@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["IRetailModeStatics","IRetailModeStatics_Vtbl","RetailMode"]};
+window.SIDEBAR_ITEMS = {"struct":["IRetailModeStatics","RetailMode"]};

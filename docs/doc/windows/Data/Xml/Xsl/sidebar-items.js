@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["IXsltProcessor","IXsltProcessor2","IXsltProcessor2_Vtbl","IXsltProcessorFactory","IXsltProcessorFactory_Vtbl","IXsltProcessor_Vtbl","XsltProcessor"]};
+window.SIDEBAR_ITEMS = {"struct":["IXsltProcessor","IXsltProcessor2","IXsltProcessorFactory","XsltProcessor"]};

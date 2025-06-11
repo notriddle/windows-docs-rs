@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["IPalmRejectionDelayZonePreview","IPalmRejectionDelayZonePreviewStatics","IPalmRejectionDelayZonePreviewStatics_Vtbl","IPalmRejectionDelayZonePreview_Vtbl","PalmRejectionDelayZonePreview"]};
+window.SIDEBAR_ITEMS = {"struct":["IPalmRejectionDelayZonePreview","IPalmRejectionDelayZonePreviewStatics","PalmRejectionDelayZonePreview"]};

@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["CompositorController","ICompositorController","ICompositorController_Vtbl"]};
+window.SIDEBAR_ITEMS = {"struct":["CompositorController","ICompositorController"]};

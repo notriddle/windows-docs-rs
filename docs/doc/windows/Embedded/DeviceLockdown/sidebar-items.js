@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["DeviceLockdownProfile","DeviceLockdownProfileInformation","IDeviceLockdownProfileInformation","IDeviceLockdownProfileInformation_Vtbl","IDeviceLockdownProfileStatics","IDeviceLockdownProfileStatics_Vtbl"]};
+window.SIDEBAR_ITEMS = {"struct":["DeviceLockdownProfile","DeviceLockdownProfileInformation","IDeviceLockdownProfileInformation","IDeviceLockdownProfileStatics"]};

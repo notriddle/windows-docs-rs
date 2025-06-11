@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["CharacterGrouping","CharacterGroupings","ICharacterGrouping","ICharacterGrouping_Vtbl","ICharacterGroupings","ICharacterGroupingsFactory","ICharacterGroupingsFactory_Vtbl","ICharacterGroupings_Vtbl"]};
+window.SIDEBAR_ITEMS = {"struct":["CharacterGrouping","CharacterGroupings","ICharacterGrouping","ICharacterGroupings","ICharacterGroupingsFactory"]};

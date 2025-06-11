@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["DisplayRequest","IDisplayRequest","IDisplayRequest_Vtbl"]};
+window.SIDEBAR_ITEMS = {"struct":["DisplayRequest","IDisplayRequest"]};

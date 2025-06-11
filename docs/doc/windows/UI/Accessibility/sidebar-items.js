@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["IScreenReaderPositionChangedEventArgs","IScreenReaderPositionChangedEventArgs_Vtbl","IScreenReaderService","IScreenReaderService_Vtbl","ScreenReaderPositionChangedEventArgs","ScreenReaderService"]};
+window.SIDEBAR_ITEMS = {"struct":["IScreenReaderPositionChangedEventArgs","IScreenReaderService","ScreenReaderPositionChangedEventArgs","ScreenReaderService"]};

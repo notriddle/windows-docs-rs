@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["HtmlUtilities","IHtmlUtilities","IHtmlUtilities_Vtbl"]};
+window.SIDEBAR_ITEMS = {"struct":["HtmlUtilities","IHtmlUtilities"]};

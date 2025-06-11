@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["IWindowManagementPreview","IWindowManagementPreviewStatics","IWindowManagementPreviewStatics_Vtbl","IWindowManagementPreview_Vtbl","WindowManagementPreview"]};
+window.SIDEBAR_ITEMS = {"struct":["IWindowManagementPreview","IWindowManagementPreviewStatics","WindowManagementPreview"]};

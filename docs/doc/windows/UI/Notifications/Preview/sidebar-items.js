@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["IToastOcclusionManagerPreviewStatics","IToastOcclusionManagerPreviewStatics_Vtbl","ToastOcclusionManagerPreview"]};
+window.SIDEBAR_ITEMS = {"struct":["IToastOcclusionManagerPreviewStatics","ToastOcclusionManagerPreview"]};

@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ISoundLevelBrokerStatics","ISoundLevelBrokerStatics_Vtbl","SoundLevelBroker"]};
+window.SIDEBAR_ITEMS = {"struct":["ISoundLevelBrokerStatics","SoundLevelBroker"]};
