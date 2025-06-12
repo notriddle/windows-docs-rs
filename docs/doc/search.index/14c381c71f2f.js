@@ -1,1 +1,0 @@
-rn_("AANhc2sAAAAB/VQPAKAEcmVhawACgW4ADHCRAGlt/w==")

@@ -1,1 +1,0 @@
-rn_("AANtcGwAAAACPkkAAAAsBgCACWxpbmdlcnJvcgABAGkAAj9JAAD/KwYA")
