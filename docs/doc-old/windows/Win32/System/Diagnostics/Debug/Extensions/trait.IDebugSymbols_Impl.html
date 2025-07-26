@@ -1,0 +1,420 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="API documentation for the Rust `IDebugSymbols_Impl` trait in crate `windows`."><title>IDebugSymbols_Impl in windows::Win32::System::Diagnostics::Debug::Extensions - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../../../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../../../../../static.files/rustdoc-aa0817cf.css"><meta name="rustdoc-vars" data-root-path="../../../../../../" data-static-root-path="../../../../../../static.files/" data-current-crate="windows" data-themes="" data-resource-suffix="" data-rustdoc-version="1.90.0-dev" data-channel="nightly" data-search-js="search-fa3e91e5.js" data-settings-js="settings-5514c975.js" ><script src="../../../../../../static.files/storage-4e99c027.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../../../../../static.files/main-673ee1e0.js"></script><noscript><link rel="stylesheet" href="../../../../../../static.files/noscript-32bb7600.css"></noscript><link rel="alternate icon" type="image/png" href="../../../../../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../../../../../static.files/favicon-044be391.svg"><link
+  rel="search"
+  type="application/opensearchdescription+xml"
+  title="Rust for Windows"
+  href="https://microsoft.github.io/windows-docs-rs/opensearch.xml"
+/>
+
+</head><body class="rustdoc trait"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button></nav><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../../../../../../windows/index.html">windows</a><span class="version">0.61.1</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">IDebug<wbr>Symbols_<wbr>Impl</a></h2><h3><a href="#required-methods">Required Methods</a></h3><ul class="block"><li><a href="#tymethod.AddSymbolOptions" title="AddSymbolOptions">AddSymbolOptions</a></li><li><a href="#tymethod.AppendImagePath" title="AppendImagePath">AppendImagePath</a></li><li><a href="#tymethod.AppendSourcePath" title="AppendSourcePath">AppendSourcePath</a></li><li><a href="#tymethod.AppendSymbolPath" title="AppendSymbolPath">AppendSymbolPath</a></li><li><a href="#tymethod.CreateSymbolGroup" title="CreateSymbolGroup">CreateSymbolGroup</a></li><li><a href="#tymethod.EndSymbolMatch" title="EndSymbolMatch">EndSymbolMatch</a></li><li><a href="#tymethod.FindSourceFile" title="FindSourceFile">FindSourceFile</a></li><li><a href="#tymethod.GetFieldOffset" title="GetFieldOffset">GetFieldOffset</a></li><li><a href="#tymethod.GetImagePath" title="GetImagePath">GetImagePath</a></li><li><a href="#tymethod.GetLineByOffset" title="GetLineByOffset">GetLineByOffset</a></li><li><a href="#tymethod.GetModuleByIndex" title="GetModuleByIndex">GetModuleByIndex</a></li><li><a href="#tymethod.GetModuleByModuleName" title="GetModuleByModuleName">GetModuleByModuleName</a></li><li><a href="#tymethod.GetModuleByOffset" title="GetModuleByOffset">GetModuleByOffset</a></li><li><a href="#tymethod.GetModuleNames" title="GetModuleNames">GetModuleNames</a></li><li><a href="#tymethod.GetModuleParameters" title="GetModuleParameters">GetModuleParameters</a></li><li><a href="#tymethod.GetNameByOffset" title="GetNameByOffset">GetNameByOffset</a></li><li><a href="#tymethod.GetNearNameByOffset" title="GetNearNameByOffset">GetNearNameByOffset</a></li><li><a href="#tymethod.GetNextSymbolMatch" title="GetNextSymbolMatch">GetNextSymbolMatch</a></li><li><a href="#tymethod.GetNumberModules" title="GetNumberModules">GetNumberModules</a></li><li><a href="#tymethod.GetOffsetByLine" title="GetOffsetByLine">GetOffsetByLine</a></li><li><a href="#tymethod.GetOffsetByName" title="GetOffsetByName">GetOffsetByName</a></li><li><a href="#tymethod.GetOffsetTypeId" title="GetOffsetTypeId">GetOffsetTypeId</a></li><li><a href="#tymethod.GetScope" title="GetScope">GetScope</a></li><li><a href="#tymethod.GetScopeSymbolGroup" title="GetScopeSymbolGroup">GetScopeSymbolGroup</a></li><li><a href="#tymethod.GetSourceFileLineOffsets" title="GetSourceFileLineOffsets">GetSourceFileLineOffsets</a></li><li><a href="#tymethod.GetSourcePath" title="GetSourcePath">GetSourcePath</a></li><li><a href="#tymethod.GetSourcePathElement" title="GetSourcePathElement">GetSourcePathElement</a></li><li><a href="#tymethod.GetSymbolModule" title="GetSymbolModule">GetSymbolModule</a></li><li><a href="#tymethod.GetSymbolOptions" title="GetSymbolOptions">GetSymbolOptions</a></li><li><a href="#tymethod.GetSymbolPath" title="GetSymbolPath">GetSymbolPath</a></li><li><a href="#tymethod.GetSymbolTypeId" title="GetSymbolTypeId">GetSymbolTypeId</a></li><li><a href="#tymethod.GetTypeId" title="GetTypeId">GetTypeId</a></li><li><a href="#tymethod.GetTypeName" title="GetTypeName">GetTypeName</a></li><li><a href="#tymethod.GetTypeSize" title="GetTypeSize">GetTypeSize</a></li><li><a href="#tymethod.OutputTypedDataPhysical" title="OutputTypedDataPhysical">OutputTypedDataPhysical</a></li><li><a href="#tymethod.OutputTypedDataVirtual" title="OutputTypedDataVirtual">OutputTypedDataVirtual</a></li><li><a href="#tymethod.ReadTypedDataPhysical" title="ReadTypedDataPhysical">ReadTypedDataPhysical</a></li><li><a href="#tymethod.ReadTypedDataVirtual" title="ReadTypedDataVirtual">ReadTypedDataVirtual</a></li><li><a href="#tymethod.Reload" title="Reload">Reload</a></li><li><a href="#tymethod.RemoveSymbolOptions" title="RemoveSymbolOptions">RemoveSymbolOptions</a></li><li><a href="#tymethod.ResetScope" title="ResetScope">ResetScope</a></li><li><a href="#tymethod.SetImagePath" title="SetImagePath">SetImagePath</a></li><li><a href="#tymethod.SetScope" title="SetScope">SetScope</a></li><li><a href="#tymethod.SetSourcePath" title="SetSourcePath">SetSourcePath</a></li><li><a href="#tymethod.SetSymbolOptions" title="SetSymbolOptions">SetSymbolOptions</a></li><li><a href="#tymethod.SetSymbolPath" title="SetSymbolPath">SetSymbolPath</a></li><li><a href="#tymethod.StartSymbolMatch" title="StartSymbolMatch">StartSymbolMatch</a></li><li><a href="#tymethod.WriteTypedDataPhysical" title="WriteTypedDataPhysical">WriteTypedDataPhysical</a></li><li><a href="#tymethod.WriteTypedDataVirtual" title="WriteTypedDataVirtual">WriteTypedDataVirtual</a></li></ul><h3><a href="#dyn-compatibility">Dyn Compatibility</a></h3><h3><a href="#implementors">Implementors</a></h3></section><div id="rustdoc-modnav"><h2><a href="index.html">In windows::<wbr>Win32::<wbr>System::<wbr>Diagnostics::<wbr>Debug::<wbr>Extensions</a></h2></div></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><div class="width-limiter"><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><div class="rustdoc-breadcrumbs"><a href="../../../../../index.html">windows</a>::<wbr><a href="../../../../index.html">Win32</a>::<wbr><a href="../../../index.html">System</a>::<wbr><a href="../../index.html">Diagnostics</a>::<wbr><a href="../index.html">Debug</a>::<wbr><a href="index.html">Extensions</a></div><h1>Trait <span class="trait">IDebugSymbols_Impl</span><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"></span></div><pre class="rust item-decl"><code>pub trait IDebugSymbols_Impl: IUnknownImpl {
+<details class="toggle type-contents-toggle"><summary class="hideme"><span>Show 49 methods</span></summary>    // Required methods
+    fn <a href="#tymethod.GetSymbolOptions" class="fn">GetSymbolOptions</a>(&amp;self) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.AddSymbolOptions" class="fn">AddSymbolOptions</a>(&amp;self, options: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.RemoveSymbolOptions" class="fn">RemoveSymbolOptions</a>(&amp;self, options: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.SetSymbolOptions" class="fn">SetSymbolOptions</a>(&amp;self, options: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetNameByOffset" class="fn">GetNameByOffset</a>(
+        &amp;self,
+        offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+        namebuffer: PSTR,
+        namebuffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        namesize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        displacement: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetOffsetByName" class="fn">GetOffsetByName</a>(&amp;self, symbol: &amp;PCSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetNearNameByOffset" class="fn">GetNearNameByOffset</a>(
+        &amp;self,
+        offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+        delta: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+        namebuffer: PSTR,
+        namebuffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        namesize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        displacement: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetLineByOffset" class="fn">GetLineByOffset</a>(
+        &amp;self,
+        offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+        line: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        filebuffer: PSTR,
+        filebuffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        filesize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        displacement: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetOffsetByLine" class="fn">GetOffsetByLine</a>(&amp;self, line: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, file: &amp;PCSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetNumberModules" class="fn">GetNumberModules</a>(
+        &amp;self,
+        loaded: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        unloaded: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetModuleByIndex" class="fn">GetModuleByIndex</a>(&amp;self, index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetModuleByModuleName" class="fn">GetModuleByModuleName</a>(
+        &amp;self,
+        name: &amp;PCSTR,
+        startindex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        base: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetModuleByOffset" class="fn">GetModuleByOffset</a>(
+        &amp;self,
+        offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+        startindex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        base: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetModuleNames" class="fn">GetModuleNames</a>(
+        &amp;self,
+        index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        base: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+        imagenamebuffer: PSTR,
+        imagenamebuffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        imagenamesize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        modulenamebuffer: PSTR,
+        modulenamebuffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        modulenamesize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        loadedimagenamebuffer: PSTR,
+        loadedimagenamebuffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        loadedimagenamesize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetModuleParameters" class="fn">GetModuleParameters</a>(
+        &amp;self,
+        count: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        bases: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+        start: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        params: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="struct.DEBUG_MODULE_PARAMETERS.html" title="struct windows::Win32::System::Diagnostics::Debug::Extensions::DEBUG_MODULE_PARAMETERS">DEBUG_MODULE_PARAMETERS</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetSymbolModule" class="fn">GetSymbolModule</a>(&amp;self, symbol: &amp;PCSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetTypeName" class="fn">GetTypeName</a>(
+        &amp;self,
+        module: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+        typeid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        namebuffer: PSTR,
+        namebuffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        namesize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetTypeId" class="fn">GetTypeId</a>(&amp;self, module: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>, name: &amp;PCSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetTypeSize" class="fn">GetTypeSize</a>(&amp;self, module: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>, typeid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetFieldOffset" class="fn">GetFieldOffset</a>(
+        &amp;self,
+        module: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+        typeid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        field: &amp;PCSTR,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetSymbolTypeId" class="fn">GetSymbolTypeId</a>(
+        &amp;self,
+        symbol: &amp;PCSTR,
+        typeid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        module: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetOffsetTypeId" class="fn">GetOffsetTypeId</a>(
+        &amp;self,
+        offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+        typeid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        module: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.ReadTypedDataVirtual" class="fn">ReadTypedDataVirtual</a>(
+        &amp;self,
+        offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+        module: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+        typeid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        buffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        buffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        bytesread: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.WriteTypedDataVirtual" class="fn">WriteTypedDataVirtual</a>(
+        &amp;self,
+        offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+        module: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+        typeid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        buffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        buffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        byteswritten: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.OutputTypedDataVirtual" class="fn">OutputTypedDataVirtual</a>(
+        &amp;self,
+        outputcontrol: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+        module: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+        typeid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        flags: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.ReadTypedDataPhysical" class="fn">ReadTypedDataPhysical</a>(
+        &amp;self,
+        offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+        module: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+        typeid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        buffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        buffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        bytesread: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.WriteTypedDataPhysical" class="fn">WriteTypedDataPhysical</a>(
+        &amp;self,
+        offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+        module: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+        typeid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        buffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        buffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        byteswritten: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.OutputTypedDataPhysical" class="fn">OutputTypedDataPhysical</a>(
+        &amp;self,
+        outputcontrol: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+        module: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+        typeid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        flags: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetScope" class="fn">GetScope</a>(
+        &amp;self,
+        instructionoffset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+        scopeframe: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="struct.DEBUG_STACK_FRAME.html" title="struct windows::Win32::System::Diagnostics::Debug::Extensions::DEBUG_STACK_FRAME">DEBUG_STACK_FRAME</a>,
+        scopecontext: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        scopecontextsize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.SetScope" class="fn">SetScope</a>(
+        &amp;self,
+        instructionoffset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+        scopeframe: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="struct.DEBUG_STACK_FRAME.html" title="struct windows::Win32::System::Diagnostics::Debug::Extensions::DEBUG_STACK_FRAME">DEBUG_STACK_FRAME</a>,
+        scopecontext: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        scopecontextsize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.ResetScope" class="fn">ResetScope</a>(&amp;self) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetScopeSymbolGroup" class="fn">GetScopeSymbolGroup</a>(
+        &amp;self,
+        flags: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        update: Ref&lt;'_, <a class="struct" href="struct.IDebugSymbolGroup.html" title="struct windows::Win32::System::Diagnostics::Debug::Extensions::IDebugSymbolGroup">IDebugSymbolGroup</a>&gt;,
+    ) -&gt; Result&lt;<a class="struct" href="struct.IDebugSymbolGroup.html" title="struct windows::Win32::System::Diagnostics::Debug::Extensions::IDebugSymbolGroup">IDebugSymbolGroup</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.CreateSymbolGroup" class="fn">CreateSymbolGroup</a>(&amp;self) -&gt; Result&lt;<a class="struct" href="struct.IDebugSymbolGroup.html" title="struct windows::Win32::System::Diagnostics::Debug::Extensions::IDebugSymbolGroup">IDebugSymbolGroup</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.StartSymbolMatch" class="fn">StartSymbolMatch</a>(&amp;self, pattern: &amp;PCSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetNextSymbolMatch" class="fn">GetNextSymbolMatch</a>(
+        &amp;self,
+        handle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+        buffer: PSTR,
+        buffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        matchsize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.EndSymbolMatch" class="fn">EndSymbolMatch</a>(&amp;self, handle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.Reload" class="fn">Reload</a>(&amp;self, module: &amp;PCSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetSymbolPath" class="fn">GetSymbolPath</a>(
+        &amp;self,
+        buffer: PSTR,
+        buffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pathsize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.SetSymbolPath" class="fn">SetSymbolPath</a>(&amp;self, path: &amp;PCSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.AppendSymbolPath" class="fn">AppendSymbolPath</a>(&amp;self, addition: &amp;PCSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetImagePath" class="fn">GetImagePath</a>(
+        &amp;self,
+        buffer: PSTR,
+        buffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pathsize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.SetImagePath" class="fn">SetImagePath</a>(&amp;self, path: &amp;PCSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.AppendImagePath" class="fn">AppendImagePath</a>(&amp;self, addition: &amp;PCSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetSourcePath" class="fn">GetSourcePath</a>(
+        &amp;self,
+        buffer: PSTR,
+        buffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pathsize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetSourcePathElement" class="fn">GetSourcePathElement</a>(
+        &amp;self,
+        index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        buffer: PSTR,
+        buffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        elementsize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.SetSourcePath" class="fn">SetSourcePath</a>(&amp;self, path: &amp;PCSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.AppendSourcePath" class="fn">AppendSourcePath</a>(&amp;self, addition: &amp;PCSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.FindSourceFile" class="fn">FindSourceFile</a>(
+        &amp;self,
+        startelement: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        file: &amp;PCSTR,
+        flags: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        foundelement: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        buffer: PSTR,
+        buffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        foundsize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetSourceFileLineOffsets" class="fn">GetSourceFileLineOffsets</a>(
+        &amp;self,
+        file: &amp;PCSTR,
+        buffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+        bufferlines: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        filelines: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+</details>}</code></pre><h2 id="required-methods" class="section-header">Required Methods<a href="#required-methods" class="anchor">§</a></h2><div class="methods"><section id="tymethod.GetSymbolOptions" class="method"><h4 class="code-header">fn <a href="#tymethod.GetSymbolOptions" class="fn">GetSymbolOptions</a>(&amp;self) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>&gt;</h4></section><section id="tymethod.AddSymbolOptions" class="method"><h4 class="code-header">fn <a href="#tymethod.AddSymbolOptions" class="fn">AddSymbolOptions</a>(&amp;self, options: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.RemoveSymbolOptions" class="method"><h4 class="code-header">fn <a href="#tymethod.RemoveSymbolOptions" class="fn">RemoveSymbolOptions</a>(&amp;self, options: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.SetSymbolOptions" class="method"><h4 class="code-header">fn <a href="#tymethod.SetSymbolOptions" class="fn">SetSymbolOptions</a>(&amp;self, options: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetNameByOffset" class="method"><h4 class="code-header">fn <a href="#tymethod.GetNameByOffset" class="fn">GetNameByOffset</a>(
+    &amp;self,
+    offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    namebuffer: PSTR,
+    namebuffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    namesize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    displacement: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetOffsetByName" class="method"><h4 class="code-header">fn <a href="#tymethod.GetOffsetByName" class="fn">GetOffsetByName</a>(&amp;self, symbol: &amp;PCSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>&gt;</h4></section><section id="tymethod.GetNearNameByOffset" class="method"><h4 class="code-header">fn <a href="#tymethod.GetNearNameByOffset" class="fn">GetNearNameByOffset</a>(
+    &amp;self,
+    offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    delta: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+    namebuffer: PSTR,
+    namebuffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    namesize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    displacement: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetLineByOffset" class="method"><h4 class="code-header">fn <a href="#tymethod.GetLineByOffset" class="fn">GetLineByOffset</a>(
+    &amp;self,
+    offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    line: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    filebuffer: PSTR,
+    filebuffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    filesize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    displacement: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetOffsetByLine" class="method"><h4 class="code-header">fn <a href="#tymethod.GetOffsetByLine" class="fn">GetOffsetByLine</a>(&amp;self, line: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, file: &amp;PCSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>&gt;</h4></section><section id="tymethod.GetNumberModules" class="method"><h4 class="code-header">fn <a href="#tymethod.GetNumberModules" class="fn">GetNumberModules</a>(&amp;self, loaded: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, unloaded: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetModuleByIndex" class="method"><h4 class="code-header">fn <a href="#tymethod.GetModuleByIndex" class="fn">GetModuleByIndex</a>(&amp;self, index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>&gt;</h4></section><section id="tymethod.GetModuleByModuleName" class="method"><h4 class="code-header">fn <a href="#tymethod.GetModuleByModuleName" class="fn">GetModuleByModuleName</a>(
+    &amp;self,
+    name: &amp;PCSTR,
+    startindex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    base: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetModuleByOffset" class="method"><h4 class="code-header">fn <a href="#tymethod.GetModuleByOffset" class="fn">GetModuleByOffset</a>(
+    &amp;self,
+    offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    startindex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    base: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetModuleNames" class="method"><h4 class="code-header">fn <a href="#tymethod.GetModuleNames" class="fn">GetModuleNames</a>(
+    &amp;self,
+    index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    base: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    imagenamebuffer: PSTR,
+    imagenamebuffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    imagenamesize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    modulenamebuffer: PSTR,
+    modulenamebuffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    modulenamesize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    loadedimagenamebuffer: PSTR,
+    loadedimagenamebuffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    loadedimagenamesize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetModuleParameters" class="method"><h4 class="code-header">fn <a href="#tymethod.GetModuleParameters" class="fn">GetModuleParameters</a>(
+    &amp;self,
+    count: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    bases: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    start: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    params: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="struct.DEBUG_MODULE_PARAMETERS.html" title="struct windows::Win32::System::Diagnostics::Debug::Extensions::DEBUG_MODULE_PARAMETERS">DEBUG_MODULE_PARAMETERS</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetSymbolModule" class="method"><h4 class="code-header">fn <a href="#tymethod.GetSymbolModule" class="fn">GetSymbolModule</a>(&amp;self, symbol: &amp;PCSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>&gt;</h4></section><section id="tymethod.GetTypeName" class="method"><h4 class="code-header">fn <a href="#tymethod.GetTypeName" class="fn">GetTypeName</a>(
+    &amp;self,
+    module: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    typeid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    namebuffer: PSTR,
+    namebuffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    namesize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetTypeId" class="method"><h4 class="code-header">fn <a href="#tymethod.GetTypeId" class="fn">GetTypeId</a>(&amp;self, module: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>, name: &amp;PCSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>&gt;</h4></section><section id="tymethod.GetTypeSize" class="method"><h4 class="code-header">fn <a href="#tymethod.GetTypeSize" class="fn">GetTypeSize</a>(&amp;self, module: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>, typeid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>&gt;</h4></section><section id="tymethod.GetFieldOffset" class="method"><h4 class="code-header">fn <a href="#tymethod.GetFieldOffset" class="fn">GetFieldOffset</a>(&amp;self, module: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>, typeid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, field: &amp;PCSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>&gt;</h4></section><section id="tymethod.GetSymbolTypeId" class="method"><h4 class="code-header">fn <a href="#tymethod.GetSymbolTypeId" class="fn">GetSymbolTypeId</a>(
+    &amp;self,
+    symbol: &amp;PCSTR,
+    typeid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    module: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetOffsetTypeId" class="method"><h4 class="code-header">fn <a href="#tymethod.GetOffsetTypeId" class="fn">GetOffsetTypeId</a>(
+    &amp;self,
+    offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    typeid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    module: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.ReadTypedDataVirtual" class="method"><h4 class="code-header">fn <a href="#tymethod.ReadTypedDataVirtual" class="fn">ReadTypedDataVirtual</a>(
+    &amp;self,
+    offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    module: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    typeid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    buffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    buffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    bytesread: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.WriteTypedDataVirtual" class="method"><h4 class="code-header">fn <a href="#tymethod.WriteTypedDataVirtual" class="fn">WriteTypedDataVirtual</a>(
+    &amp;self,
+    offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    module: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    typeid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    buffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    buffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    byteswritten: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.OutputTypedDataVirtual" class="method"><h4 class="code-header">fn <a href="#tymethod.OutputTypedDataVirtual" class="fn">OutputTypedDataVirtual</a>(
+    &amp;self,
+    outputcontrol: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    module: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    typeid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    flags: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.ReadTypedDataPhysical" class="method"><h4 class="code-header">fn <a href="#tymethod.ReadTypedDataPhysical" class="fn">ReadTypedDataPhysical</a>(
+    &amp;self,
+    offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    module: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    typeid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    buffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    buffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    bytesread: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.WriteTypedDataPhysical" class="method"><h4 class="code-header">fn <a href="#tymethod.WriteTypedDataPhysical" class="fn">WriteTypedDataPhysical</a>(
+    &amp;self,
+    offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    module: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    typeid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    buffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    buffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    byteswritten: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.OutputTypedDataPhysical" class="method"><h4 class="code-header">fn <a href="#tymethod.OutputTypedDataPhysical" class="fn">OutputTypedDataPhysical</a>(
+    &amp;self,
+    outputcontrol: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    module: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    typeid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    flags: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetScope" class="method"><h4 class="code-header">fn <a href="#tymethod.GetScope" class="fn">GetScope</a>(
+    &amp;self,
+    instructionoffset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    scopeframe: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="struct.DEBUG_STACK_FRAME.html" title="struct windows::Win32::System::Diagnostics::Debug::Extensions::DEBUG_STACK_FRAME">DEBUG_STACK_FRAME</a>,
+    scopecontext: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    scopecontextsize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.SetScope" class="method"><h4 class="code-header">fn <a href="#tymethod.SetScope" class="fn">SetScope</a>(
+    &amp;self,
+    instructionoffset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    scopeframe: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="struct.DEBUG_STACK_FRAME.html" title="struct windows::Win32::System::Diagnostics::Debug::Extensions::DEBUG_STACK_FRAME">DEBUG_STACK_FRAME</a>,
+    scopecontext: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    scopecontextsize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.ResetScope" class="method"><h4 class="code-header">fn <a href="#tymethod.ResetScope" class="fn">ResetScope</a>(&amp;self) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetScopeSymbolGroup" class="method"><h4 class="code-header">fn <a href="#tymethod.GetScopeSymbolGroup" class="fn">GetScopeSymbolGroup</a>(
+    &amp;self,
+    flags: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    update: Ref&lt;'_, <a class="struct" href="struct.IDebugSymbolGroup.html" title="struct windows::Win32::System::Diagnostics::Debug::Extensions::IDebugSymbolGroup">IDebugSymbolGroup</a>&gt;,
+) -&gt; Result&lt;<a class="struct" href="struct.IDebugSymbolGroup.html" title="struct windows::Win32::System::Diagnostics::Debug::Extensions::IDebugSymbolGroup">IDebugSymbolGroup</a>&gt;</h4></section><section id="tymethod.CreateSymbolGroup" class="method"><h4 class="code-header">fn <a href="#tymethod.CreateSymbolGroup" class="fn">CreateSymbolGroup</a>(&amp;self) -&gt; Result&lt;<a class="struct" href="struct.IDebugSymbolGroup.html" title="struct windows::Win32::System::Diagnostics::Debug::Extensions::IDebugSymbolGroup">IDebugSymbolGroup</a>&gt;</h4></section><section id="tymethod.StartSymbolMatch" class="method"><h4 class="code-header">fn <a href="#tymethod.StartSymbolMatch" class="fn">StartSymbolMatch</a>(&amp;self, pattern: &amp;PCSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>&gt;</h4></section><section id="tymethod.GetNextSymbolMatch" class="method"><h4 class="code-header">fn <a href="#tymethod.GetNextSymbolMatch" class="fn">GetNextSymbolMatch</a>(
+    &amp;self,
+    handle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    buffer: PSTR,
+    buffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    matchsize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.EndSymbolMatch" class="method"><h4 class="code-header">fn <a href="#tymethod.EndSymbolMatch" class="fn">EndSymbolMatch</a>(&amp;self, handle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.Reload" class="method"><h4 class="code-header">fn <a href="#tymethod.Reload" class="fn">Reload</a>(&amp;self, module: &amp;PCSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetSymbolPath" class="method"><h4 class="code-header">fn <a href="#tymethod.GetSymbolPath" class="fn">GetSymbolPath</a>(
+    &amp;self,
+    buffer: PSTR,
+    buffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pathsize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.SetSymbolPath" class="method"><h4 class="code-header">fn <a href="#tymethod.SetSymbolPath" class="fn">SetSymbolPath</a>(&amp;self, path: &amp;PCSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.AppendSymbolPath" class="method"><h4 class="code-header">fn <a href="#tymethod.AppendSymbolPath" class="fn">AppendSymbolPath</a>(&amp;self, addition: &amp;PCSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetImagePath" class="method"><h4 class="code-header">fn <a href="#tymethod.GetImagePath" class="fn">GetImagePath</a>(
+    &amp;self,
+    buffer: PSTR,
+    buffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pathsize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.SetImagePath" class="method"><h4 class="code-header">fn <a href="#tymethod.SetImagePath" class="fn">SetImagePath</a>(&amp;self, path: &amp;PCSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.AppendImagePath" class="method"><h4 class="code-header">fn <a href="#tymethod.AppendImagePath" class="fn">AppendImagePath</a>(&amp;self, addition: &amp;PCSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetSourcePath" class="method"><h4 class="code-header">fn <a href="#tymethod.GetSourcePath" class="fn">GetSourcePath</a>(
+    &amp;self,
+    buffer: PSTR,
+    buffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pathsize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetSourcePathElement" class="method"><h4 class="code-header">fn <a href="#tymethod.GetSourcePathElement" class="fn">GetSourcePathElement</a>(
+    &amp;self,
+    index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    buffer: PSTR,
+    buffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    elementsize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.SetSourcePath" class="method"><h4 class="code-header">fn <a href="#tymethod.SetSourcePath" class="fn">SetSourcePath</a>(&amp;self, path: &amp;PCSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.AppendSourcePath" class="method"><h4 class="code-header">fn <a href="#tymethod.AppendSourcePath" class="fn">AppendSourcePath</a>(&amp;self, addition: &amp;PCSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.FindSourceFile" class="method"><h4 class="code-header">fn <a href="#tymethod.FindSourceFile" class="fn">FindSourceFile</a>(
+    &amp;self,
+    startelement: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    file: &amp;PCSTR,
+    flags: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    foundelement: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    buffer: PSTR,
+    buffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    foundsize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetSourceFileLineOffsets" class="method"><h4 class="code-header">fn <a href="#tymethod.GetSourceFileLineOffsets" class="fn">GetSourceFileLineOffsets</a>(
+    &amp;self,
+    file: &amp;PCSTR,
+    buffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    bufferlines: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    filelines: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section></div><h2 id="dyn-compatibility" class="section-header">Dyn Compatibility<a href="#dyn-compatibility" class="anchor">§</a></h2><div class="dyn-compatibility-info"><p>This trait is <b>not</b> <a href="https://doc.rust-lang.org/nightly/reference/items/traits.html#dyn-compatibility">dyn compatible</a>.</p><p><i>In older versions of Rust, dyn compatibility was called "object safety", so this trait is not object safe.</i></p></div><h2 id="implementors" class="section-header">Implementors<a href="#implementors" class="anchor">§</a></h2><div id="implementors-list"></div><script src="../../../../../../trait.impl/windows/Win32/System/Diagnostics/Debug/Extensions/trait.IDebugSymbols_Impl.js" async></script></section></div></main></body></html>

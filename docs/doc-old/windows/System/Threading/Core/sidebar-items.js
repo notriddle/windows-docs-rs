@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["IPreallocatedWorkItem","IPreallocatedWorkItemFactory","ISignalNotifier","ISignalNotifierStatics","PreallocatedWorkItem","SignalHandler","SignalNotifier"]};

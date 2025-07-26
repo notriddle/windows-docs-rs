@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["ISceneLightingEffect","ISceneLightingEffect2","SceneLightingEffect","SceneLightingEffectReflectanceModel"]};

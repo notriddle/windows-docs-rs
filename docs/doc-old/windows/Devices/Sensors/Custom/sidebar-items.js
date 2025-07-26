@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["CustomSensor","CustomSensorReading","CustomSensorReadingChangedEventArgs","ICustomSensor","ICustomSensor2","ICustomSensorReading","ICustomSensorReading2","ICustomSensorReadingChangedEventArgs","ICustomSensorStatics"]};

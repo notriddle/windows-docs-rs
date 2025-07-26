@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["IOfflineMapPackage","IOfflineMapPackageQueryResult","IOfflineMapPackageStartDownloadResult","IOfflineMapPackageStatics","OfflineMapPackage","OfflineMapPackageQueryResult","OfflineMapPackageQueryStatus","OfflineMapPackageStartDownloadResult","OfflineMapPackageStartDownloadStatus","OfflineMapPackageStatus"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["IServiceDeviceStatics","IStorageDeviceStatics","ServiceDevice","ServiceDeviceType","StorageDevice"]};

@@ -1,0 +1,291 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="API documentation for the Rust `IMSAdminBaseW_Impl` trait in crate `windows`."><title>IMSAdminBaseW_Impl in windows::Win32::System::Iis - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../../../static.files/rustdoc-aa0817cf.css"><meta name="rustdoc-vars" data-root-path="../../../../" data-static-root-path="../../../../static.files/" data-current-crate="windows" data-themes="" data-resource-suffix="" data-rustdoc-version="1.90.0-dev" data-channel="nightly" data-search-js="search-fa3e91e5.js" data-settings-js="settings-5514c975.js" ><script src="../../../../static.files/storage-4e99c027.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../../../static.files/main-673ee1e0.js"></script><noscript><link rel="stylesheet" href="../../../../static.files/noscript-32bb7600.css"></noscript><link rel="alternate icon" type="image/png" href="../../../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../../../static.files/favicon-044be391.svg"><link
+  rel="search"
+  type="application/opensearchdescription+xml"
+  title="Rust for Windows"
+  href="https://microsoft.github.io/windows-docs-rs/opensearch.xml"
+/>
+
+</head><body class="rustdoc trait"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button></nav><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../../../../windows/index.html">windows</a><span class="version">0.61.1</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">IMSAdmin<wbr>BaseW_<wbr>Impl</a></h2><h3><a href="#required-methods">Required Methods</a></h3><ul class="block"><li><a href="#tymethod.AddKey" title="AddKey">AddKey</a></li><li><a href="#tymethod.Backup" title="Backup">Backup</a></li><li><a href="#tymethod.ChangePermissions" title="ChangePermissions">ChangePermissions</a></li><li><a href="#tymethod.CloseKey" title="CloseKey">CloseKey</a></li><li><a href="#tymethod.CopyData" title="CopyData">CopyData</a></li><li><a href="#tymethod.CopyKey" title="CopyKey">CopyKey</a></li><li><a href="#tymethod.DeleteAllData" title="DeleteAllData">DeleteAllData</a></li><li><a href="#tymethod.DeleteBackup" title="DeleteBackup">DeleteBackup</a></li><li><a href="#tymethod.DeleteChildKeys" title="DeleteChildKeys">DeleteChildKeys</a></li><li><a href="#tymethod.DeleteData" title="DeleteData">DeleteData</a></li><li><a href="#tymethod.DeleteKey" title="DeleteKey">DeleteKey</a></li><li><a href="#tymethod.EnumBackups" title="EnumBackups">EnumBackups</a></li><li><a href="#tymethod.EnumData" title="EnumData">EnumData</a></li><li><a href="#tymethod.EnumKeys" title="EnumKeys">EnumKeys</a></li><li><a href="#tymethod.GetAllData" title="GetAllData">GetAllData</a></li><li><a href="#tymethod.GetData" title="GetData">GetData</a></li><li><a href="#tymethod.GetDataPaths" title="GetDataPaths">GetDataPaths</a></li><li><a href="#tymethod.GetDataSetNumber" title="GetDataSetNumber">GetDataSetNumber</a></li><li><a href="#tymethod.GetHandleInfo" title="GetHandleInfo">GetHandleInfo</a></li><li><a href="#tymethod.GetLastChangeTime" title="GetLastChangeTime">GetLastChangeTime</a></li><li><a href="#tymethod.GetServerGuid" title="GetServerGuid">GetServerGuid</a></li><li><a href="#tymethod.GetSystemChangeNumber" title="GetSystemChangeNumber">GetSystemChangeNumber</a></li><li><a href="#tymethod.KeyExchangePhase1" title="KeyExchangePhase1">KeyExchangePhase1</a></li><li><a href="#tymethod.KeyExchangePhase2" title="KeyExchangePhase2">KeyExchangePhase2</a></li><li><a href="#tymethod.OpenKey" title="OpenKey">OpenKey</a></li><li><a href="#tymethod.RenameKey" title="RenameKey">RenameKey</a></li><li><a href="#tymethod.Restore" title="Restore">Restore</a></li><li><a href="#tymethod.SaveData" title="SaveData">SaveData</a></li><li><a href="#tymethod.SetData" title="SetData">SetData</a></li><li><a href="#tymethod.SetLastChangeTime" title="SetLastChangeTime">SetLastChangeTime</a></li><li><a href="#tymethod.UnmarshalInterface" title="UnmarshalInterface">UnmarshalInterface</a></li></ul><h3><a href="#dyn-compatibility">Dyn Compatibility</a></h3><h3><a href="#implementors">Implementors</a></h3></section><div id="rustdoc-modnav"><h2><a href="index.html">In windows::<wbr>Win32::<wbr>System::<wbr>Iis</a></h2></div></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><div class="width-limiter"><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><div class="rustdoc-breadcrumbs"><a href="../../../index.html">windows</a>::<wbr><a href="../../index.html">Win32</a>::<wbr><a href="../index.html">System</a>::<wbr><a href="index.html">Iis</a></div><h1>Trait <span class="trait">IMSAdminBaseW_Impl</span><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"></span></div><pre class="rust item-decl"><code>pub trait IMSAdminBaseW_Impl: IUnknownImpl {
+<details class="toggle type-contents-toggle"><summary class="hideme"><span>Show 31 methods</span></summary>    // Required methods
+    fn <a href="#tymethod.AddKey" class="fn">AddKey</a>(&amp;self, hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, pszmdpath: &amp;PCWSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.DeleteKey" class="fn">DeleteKey</a>(&amp;self, hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, pszmdpath: &amp;PCWSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.DeleteChildKeys" class="fn">DeleteChildKeys</a>(&amp;self, hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, pszmdpath: &amp;PCWSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.EnumKeys" class="fn">EnumKeys</a>(
+        &amp;self,
+        hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pszmdpath: &amp;PCWSTR,
+        pszmdname: PWSTR,
+        dwmdenumobjectindex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.CopyKey" class="fn">CopyKey</a>(
+        &amp;self,
+        hmdsourcehandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pszmdsourcepath: &amp;PCWSTR,
+        hmddesthandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pszmddestpath: &amp;PCWSTR,
+        bmdoverwriteflag: BOOL,
+        bmdcopyflag: BOOL,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.RenameKey" class="fn">RenameKey</a>(
+        &amp;self,
+        hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pszmdpath: &amp;PCWSTR,
+        pszmdnewname: &amp;PCWSTR,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.SetData" class="fn">SetData</a>(
+        &amp;self,
+        hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pszmdpath: &amp;PCWSTR,
+        pmdrmddata: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="struct.METADATA_RECORD.html" title="struct windows::Win32::System::Iis::METADATA_RECORD">METADATA_RECORD</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetData" class="fn">GetData</a>(
+        &amp;self,
+        hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pszmdpath: &amp;PCWSTR,
+        pmdrmddata: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="struct.METADATA_RECORD.html" title="struct windows::Win32::System::Iis::METADATA_RECORD">METADATA_RECORD</a>,
+        pdwmdrequireddatalen: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.DeleteData" class="fn">DeleteData</a>(
+        &amp;self,
+        hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pszmdpath: &amp;PCWSTR,
+        dwmdidentifier: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        dwmddatatype: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.EnumData" class="fn">EnumData</a>(
+        &amp;self,
+        hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pszmdpath: &amp;PCWSTR,
+        pmdrmddata: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="struct.METADATA_RECORD.html" title="struct windows::Win32::System::Iis::METADATA_RECORD">METADATA_RECORD</a>,
+        dwmdenumdataindex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pdwmdrequireddatalen: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetAllData" class="fn">GetAllData</a>(
+        &amp;self,
+        hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pszmdpath: &amp;PCWSTR,
+        dwmdattributes: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        dwmdusertype: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        dwmddatatype: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pdwmdnumdataentries: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pdwmddatasetnumber: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        dwmdbuffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pbmdbuffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+        pdwmdrequiredbuffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.DeleteAllData" class="fn">DeleteAllData</a>(
+        &amp;self,
+        hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pszmdpath: &amp;PCWSTR,
+        dwmdusertype: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        dwmddatatype: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.CopyData" class="fn">CopyData</a>(
+        &amp;self,
+        hmdsourcehandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pszmdsourcepath: &amp;PCWSTR,
+        hmddesthandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pszmddestpath: &amp;PCWSTR,
+        dwmdattributes: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        dwmdusertype: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        dwmddatatype: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        bmdcopyflag: BOOL,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetDataPaths" class="fn">GetDataPaths</a>(
+        &amp;self,
+        hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pszmdpath: &amp;PCWSTR,
+        dwmdidentifier: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        dwmddatatype: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        dwmdbuffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pszbuffer: PWSTR,
+        pdwmdrequiredbuffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.OpenKey" class="fn">OpenKey</a>(
+        &amp;self,
+        hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pszmdpath: &amp;PCWSTR,
+        dwmdaccessrequested: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        dwmdtimeout: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.CloseKey" class="fn">CloseKey</a>(&amp;self, hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.ChangePermissions" class="fn">ChangePermissions</a>(
+        &amp;self,
+        hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        dwmdtimeout: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        dwmdaccessrequested: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.SaveData" class="fn">SaveData</a>(&amp;self) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetHandleInfo" class="fn">GetHandleInfo</a>(&amp;self, hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; Result&lt;<a class="struct" href="struct.METADATA_HANDLE_INFO.html" title="struct windows::Win32::System::Iis::METADATA_HANDLE_INFO">METADATA_HANDLE_INFO</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetSystemChangeNumber" class="fn">GetSystemChangeNumber</a>(&amp;self) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetDataSetNumber" class="fn">GetDataSetNumber</a>(
+        &amp;self,
+        hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pszmdpath: &amp;PCWSTR,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.SetLastChangeTime" class="fn">SetLastChangeTime</a>(
+        &amp;self,
+        hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pszmdpath: &amp;PCWSTR,
+        pftmdlastchangetime: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="../../Foundation/struct.FILETIME.html" title="struct windows::Win32::Foundation::FILETIME">FILETIME</a>,
+        blocaltime: BOOL,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetLastChangeTime" class="fn">GetLastChangeTime</a>(
+        &amp;self,
+        hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pszmdpath: &amp;PCWSTR,
+        pftmdlastchangetime: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../Foundation/struct.FILETIME.html" title="struct windows::Win32::Foundation::FILETIME">FILETIME</a>,
+        blocaltime: BOOL,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.KeyExchangePhase1" class="fn">KeyExchangePhase1</a>(&amp;self) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.KeyExchangePhase2" class="fn">KeyExchangePhase2</a>(&amp;self) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.Backup" class="fn">Backup</a>(
+        &amp;self,
+        pszmdbackuplocation: &amp;PCWSTR,
+        dwmdversion: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        dwmdflags: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.Restore" class="fn">Restore</a>(
+        &amp;self,
+        pszmdbackuplocation: &amp;PCWSTR,
+        dwmdversion: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        dwmdflags: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.EnumBackups" class="fn">EnumBackups</a>(
+        &amp;self,
+        pszmdbackuplocation: PWSTR,
+        pdwmdversion: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pftmdbackuptime: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../Foundation/struct.FILETIME.html" title="struct windows::Win32::Foundation::FILETIME">FILETIME</a>,
+        dwmdenumindex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.DeleteBackup" class="fn">DeleteBackup</a>(
+        &amp;self,
+        pszmdbackuplocation: &amp;PCWSTR,
+        dwmdversion: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.UnmarshalInterface" class="fn">UnmarshalInterface</a>(&amp;self) -&gt; Result&lt;<a class="struct" href="struct.IMSAdminBaseW.html" title="struct windows::Win32::System::Iis::IMSAdminBaseW">IMSAdminBaseW</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetServerGuid" class="fn">GetServerGuid</a>(&amp;self) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+</details>}</code></pre><h2 id="required-methods" class="section-header">Required Methods<a href="#required-methods" class="anchor">§</a></h2><div class="methods"><section id="tymethod.AddKey" class="method"><h4 class="code-header">fn <a href="#tymethod.AddKey" class="fn">AddKey</a>(&amp;self, hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, pszmdpath: &amp;PCWSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.DeleteKey" class="method"><h4 class="code-header">fn <a href="#tymethod.DeleteKey" class="fn">DeleteKey</a>(&amp;self, hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, pszmdpath: &amp;PCWSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.DeleteChildKeys" class="method"><h4 class="code-header">fn <a href="#tymethod.DeleteChildKeys" class="fn">DeleteChildKeys</a>(&amp;self, hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, pszmdpath: &amp;PCWSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.EnumKeys" class="method"><h4 class="code-header">fn <a href="#tymethod.EnumKeys" class="fn">EnumKeys</a>(
+    &amp;self,
+    hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pszmdpath: &amp;PCWSTR,
+    pszmdname: PWSTR,
+    dwmdenumobjectindex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.CopyKey" class="method"><h4 class="code-header">fn <a href="#tymethod.CopyKey" class="fn">CopyKey</a>(
+    &amp;self,
+    hmdsourcehandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pszmdsourcepath: &amp;PCWSTR,
+    hmddesthandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pszmddestpath: &amp;PCWSTR,
+    bmdoverwriteflag: BOOL,
+    bmdcopyflag: BOOL,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.RenameKey" class="method"><h4 class="code-header">fn <a href="#tymethod.RenameKey" class="fn">RenameKey</a>(
+    &amp;self,
+    hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pszmdpath: &amp;PCWSTR,
+    pszmdnewname: &amp;PCWSTR,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.SetData" class="method"><h4 class="code-header">fn <a href="#tymethod.SetData" class="fn">SetData</a>(
+    &amp;self,
+    hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pszmdpath: &amp;PCWSTR,
+    pmdrmddata: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="struct.METADATA_RECORD.html" title="struct windows::Win32::System::Iis::METADATA_RECORD">METADATA_RECORD</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetData" class="method"><h4 class="code-header">fn <a href="#tymethod.GetData" class="fn">GetData</a>(
+    &amp;self,
+    hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pszmdpath: &amp;PCWSTR,
+    pmdrmddata: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="struct.METADATA_RECORD.html" title="struct windows::Win32::System::Iis::METADATA_RECORD">METADATA_RECORD</a>,
+    pdwmdrequireddatalen: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.DeleteData" class="method"><h4 class="code-header">fn <a href="#tymethod.DeleteData" class="fn">DeleteData</a>(
+    &amp;self,
+    hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pszmdpath: &amp;PCWSTR,
+    dwmdidentifier: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    dwmddatatype: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.EnumData" class="method"><h4 class="code-header">fn <a href="#tymethod.EnumData" class="fn">EnumData</a>(
+    &amp;self,
+    hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pszmdpath: &amp;PCWSTR,
+    pmdrmddata: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="struct.METADATA_RECORD.html" title="struct windows::Win32::System::Iis::METADATA_RECORD">METADATA_RECORD</a>,
+    dwmdenumdataindex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pdwmdrequireddatalen: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetAllData" class="method"><h4 class="code-header">fn <a href="#tymethod.GetAllData" class="fn">GetAllData</a>(
+    &amp;self,
+    hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pszmdpath: &amp;PCWSTR,
+    dwmdattributes: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    dwmdusertype: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    dwmddatatype: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pdwmdnumdataentries: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pdwmddatasetnumber: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    dwmdbuffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pbmdbuffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pdwmdrequiredbuffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.DeleteAllData" class="method"><h4 class="code-header">fn <a href="#tymethod.DeleteAllData" class="fn">DeleteAllData</a>(
+    &amp;self,
+    hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pszmdpath: &amp;PCWSTR,
+    dwmdusertype: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    dwmddatatype: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.CopyData" class="method"><h4 class="code-header">fn <a href="#tymethod.CopyData" class="fn">CopyData</a>(
+    &amp;self,
+    hmdsourcehandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pszmdsourcepath: &amp;PCWSTR,
+    hmddesthandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pszmddestpath: &amp;PCWSTR,
+    dwmdattributes: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    dwmdusertype: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    dwmddatatype: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    bmdcopyflag: BOOL,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetDataPaths" class="method"><h4 class="code-header">fn <a href="#tymethod.GetDataPaths" class="fn">GetDataPaths</a>(
+    &amp;self,
+    hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pszmdpath: &amp;PCWSTR,
+    dwmdidentifier: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    dwmddatatype: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    dwmdbuffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pszbuffer: PWSTR,
+    pdwmdrequiredbuffersize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.OpenKey" class="method"><h4 class="code-header">fn <a href="#tymethod.OpenKey" class="fn">OpenKey</a>(
+    &amp;self,
+    hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pszmdpath: &amp;PCWSTR,
+    dwmdaccessrequested: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    dwmdtimeout: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>&gt;</h4></section><section id="tymethod.CloseKey" class="method"><h4 class="code-header">fn <a href="#tymethod.CloseKey" class="fn">CloseKey</a>(&amp;self, hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.ChangePermissions" class="method"><h4 class="code-header">fn <a href="#tymethod.ChangePermissions" class="fn">ChangePermissions</a>(
+    &amp;self,
+    hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    dwmdtimeout: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    dwmdaccessrequested: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.SaveData" class="method"><h4 class="code-header">fn <a href="#tymethod.SaveData" class="fn">SaveData</a>(&amp;self) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetHandleInfo" class="method"><h4 class="code-header">fn <a href="#tymethod.GetHandleInfo" class="fn">GetHandleInfo</a>(&amp;self, hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; Result&lt;<a class="struct" href="struct.METADATA_HANDLE_INFO.html" title="struct windows::Win32::System::Iis::METADATA_HANDLE_INFO">METADATA_HANDLE_INFO</a>&gt;</h4></section><section id="tymethod.GetSystemChangeNumber" class="method"><h4 class="code-header">fn <a href="#tymethod.GetSystemChangeNumber" class="fn">GetSystemChangeNumber</a>(&amp;self) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>&gt;</h4></section><section id="tymethod.GetDataSetNumber" class="method"><h4 class="code-header">fn <a href="#tymethod.GetDataSetNumber" class="fn">GetDataSetNumber</a>(&amp;self, hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, pszmdpath: &amp;PCWSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>&gt;</h4></section><section id="tymethod.SetLastChangeTime" class="method"><h4 class="code-header">fn <a href="#tymethod.SetLastChangeTime" class="fn">SetLastChangeTime</a>(
+    &amp;self,
+    hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pszmdpath: &amp;PCWSTR,
+    pftmdlastchangetime: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="../../Foundation/struct.FILETIME.html" title="struct windows::Win32::Foundation::FILETIME">FILETIME</a>,
+    blocaltime: BOOL,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetLastChangeTime" class="method"><h4 class="code-header">fn <a href="#tymethod.GetLastChangeTime" class="fn">GetLastChangeTime</a>(
+    &amp;self,
+    hmdhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pszmdpath: &amp;PCWSTR,
+    pftmdlastchangetime: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../Foundation/struct.FILETIME.html" title="struct windows::Win32::Foundation::FILETIME">FILETIME</a>,
+    blocaltime: BOOL,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.KeyExchangePhase1" class="method"><h4 class="code-header">fn <a href="#tymethod.KeyExchangePhase1" class="fn">KeyExchangePhase1</a>(&amp;self) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.KeyExchangePhase2" class="method"><h4 class="code-header">fn <a href="#tymethod.KeyExchangePhase2" class="fn">KeyExchangePhase2</a>(&amp;self) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.Backup" class="method"><h4 class="code-header">fn <a href="#tymethod.Backup" class="fn">Backup</a>(
+    &amp;self,
+    pszmdbackuplocation: &amp;PCWSTR,
+    dwmdversion: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    dwmdflags: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.Restore" class="method"><h4 class="code-header">fn <a href="#tymethod.Restore" class="fn">Restore</a>(
+    &amp;self,
+    pszmdbackuplocation: &amp;PCWSTR,
+    dwmdversion: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    dwmdflags: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.EnumBackups" class="method"><h4 class="code-header">fn <a href="#tymethod.EnumBackups" class="fn">EnumBackups</a>(
+    &amp;self,
+    pszmdbackuplocation: PWSTR,
+    pdwmdversion: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pftmdbackuptime: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../Foundation/struct.FILETIME.html" title="struct windows::Win32::Foundation::FILETIME">FILETIME</a>,
+    dwmdenumindex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.DeleteBackup" class="method"><h4 class="code-header">fn <a href="#tymethod.DeleteBackup" class="fn">DeleteBackup</a>(
+    &amp;self,
+    pszmdbackuplocation: &amp;PCWSTR,
+    dwmdversion: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.UnmarshalInterface" class="method"><h4 class="code-header">fn <a href="#tymethod.UnmarshalInterface" class="fn">UnmarshalInterface</a>(&amp;self) -&gt; Result&lt;<a class="struct" href="struct.IMSAdminBaseW.html" title="struct windows::Win32::System::Iis::IMSAdminBaseW">IMSAdminBaseW</a>&gt;</h4></section><section id="tymethod.GetServerGuid" class="method"><h4 class="code-header">fn <a href="#tymethod.GetServerGuid" class="fn">GetServerGuid</a>(&amp;self) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section></div><h2 id="dyn-compatibility" class="section-header">Dyn Compatibility<a href="#dyn-compatibility" class="anchor">§</a></h2><div class="dyn-compatibility-info"><p>This trait is <b>not</b> <a href="https://doc.rust-lang.org/nightly/reference/items/traits.html#dyn-compatibility">dyn compatible</a>.</p><p><i>In older versions of Rust, dyn compatibility was called "object safety", so this trait is not object safe.</i></p></div><h2 id="implementors" class="section-header">Implementors<a href="#implementors" class="anchor">§</a></h2><div id="implementors-list"></div><script src="../../../../trait.impl/windows/Win32/System/Iis/trait.IMSAdminBaseW_Impl.js" async></script></section></div></main></body></html>

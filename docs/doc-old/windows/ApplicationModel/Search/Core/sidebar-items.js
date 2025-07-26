@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["IRequestingFocusOnKeyboardInputEventArgs","ISearchSuggestion","ISearchSuggestionManager","ISearchSuggestionsRequestedEventArgs","RequestingFocusOnKeyboardInputEventArgs","SearchSuggestion","SearchSuggestionKind","SearchSuggestionManager","SearchSuggestionsRequestedEventArgs"]};

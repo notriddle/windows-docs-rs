@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["IOcrEngine","IOcrEngineStatics","IOcrLine","IOcrResult","IOcrWord","OcrEngine","OcrLine","OcrResult","OcrWord"]};

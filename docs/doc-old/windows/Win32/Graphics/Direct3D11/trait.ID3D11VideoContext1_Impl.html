@@ -1,0 +1,166 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="API documentation for the Rust `ID3D11VideoContext1_Impl` trait in crate `windows`."><title>ID3D11VideoContext1_Impl in windows::Win32::Graphics::Direct3D11 - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../../../static.files/rustdoc-aa0817cf.css"><meta name="rustdoc-vars" data-root-path="../../../../" data-static-root-path="../../../../static.files/" data-current-crate="windows" data-themes="" data-resource-suffix="" data-rustdoc-version="1.90.0-dev" data-channel="nightly" data-search-js="search-fa3e91e5.js" data-settings-js="settings-5514c975.js" ><script src="../../../../static.files/storage-4e99c027.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../../../static.files/main-673ee1e0.js"></script><noscript><link rel="stylesheet" href="../../../../static.files/noscript-32bb7600.css"></noscript><link rel="alternate icon" type="image/png" href="../../../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../../../static.files/favicon-044be391.svg"><link
+  rel="search"
+  type="application/opensearchdescription+xml"
+  title="Rust for Windows"
+  href="https://microsoft.github.io/windows-docs-rs/opensearch.xml"
+/>
+
+</head><body class="rustdoc trait"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button></nav><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../../../../windows/index.html">windows</a><span class="version">0.61.1</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">ID3D11<wbr>Video<wbr>Context1_<wbr>Impl</a></h2><h3><a href="#required-methods">Required Methods</a></h3><ul class="block"><li><a href="#tymethod.CheckCryptoSessionStatus" title="CheckCryptoSessionStatus">CheckCryptoSessionStatus</a></li><li><a href="#tymethod.DecoderEnableDownsampling" title="DecoderEnableDownsampling">DecoderEnableDownsampling</a></li><li><a href="#tymethod.DecoderUpdateDownsampling" title="DecoderUpdateDownsampling">DecoderUpdateDownsampling</a></li><li><a href="#tymethod.GetDataForNewHardwareKey" title="GetDataForNewHardwareKey">GetDataForNewHardwareKey</a></li><li><a href="#tymethod.SubmitDecoderBuffers1" title="SubmitDecoderBuffers1">SubmitDecoderBuffers1</a></li><li><a href="#tymethod.VideoProcessorGetBehaviorHints" title="VideoProcessorGetBehaviorHints">VideoProcessorGetBehaviorHints</a></li><li><a href="#tymethod.VideoProcessorGetOutputColorSpace1" title="VideoProcessorGetOutputColorSpace1">VideoProcessorGetOutputColorSpace1</a></li><li><a href="#tymethod.VideoProcessorGetOutputShaderUsage" title="VideoProcessorGetOutputShaderUsage">VideoProcessorGetOutputShaderUsage</a></li><li><a href="#tymethod.VideoProcessorGetStreamColorSpace1" title="VideoProcessorGetStreamColorSpace1">VideoProcessorGetStreamColorSpace1</a></li><li><a href="#tymethod.VideoProcessorGetStreamMirror" title="VideoProcessorGetStreamMirror">VideoProcessorGetStreamMirror</a></li><li><a href="#tymethod.VideoProcessorSetOutputColorSpace1" title="VideoProcessorSetOutputColorSpace1">VideoProcessorSetOutputColorSpace1</a></li><li><a href="#tymethod.VideoProcessorSetOutputShaderUsage" title="VideoProcessorSetOutputShaderUsage">VideoProcessorSetOutputShaderUsage</a></li><li><a href="#tymethod.VideoProcessorSetStreamColorSpace1" title="VideoProcessorSetStreamColorSpace1">VideoProcessorSetStreamColorSpace1</a></li><li><a href="#tymethod.VideoProcessorSetStreamMirror" title="VideoProcessorSetStreamMirror">VideoProcessorSetStreamMirror</a></li></ul><h3><a href="#dyn-compatibility">Dyn Compatibility</a></h3><h3><a href="#implementors">Implementors</a></h3></section><div id="rustdoc-modnav"><h2><a href="index.html">In windows::<wbr>Win32::<wbr>Graphics::<wbr>Direct3<wbr>D11</a></h2></div></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><div class="width-limiter"><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><div class="rustdoc-breadcrumbs"><a href="../../../index.html">windows</a>::<wbr><a href="../../index.html">Win32</a>::<wbr><a href="../index.html">Graphics</a>::<wbr><a href="index.html">Direct3D11</a></div><h1>Trait <span class="trait">ID3D11VideoContext1_Impl</span><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"></span></div><pre class="rust item-decl"><code>pub trait ID3D11VideoContext1_Impl: <a class="trait" href="trait.ID3D11VideoContext_Impl.html" title="trait windows::Win32::Graphics::Direct3D11::ID3D11VideoContext_Impl">ID3D11VideoContext_Impl</a> {
+<details class="toggle type-contents-toggle"><summary class="hideme"><span>Show 14 methods</span></summary>    // Required methods
+    fn <a href="#tymethod.SubmitDecoderBuffers1" class="fn">SubmitDecoderBuffers1</a>(
+        &amp;self,
+        pdecoder: Ref&lt;'_, <a class="struct" href="struct.ID3D11VideoDecoder.html" title="struct windows::Win32::Graphics::Direct3D11::ID3D11VideoDecoder">ID3D11VideoDecoder</a>&gt;,
+        numbuffers: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pbufferdesc: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="struct.D3D11_VIDEO_DECODER_BUFFER_DESC1.html" title="struct windows::Win32::Graphics::Direct3D11::D3D11_VIDEO_DECODER_BUFFER_DESC1">D3D11_VIDEO_DECODER_BUFFER_DESC1</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetDataForNewHardwareKey" class="fn">GetDataForNewHardwareKey</a>(
+        &amp;self,
+        pcryptosession: Ref&lt;'_, <a class="struct" href="struct.ID3D11CryptoSession.html" title="struct windows::Win32::Graphics::Direct3D11::ID3D11CryptoSession">ID3D11CryptoSession</a>&gt;,
+        privateinputsize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pprivatinputdata: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.CheckCryptoSessionStatus" class="fn">CheckCryptoSessionStatus</a>(
+        &amp;self,
+        pcryptosession: Ref&lt;'_, <a class="struct" href="struct.ID3D11CryptoSession.html" title="struct windows::Win32::Graphics::Direct3D11::ID3D11CryptoSession">ID3D11CryptoSession</a>&gt;,
+    ) -&gt; Result&lt;<a class="struct" href="struct.D3D11_CRYPTO_SESSION_STATUS.html" title="struct windows::Win32::Graphics::Direct3D11::D3D11_CRYPTO_SESSION_STATUS">D3D11_CRYPTO_SESSION_STATUS</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.DecoderEnableDownsampling" class="fn">DecoderEnableDownsampling</a>(
+        &amp;self,
+        pdecoder: Ref&lt;'_, <a class="struct" href="struct.ID3D11VideoDecoder.html" title="struct windows::Win32::Graphics::Direct3D11::ID3D11VideoDecoder">ID3D11VideoDecoder</a>&gt;,
+        inputcolorspace: <a class="struct" href="../Dxgi/Common/struct.DXGI_COLOR_SPACE_TYPE.html" title="struct windows::Win32::Graphics::Dxgi::Common::DXGI_COLOR_SPACE_TYPE">DXGI_COLOR_SPACE_TYPE</a>,
+        poutputdesc: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="struct.D3D11_VIDEO_SAMPLE_DESC.html" title="struct windows::Win32::Graphics::Direct3D11::D3D11_VIDEO_SAMPLE_DESC">D3D11_VIDEO_SAMPLE_DESC</a>,
+        referenceframecount: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.DecoderUpdateDownsampling" class="fn">DecoderUpdateDownsampling</a>(
+        &amp;self,
+        pdecoder: Ref&lt;'_, <a class="struct" href="struct.ID3D11VideoDecoder.html" title="struct windows::Win32::Graphics::Direct3D11::ID3D11VideoDecoder">ID3D11VideoDecoder</a>&gt;,
+        poutputdesc: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="struct.D3D11_VIDEO_SAMPLE_DESC.html" title="struct windows::Win32::Graphics::Direct3D11::D3D11_VIDEO_SAMPLE_DESC">D3D11_VIDEO_SAMPLE_DESC</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.VideoProcessorSetOutputColorSpace1" class="fn">VideoProcessorSetOutputColorSpace1</a>(
+        &amp;self,
+        pvideoprocessor: Ref&lt;'_, <a class="struct" href="struct.ID3D11VideoProcessor.html" title="struct windows::Win32::Graphics::Direct3D11::ID3D11VideoProcessor">ID3D11VideoProcessor</a>&gt;,
+        colorspace: <a class="struct" href="../Dxgi/Common/struct.DXGI_COLOR_SPACE_TYPE.html" title="struct windows::Win32::Graphics::Dxgi::Common::DXGI_COLOR_SPACE_TYPE">DXGI_COLOR_SPACE_TYPE</a>,
+    );
+<span class="item-spacer"></span>    fn <a href="#tymethod.VideoProcessorSetOutputShaderUsage" class="fn">VideoProcessorSetOutputShaderUsage</a>(
+        &amp;self,
+        pvideoprocessor: Ref&lt;'_, <a class="struct" href="struct.ID3D11VideoProcessor.html" title="struct windows::Win32::Graphics::Direct3D11::ID3D11VideoProcessor">ID3D11VideoProcessor</a>&gt;,
+        shaderusage: BOOL,
+    );
+<span class="item-spacer"></span>    fn <a href="#tymethod.VideoProcessorGetOutputColorSpace1" class="fn">VideoProcessorGetOutputColorSpace1</a>(
+        &amp;self,
+        pvideoprocessor: Ref&lt;'_, <a class="struct" href="struct.ID3D11VideoProcessor.html" title="struct windows::Win32::Graphics::Direct3D11::ID3D11VideoProcessor">ID3D11VideoProcessor</a>&gt;,
+        pcolorspace: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../Dxgi/Common/struct.DXGI_COLOR_SPACE_TYPE.html" title="struct windows::Win32::Graphics::Dxgi::Common::DXGI_COLOR_SPACE_TYPE">DXGI_COLOR_SPACE_TYPE</a>,
+    );
+<span class="item-spacer"></span>    fn <a href="#tymethod.VideoProcessorGetOutputShaderUsage" class="fn">VideoProcessorGetOutputShaderUsage</a>(
+        &amp;self,
+        pvideoprocessor: Ref&lt;'_, <a class="struct" href="struct.ID3D11VideoProcessor.html" title="struct windows::Win32::Graphics::Direct3D11::ID3D11VideoProcessor">ID3D11VideoProcessor</a>&gt;,
+        pshaderusage: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a>BOOL,
+    );
+<span class="item-spacer"></span>    fn <a href="#tymethod.VideoProcessorSetStreamColorSpace1" class="fn">VideoProcessorSetStreamColorSpace1</a>(
+        &amp;self,
+        pvideoprocessor: Ref&lt;'_, <a class="struct" href="struct.ID3D11VideoProcessor.html" title="struct windows::Win32::Graphics::Direct3D11::ID3D11VideoProcessor">ID3D11VideoProcessor</a>&gt;,
+        streamindex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        colorspace: <a class="struct" href="../Dxgi/Common/struct.DXGI_COLOR_SPACE_TYPE.html" title="struct windows::Win32::Graphics::Dxgi::Common::DXGI_COLOR_SPACE_TYPE">DXGI_COLOR_SPACE_TYPE</a>,
+    );
+<span class="item-spacer"></span>    fn <a href="#tymethod.VideoProcessorSetStreamMirror" class="fn">VideoProcessorSetStreamMirror</a>(
+        &amp;self,
+        pvideoprocessor: Ref&lt;'_, <a class="struct" href="struct.ID3D11VideoProcessor.html" title="struct windows::Win32::Graphics::Direct3D11::ID3D11VideoProcessor">ID3D11VideoProcessor</a>&gt;,
+        streamindex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        enable: BOOL,
+        fliphorizontal: BOOL,
+        flipvertical: BOOL,
+    );
+<span class="item-spacer"></span>    fn <a href="#tymethod.VideoProcessorGetStreamColorSpace1" class="fn">VideoProcessorGetStreamColorSpace1</a>(
+        &amp;self,
+        pvideoprocessor: Ref&lt;'_, <a class="struct" href="struct.ID3D11VideoProcessor.html" title="struct windows::Win32::Graphics::Direct3D11::ID3D11VideoProcessor">ID3D11VideoProcessor</a>&gt;,
+        streamindex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pcolorspace: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../Dxgi/Common/struct.DXGI_COLOR_SPACE_TYPE.html" title="struct windows::Win32::Graphics::Dxgi::Common::DXGI_COLOR_SPACE_TYPE">DXGI_COLOR_SPACE_TYPE</a>,
+    );
+<span class="item-spacer"></span>    fn <a href="#tymethod.VideoProcessorGetStreamMirror" class="fn">VideoProcessorGetStreamMirror</a>(
+        &amp;self,
+        pvideoprocessor: Ref&lt;'_, <a class="struct" href="struct.ID3D11VideoProcessor.html" title="struct windows::Win32::Graphics::Direct3D11::ID3D11VideoProcessor">ID3D11VideoProcessor</a>&gt;,
+        streamindex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        penable: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a>BOOL,
+        pfliphorizontal: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a>BOOL,
+        pflipvertical: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a>BOOL,
+    );
+<span class="item-spacer"></span>    fn <a href="#tymethod.VideoProcessorGetBehaviorHints" class="fn">VideoProcessorGetBehaviorHints</a>(
+        &amp;self,
+        pvideoprocessor: Ref&lt;'_, <a class="struct" href="struct.ID3D11VideoProcessor.html" title="struct windows::Win32::Graphics::Direct3D11::ID3D11VideoProcessor">ID3D11VideoProcessor</a>&gt;,
+        outputwidth: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        outputheight: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        outputformat: <a class="struct" href="../Dxgi/Common/struct.DXGI_FORMAT.html" title="struct windows::Win32::Graphics::Dxgi::Common::DXGI_FORMAT">DXGI_FORMAT</a>,
+        streamcount: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pstreams: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="struct.D3D11_VIDEO_PROCESSOR_STREAM_BEHAVIOR_HINT.html" title="struct windows::Win32::Graphics::Direct3D11::D3D11_VIDEO_PROCESSOR_STREAM_BEHAVIOR_HINT">D3D11_VIDEO_PROCESSOR_STREAM_BEHAVIOR_HINT</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>&gt;;
+</details>}</code></pre><h2 id="required-methods" class="section-header">Required Methods<a href="#required-methods" class="anchor">§</a></h2><div class="methods"><section id="tymethod.SubmitDecoderBuffers1" class="method"><h4 class="code-header">fn <a href="#tymethod.SubmitDecoderBuffers1" class="fn">SubmitDecoderBuffers1</a>(
+    &amp;self,
+    pdecoder: Ref&lt;'_, <a class="struct" href="struct.ID3D11VideoDecoder.html" title="struct windows::Win32::Graphics::Direct3D11::ID3D11VideoDecoder">ID3D11VideoDecoder</a>&gt;,
+    numbuffers: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pbufferdesc: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="struct.D3D11_VIDEO_DECODER_BUFFER_DESC1.html" title="struct windows::Win32::Graphics::Direct3D11::D3D11_VIDEO_DECODER_BUFFER_DESC1">D3D11_VIDEO_DECODER_BUFFER_DESC1</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetDataForNewHardwareKey" class="method"><h4 class="code-header">fn <a href="#tymethod.GetDataForNewHardwareKey" class="fn">GetDataForNewHardwareKey</a>(
+    &amp;self,
+    pcryptosession: Ref&lt;'_, <a class="struct" href="struct.ID3D11CryptoSession.html" title="struct windows::Win32::Graphics::Direct3D11::ID3D11CryptoSession">ID3D11CryptoSession</a>&gt;,
+    privateinputsize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pprivatinputdata: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>&gt;</h4></section><section id="tymethod.CheckCryptoSessionStatus" class="method"><h4 class="code-header">fn <a href="#tymethod.CheckCryptoSessionStatus" class="fn">CheckCryptoSessionStatus</a>(
+    &amp;self,
+    pcryptosession: Ref&lt;'_, <a class="struct" href="struct.ID3D11CryptoSession.html" title="struct windows::Win32::Graphics::Direct3D11::ID3D11CryptoSession">ID3D11CryptoSession</a>&gt;,
+) -&gt; Result&lt;<a class="struct" href="struct.D3D11_CRYPTO_SESSION_STATUS.html" title="struct windows::Win32::Graphics::Direct3D11::D3D11_CRYPTO_SESSION_STATUS">D3D11_CRYPTO_SESSION_STATUS</a>&gt;</h4></section><section id="tymethod.DecoderEnableDownsampling" class="method"><h4 class="code-header">fn <a href="#tymethod.DecoderEnableDownsampling" class="fn">DecoderEnableDownsampling</a>(
+    &amp;self,
+    pdecoder: Ref&lt;'_, <a class="struct" href="struct.ID3D11VideoDecoder.html" title="struct windows::Win32::Graphics::Direct3D11::ID3D11VideoDecoder">ID3D11VideoDecoder</a>&gt;,
+    inputcolorspace: <a class="struct" href="../Dxgi/Common/struct.DXGI_COLOR_SPACE_TYPE.html" title="struct windows::Win32::Graphics::Dxgi::Common::DXGI_COLOR_SPACE_TYPE">DXGI_COLOR_SPACE_TYPE</a>,
+    poutputdesc: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="struct.D3D11_VIDEO_SAMPLE_DESC.html" title="struct windows::Win32::Graphics::Direct3D11::D3D11_VIDEO_SAMPLE_DESC">D3D11_VIDEO_SAMPLE_DESC</a>,
+    referenceframecount: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.DecoderUpdateDownsampling" class="method"><h4 class="code-header">fn <a href="#tymethod.DecoderUpdateDownsampling" class="fn">DecoderUpdateDownsampling</a>(
+    &amp;self,
+    pdecoder: Ref&lt;'_, <a class="struct" href="struct.ID3D11VideoDecoder.html" title="struct windows::Win32::Graphics::Direct3D11::ID3D11VideoDecoder">ID3D11VideoDecoder</a>&gt;,
+    poutputdesc: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="struct.D3D11_VIDEO_SAMPLE_DESC.html" title="struct windows::Win32::Graphics::Direct3D11::D3D11_VIDEO_SAMPLE_DESC">D3D11_VIDEO_SAMPLE_DESC</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.VideoProcessorSetOutputColorSpace1" class="method"><h4 class="code-header">fn <a href="#tymethod.VideoProcessorSetOutputColorSpace1" class="fn">VideoProcessorSetOutputColorSpace1</a>(
+    &amp;self,
+    pvideoprocessor: Ref&lt;'_, <a class="struct" href="struct.ID3D11VideoProcessor.html" title="struct windows::Win32::Graphics::Direct3D11::ID3D11VideoProcessor">ID3D11VideoProcessor</a>&gt;,
+    colorspace: <a class="struct" href="../Dxgi/Common/struct.DXGI_COLOR_SPACE_TYPE.html" title="struct windows::Win32::Graphics::Dxgi::Common::DXGI_COLOR_SPACE_TYPE">DXGI_COLOR_SPACE_TYPE</a>,
+)</h4></section><section id="tymethod.VideoProcessorSetOutputShaderUsage" class="method"><h4 class="code-header">fn <a href="#tymethod.VideoProcessorSetOutputShaderUsage" class="fn">VideoProcessorSetOutputShaderUsage</a>(
+    &amp;self,
+    pvideoprocessor: Ref&lt;'_, <a class="struct" href="struct.ID3D11VideoProcessor.html" title="struct windows::Win32::Graphics::Direct3D11::ID3D11VideoProcessor">ID3D11VideoProcessor</a>&gt;,
+    shaderusage: BOOL,
+)</h4></section><section id="tymethod.VideoProcessorGetOutputColorSpace1" class="method"><h4 class="code-header">fn <a href="#tymethod.VideoProcessorGetOutputColorSpace1" class="fn">VideoProcessorGetOutputColorSpace1</a>(
+    &amp;self,
+    pvideoprocessor: Ref&lt;'_, <a class="struct" href="struct.ID3D11VideoProcessor.html" title="struct windows::Win32::Graphics::Direct3D11::ID3D11VideoProcessor">ID3D11VideoProcessor</a>&gt;,
+    pcolorspace: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../Dxgi/Common/struct.DXGI_COLOR_SPACE_TYPE.html" title="struct windows::Win32::Graphics::Dxgi::Common::DXGI_COLOR_SPACE_TYPE">DXGI_COLOR_SPACE_TYPE</a>,
+)</h4></section><section id="tymethod.VideoProcessorGetOutputShaderUsage" class="method"><h4 class="code-header">fn <a href="#tymethod.VideoProcessorGetOutputShaderUsage" class="fn">VideoProcessorGetOutputShaderUsage</a>(
+    &amp;self,
+    pvideoprocessor: Ref&lt;'_, <a class="struct" href="struct.ID3D11VideoProcessor.html" title="struct windows::Win32::Graphics::Direct3D11::ID3D11VideoProcessor">ID3D11VideoProcessor</a>&gt;,
+    pshaderusage: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a>BOOL,
+)</h4></section><section id="tymethod.VideoProcessorSetStreamColorSpace1" class="method"><h4 class="code-header">fn <a href="#tymethod.VideoProcessorSetStreamColorSpace1" class="fn">VideoProcessorSetStreamColorSpace1</a>(
+    &amp;self,
+    pvideoprocessor: Ref&lt;'_, <a class="struct" href="struct.ID3D11VideoProcessor.html" title="struct windows::Win32::Graphics::Direct3D11::ID3D11VideoProcessor">ID3D11VideoProcessor</a>&gt;,
+    streamindex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    colorspace: <a class="struct" href="../Dxgi/Common/struct.DXGI_COLOR_SPACE_TYPE.html" title="struct windows::Win32::Graphics::Dxgi::Common::DXGI_COLOR_SPACE_TYPE">DXGI_COLOR_SPACE_TYPE</a>,
+)</h4></section><section id="tymethod.VideoProcessorSetStreamMirror" class="method"><h4 class="code-header">fn <a href="#tymethod.VideoProcessorSetStreamMirror" class="fn">VideoProcessorSetStreamMirror</a>(
+    &amp;self,
+    pvideoprocessor: Ref&lt;'_, <a class="struct" href="struct.ID3D11VideoProcessor.html" title="struct windows::Win32::Graphics::Direct3D11::ID3D11VideoProcessor">ID3D11VideoProcessor</a>&gt;,
+    streamindex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    enable: BOOL,
+    fliphorizontal: BOOL,
+    flipvertical: BOOL,
+)</h4></section><section id="tymethod.VideoProcessorGetStreamColorSpace1" class="method"><h4 class="code-header">fn <a href="#tymethod.VideoProcessorGetStreamColorSpace1" class="fn">VideoProcessorGetStreamColorSpace1</a>(
+    &amp;self,
+    pvideoprocessor: Ref&lt;'_, <a class="struct" href="struct.ID3D11VideoProcessor.html" title="struct windows::Win32::Graphics::Direct3D11::ID3D11VideoProcessor">ID3D11VideoProcessor</a>&gt;,
+    streamindex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pcolorspace: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../Dxgi/Common/struct.DXGI_COLOR_SPACE_TYPE.html" title="struct windows::Win32::Graphics::Dxgi::Common::DXGI_COLOR_SPACE_TYPE">DXGI_COLOR_SPACE_TYPE</a>,
+)</h4></section><section id="tymethod.VideoProcessorGetStreamMirror" class="method"><h4 class="code-header">fn <a href="#tymethod.VideoProcessorGetStreamMirror" class="fn">VideoProcessorGetStreamMirror</a>(
+    &amp;self,
+    pvideoprocessor: Ref&lt;'_, <a class="struct" href="struct.ID3D11VideoProcessor.html" title="struct windows::Win32::Graphics::Direct3D11::ID3D11VideoProcessor">ID3D11VideoProcessor</a>&gt;,
+    streamindex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    penable: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a>BOOL,
+    pfliphorizontal: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a>BOOL,
+    pflipvertical: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a>BOOL,
+)</h4></section><section id="tymethod.VideoProcessorGetBehaviorHints" class="method"><h4 class="code-header">fn <a href="#tymethod.VideoProcessorGetBehaviorHints" class="fn">VideoProcessorGetBehaviorHints</a>(
+    &amp;self,
+    pvideoprocessor: Ref&lt;'_, <a class="struct" href="struct.ID3D11VideoProcessor.html" title="struct windows::Win32::Graphics::Direct3D11::ID3D11VideoProcessor">ID3D11VideoProcessor</a>&gt;,
+    outputwidth: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    outputheight: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    outputformat: <a class="struct" href="../Dxgi/Common/struct.DXGI_FORMAT.html" title="struct windows::Win32::Graphics::Dxgi::Common::DXGI_FORMAT">DXGI_FORMAT</a>,
+    streamcount: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pstreams: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="struct.D3D11_VIDEO_PROCESSOR_STREAM_BEHAVIOR_HINT.html" title="struct windows::Win32::Graphics::Direct3D11::D3D11_VIDEO_PROCESSOR_STREAM_BEHAVIOR_HINT">D3D11_VIDEO_PROCESSOR_STREAM_BEHAVIOR_HINT</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>&gt;</h4></section></div><h2 id="dyn-compatibility" class="section-header">Dyn Compatibility<a href="#dyn-compatibility" class="anchor">§</a></h2><div class="dyn-compatibility-info"><p>This trait is <b>not</b> <a href="https://doc.rust-lang.org/nightly/reference/items/traits.html#dyn-compatibility">dyn compatible</a>.</p><p><i>In older versions of Rust, dyn compatibility was called "object safety", so this trait is not object safe.</i></p></div><h2 id="implementors" class="section-header">Implementors<a href="#implementors" class="anchor">§</a></h2><div id="implementors-list"></div><script src="../../../../trait.impl/windows/Win32/Graphics/Direct3D11/trait.ID3D11VideoContext1_Impl.js" async></script></section></div></main></body></html>

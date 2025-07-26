@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["BackgroundEnergyManager","BatteryStatus","EnergySaverStatus","ForegroundEnergyManager","IBackgroundEnergyManagerStatics","IForegroundEnergyManagerStatics","IPowerManagerStatics","PowerManager","PowerSupplyStatus"]};

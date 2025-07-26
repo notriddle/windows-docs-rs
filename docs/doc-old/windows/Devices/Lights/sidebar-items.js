@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["Effects"],"struct":["ILamp","ILampArray","ILampArray2","ILampArrayStatics","ILampAvailabilityChangedEventArgs","ILampInfo","ILampStatics","Lamp","LampArray","LampArrayKind","LampAvailabilityChangedEventArgs","LampInfo","LampPurposes"]};

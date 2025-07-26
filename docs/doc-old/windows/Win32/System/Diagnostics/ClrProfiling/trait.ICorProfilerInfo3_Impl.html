@@ -1,0 +1,166 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="API documentation for the Rust `ICorProfilerInfo3_Impl` trait in crate `windows`."><title>ICorProfilerInfo3_Impl in windows::Win32::System::Diagnostics::ClrProfiling - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../../../../static.files/rustdoc-aa0817cf.css"><meta name="rustdoc-vars" data-root-path="../../../../../" data-static-root-path="../../../../../static.files/" data-current-crate="windows" data-themes="" data-resource-suffix="" data-rustdoc-version="1.90.0-dev" data-channel="nightly" data-search-js="search-fa3e91e5.js" data-settings-js="settings-5514c975.js" ><script src="../../../../../static.files/storage-4e99c027.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../../../../static.files/main-673ee1e0.js"></script><noscript><link rel="stylesheet" href="../../../../../static.files/noscript-32bb7600.css"></noscript><link rel="alternate icon" type="image/png" href="../../../../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../../../../static.files/favicon-044be391.svg"><link
+  rel="search"
+  type="application/opensearchdescription+xml"
+  title="Rust for Windows"
+  href="https://microsoft.github.io/windows-docs-rs/opensearch.xml"
+/>
+
+</head><body class="rustdoc trait"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button></nav><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../../../../../windows/index.html">windows</a><span class="version">0.61.1</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">ICor<wbr>Profiler<wbr>Info3_<wbr>Impl</a></h2><h3><a href="#required-methods">Required Methods</a></h3><ul class="block"><li><a href="#tymethod.EnumJITedFunctions" title="EnumJITedFunctions">EnumJITedFunctions</a></li><li><a href="#tymethod.EnumModules" title="EnumModules">EnumModules</a></li><li><a href="#tymethod.GetAppDomainsContainingModule" title="GetAppDomainsContainingModule">GetAppDomainsContainingModule</a></li><li><a href="#tymethod.GetFunctionEnter3Info" title="GetFunctionEnter3Info">GetFunctionEnter3Info</a></li><li><a href="#tymethod.GetFunctionLeave3Info" title="GetFunctionLeave3Info">GetFunctionLeave3Info</a></li><li><a href="#tymethod.GetFunctionTailcall3Info" title="GetFunctionTailcall3Info">GetFunctionTailcall3Info</a></li><li><a href="#tymethod.GetModuleInfo2" title="GetModuleInfo2">GetModuleInfo2</a></li><li><a href="#tymethod.GetRuntimeInformation" title="GetRuntimeInformation">GetRuntimeInformation</a></li><li><a href="#tymethod.GetStringLayout2" title="GetStringLayout2">GetStringLayout2</a></li><li><a href="#tymethod.GetThreadStaticAddress2" title="GetThreadStaticAddress2">GetThreadStaticAddress2</a></li><li><a href="#tymethod.RequestProfilerDetach" title="RequestProfilerDetach">RequestProfilerDetach</a></li><li><a href="#tymethod.SetEnterLeaveFunctionHooks3" title="SetEnterLeaveFunctionHooks3">SetEnterLeaveFunctionHooks3</a></li><li><a href="#tymethod.SetEnterLeaveFunctionHooks3WithInfo" title="SetEnterLeaveFunctionHooks3WithInfo">SetEnterLeaveFunctionHooks3WithInfo</a></li><li><a href="#tymethod.SetFunctionIDMapper2" title="SetFunctionIDMapper2">SetFunctionIDMapper2</a></li></ul><h3><a href="#dyn-compatibility">Dyn Compatibility</a></h3><h3><a href="#implementors">Implementors</a></h3></section><div id="rustdoc-modnav"><h2><a href="index.html">In windows::<wbr>Win32::<wbr>System::<wbr>Diagnostics::<wbr>ClrProfiling</a></h2></div></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><div class="width-limiter"><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><div class="rustdoc-breadcrumbs"><a href="../../../../index.html">windows</a>::<wbr><a href="../../../index.html">Win32</a>::<wbr><a href="../../index.html">System</a>::<wbr><a href="../index.html">Diagnostics</a>::<wbr><a href="index.html">ClrProfiling</a></div><h1>Trait <span class="trait">ICorProfilerInfo3_Impl</span><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"></span></div><pre class="rust item-decl"><code>pub trait ICorProfilerInfo3_Impl: <a class="trait" href="trait.ICorProfilerInfo2_Impl.html" title="trait windows::Win32::System::Diagnostics::ClrProfiling::ICorProfilerInfo2_Impl">ICorProfilerInfo2_Impl</a> {
+<details class="toggle type-contents-toggle"><summary class="hideme"><span>Show 14 methods</span></summary>    // Required methods
+    fn <a href="#tymethod.EnumJITedFunctions" class="fn">EnumJITedFunctions</a>(&amp;self) -&gt; Result&lt;<a class="struct" href="struct.ICorProfilerFunctionEnum.html" title="struct windows::Win32::System::Diagnostics::ClrProfiling::ICorProfilerFunctionEnum">ICorProfilerFunctionEnum</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.RequestProfilerDetach" class="fn">RequestProfilerDetach</a>(
+        &amp;self,
+        dwexpectedcompletionmilliseconds: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.SetFunctionIDMapper2" class="fn">SetFunctionIDMapper2</a>(
+        &amp;self,
+        pfunc: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="type" href="type.FunctionIDMapper2.html" title="type windows::Win32::System::Diagnostics::ClrProfiling::FunctionIDMapper2">FunctionIDMapper2</a>,
+        clientdata: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetStringLayout2" class="fn">GetStringLayout2</a>(
+        &amp;self,
+        pstringlengthoffset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pbufferoffset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.SetEnterLeaveFunctionHooks3" class="fn">SetEnterLeaveFunctionHooks3</a>(
+        &amp;self,
+        pfuncenter3: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="type" href="type.FunctionEnter3.html" title="type windows::Win32::System::Diagnostics::ClrProfiling::FunctionEnter3">FunctionEnter3</a>,
+        pfuncleave3: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="type" href="type.FunctionLeave3.html" title="type windows::Win32::System::Diagnostics::ClrProfiling::FunctionLeave3">FunctionLeave3</a>,
+        pfunctailcall3: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="type" href="type.FunctionTailcall3.html" title="type windows::Win32::System::Diagnostics::ClrProfiling::FunctionTailcall3">FunctionTailcall3</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.SetEnterLeaveFunctionHooks3WithInfo" class="fn">SetEnterLeaveFunctionHooks3WithInfo</a>(
+        &amp;self,
+        pfuncenter3withinfo: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="type" href="type.FunctionEnter3WithInfo.html" title="type windows::Win32::System::Diagnostics::ClrProfiling::FunctionEnter3WithInfo">FunctionEnter3WithInfo</a>,
+        pfuncleave3withinfo: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="type" href="type.FunctionLeave3WithInfo.html" title="type windows::Win32::System::Diagnostics::ClrProfiling::FunctionLeave3WithInfo">FunctionLeave3WithInfo</a>,
+        pfunctailcall3withinfo: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="type" href="type.FunctionTailcall3WithInfo.html" title="type windows::Win32::System::Diagnostics::ClrProfiling::FunctionTailcall3WithInfo">FunctionTailcall3WithInfo</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetFunctionEnter3Info" class="fn">GetFunctionEnter3Info</a>(
+        &amp;self,
+        functionid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+        eltinfo: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+        pframeinfo: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+        pcbargumentinfo: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pargumentinfo: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="struct.COR_PRF_FUNCTION_ARGUMENT_INFO.html" title="struct windows::Win32::System::Diagnostics::ClrProfiling::COR_PRF_FUNCTION_ARGUMENT_INFO">COR_PRF_FUNCTION_ARGUMENT_INFO</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetFunctionLeave3Info" class="fn">GetFunctionLeave3Info</a>(
+        &amp;self,
+        functionid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+        eltinfo: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+        pframeinfo: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+        pretvalrange: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="struct.COR_PRF_FUNCTION_ARGUMENT_RANGE.html" title="struct windows::Win32::System::Diagnostics::ClrProfiling::COR_PRF_FUNCTION_ARGUMENT_RANGE">COR_PRF_FUNCTION_ARGUMENT_RANGE</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetFunctionTailcall3Info" class="fn">GetFunctionTailcall3Info</a>(
+        &amp;self,
+        functionid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+        eltinfo: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.EnumModules" class="fn">EnumModules</a>(&amp;self) -&gt; Result&lt;<a class="struct" href="struct.ICorProfilerModuleEnum.html" title="struct windows::Win32::System::Diagnostics::ClrProfiling::ICorProfilerModuleEnum">ICorProfilerModuleEnum</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetRuntimeInformation" class="fn">GetRuntimeInformation</a>(
+        &amp;self,
+        pclrinstanceid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+        pruntimetype: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="struct.COR_PRF_RUNTIME_TYPE.html" title="struct windows::Win32::System::Diagnostics::ClrProfiling::COR_PRF_RUNTIME_TYPE">COR_PRF_RUNTIME_TYPE</a>,
+        pmajorversion: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+        pminorversion: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+        pbuildnumber: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+        pqfeversion: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+        cchversionstring: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pcchversionstring: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        szversionstring: PWSTR,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetThreadStaticAddress2" class="fn">GetThreadStaticAddress2</a>(
+        &amp;self,
+        classid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+        fieldtoken: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        appdomainid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+        threadid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+        ppaddress: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetAppDomainsContainingModule" class="fn">GetAppDomainsContainingModule</a>(
+        &amp;self,
+        moduleid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+        cappdomainids: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pcappdomainids: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        appdomainids: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetModuleInfo2" class="fn">GetModuleInfo2</a>(
+        &amp;self,
+        moduleid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+        ppbaseloadaddress: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+        cchname: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pcchname: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        szname: PWSTR,
+        passemblyid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+        pdwmoduleflags: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+</details>}</code></pre><h2 id="required-methods" class="section-header">Required Methods<a href="#required-methods" class="anchor">§</a></h2><div class="methods"><section id="tymethod.EnumJITedFunctions" class="method"><h4 class="code-header">fn <a href="#tymethod.EnumJITedFunctions" class="fn">EnumJITedFunctions</a>(&amp;self) -&gt; Result&lt;<a class="struct" href="struct.ICorProfilerFunctionEnum.html" title="struct windows::Win32::System::Diagnostics::ClrProfiling::ICorProfilerFunctionEnum">ICorProfilerFunctionEnum</a>&gt;</h4></section><section id="tymethod.RequestProfilerDetach" class="method"><h4 class="code-header">fn <a href="#tymethod.RequestProfilerDetach" class="fn">RequestProfilerDetach</a>(
+    &amp;self,
+    dwexpectedcompletionmilliseconds: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.SetFunctionIDMapper2" class="method"><h4 class="code-header">fn <a href="#tymethod.SetFunctionIDMapper2" class="fn">SetFunctionIDMapper2</a>(
+    &amp;self,
+    pfunc: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="type" href="type.FunctionIDMapper2.html" title="type windows::Win32::System::Diagnostics::ClrProfiling::FunctionIDMapper2">FunctionIDMapper2</a>,
+    clientdata: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetStringLayout2" class="method"><h4 class="code-header">fn <a href="#tymethod.GetStringLayout2" class="fn">GetStringLayout2</a>(
+    &amp;self,
+    pstringlengthoffset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pbufferoffset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.SetEnterLeaveFunctionHooks3" class="method"><h4 class="code-header">fn <a href="#tymethod.SetEnterLeaveFunctionHooks3" class="fn">SetEnterLeaveFunctionHooks3</a>(
+    &amp;self,
+    pfuncenter3: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="type" href="type.FunctionEnter3.html" title="type windows::Win32::System::Diagnostics::ClrProfiling::FunctionEnter3">FunctionEnter3</a>,
+    pfuncleave3: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="type" href="type.FunctionLeave3.html" title="type windows::Win32::System::Diagnostics::ClrProfiling::FunctionLeave3">FunctionLeave3</a>,
+    pfunctailcall3: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="type" href="type.FunctionTailcall3.html" title="type windows::Win32::System::Diagnostics::ClrProfiling::FunctionTailcall3">FunctionTailcall3</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.SetEnterLeaveFunctionHooks3WithInfo" class="method"><h4 class="code-header">fn <a href="#tymethod.SetEnterLeaveFunctionHooks3WithInfo" class="fn">SetEnterLeaveFunctionHooks3WithInfo</a>(
+    &amp;self,
+    pfuncenter3withinfo: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="type" href="type.FunctionEnter3WithInfo.html" title="type windows::Win32::System::Diagnostics::ClrProfiling::FunctionEnter3WithInfo">FunctionEnter3WithInfo</a>,
+    pfuncleave3withinfo: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="type" href="type.FunctionLeave3WithInfo.html" title="type windows::Win32::System::Diagnostics::ClrProfiling::FunctionLeave3WithInfo">FunctionLeave3WithInfo</a>,
+    pfunctailcall3withinfo: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="type" href="type.FunctionTailcall3WithInfo.html" title="type windows::Win32::System::Diagnostics::ClrProfiling::FunctionTailcall3WithInfo">FunctionTailcall3WithInfo</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetFunctionEnter3Info" class="method"><h4 class="code-header">fn <a href="#tymethod.GetFunctionEnter3Info" class="fn">GetFunctionEnter3Info</a>(
+    &amp;self,
+    functionid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+    eltinfo: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+    pframeinfo: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+    pcbargumentinfo: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pargumentinfo: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="struct.COR_PRF_FUNCTION_ARGUMENT_INFO.html" title="struct windows::Win32::System::Diagnostics::ClrProfiling::COR_PRF_FUNCTION_ARGUMENT_INFO">COR_PRF_FUNCTION_ARGUMENT_INFO</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetFunctionLeave3Info" class="method"><h4 class="code-header">fn <a href="#tymethod.GetFunctionLeave3Info" class="fn">GetFunctionLeave3Info</a>(
+    &amp;self,
+    functionid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+    eltinfo: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+    pframeinfo: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+    pretvalrange: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="struct.COR_PRF_FUNCTION_ARGUMENT_RANGE.html" title="struct windows::Win32::System::Diagnostics::ClrProfiling::COR_PRF_FUNCTION_ARGUMENT_RANGE">COR_PRF_FUNCTION_ARGUMENT_RANGE</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetFunctionTailcall3Info" class="method"><h4 class="code-header">fn <a href="#tymethod.GetFunctionTailcall3Info" class="fn">GetFunctionTailcall3Info</a>(
+    &amp;self,
+    functionid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+    eltinfo: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>&gt;</h4></section><section id="tymethod.EnumModules" class="method"><h4 class="code-header">fn <a href="#tymethod.EnumModules" class="fn">EnumModules</a>(&amp;self) -&gt; Result&lt;<a class="struct" href="struct.ICorProfilerModuleEnum.html" title="struct windows::Win32::System::Diagnostics::ClrProfiling::ICorProfilerModuleEnum">ICorProfilerModuleEnum</a>&gt;</h4></section><section id="tymethod.GetRuntimeInformation" class="method"><h4 class="code-header">fn <a href="#tymethod.GetRuntimeInformation" class="fn">GetRuntimeInformation</a>(
+    &amp;self,
+    pclrinstanceid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pruntimetype: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="struct.COR_PRF_RUNTIME_TYPE.html" title="struct windows::Win32::System::Diagnostics::ClrProfiling::COR_PRF_RUNTIME_TYPE">COR_PRF_RUNTIME_TYPE</a>,
+    pmajorversion: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pminorversion: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pbuildnumber: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pqfeversion: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    cchversionstring: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pcchversionstring: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    szversionstring: PWSTR,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetThreadStaticAddress2" class="method"><h4 class="code-header">fn <a href="#tymethod.GetThreadStaticAddress2" class="fn">GetThreadStaticAddress2</a>(
+    &amp;self,
+    classid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+    fieldtoken: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    appdomainid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+    threadid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+    ppaddress: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetAppDomainsContainingModule" class="method"><h4 class="code-header">fn <a href="#tymethod.GetAppDomainsContainingModule" class="fn">GetAppDomainsContainingModule</a>(
+    &amp;self,
+    moduleid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+    cappdomainids: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pcappdomainids: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    appdomainids: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetModuleInfo2" class="method"><h4 class="code-header">fn <a href="#tymethod.GetModuleInfo2" class="fn">GetModuleInfo2</a>(
+    &amp;self,
+    moduleid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+    ppbaseloadaddress: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    cchname: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pcchname: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    szname: PWSTR,
+    passemblyid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+    pdwmoduleflags: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section></div><h2 id="dyn-compatibility" class="section-header">Dyn Compatibility<a href="#dyn-compatibility" class="anchor">§</a></h2><div class="dyn-compatibility-info"><p>This trait is <b>not</b> <a href="https://doc.rust-lang.org/nightly/reference/items/traits.html#dyn-compatibility">dyn compatible</a>.</p><p><i>In older versions of Rust, dyn compatibility was called "object safety", so this trait is not object safe.</i></p></div><h2 id="implementors" class="section-header">Implementors<a href="#implementors" class="anchor">§</a></h2><div id="implementors-list"></div><script src="../../../../../trait.impl/windows/Win32/System/Diagnostics/ClrProfiling/trait.ICorProfilerInfo3_Impl.js" async></script></section></div></main></body></html>

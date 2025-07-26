@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["IPlaylist","IPlaylistStatics","Playlist","PlaylistFormat"]};

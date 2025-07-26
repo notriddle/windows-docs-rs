@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["AuthenticationProtocol","CredentialPicker","CredentialPickerOptions","CredentialPickerResults","CredentialSaveOption","ICredentialPickerOptions","ICredentialPickerResults","ICredentialPickerStatics","IUserConsentVerifierStatics","UserConsentVerificationResult","UserConsentVerifier","UserConsentVerifierAvailability"]};

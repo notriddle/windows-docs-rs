@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["IPhoneCallOrigin","IPhoneCallOrigin2","IPhoneCallOrigin3","IPhoneCallOriginManagerStatics","IPhoneCallOriginManagerStatics2","IPhoneCallOriginManagerStatics3","PhoneCallOrigin","PhoneCallOriginManager"]};

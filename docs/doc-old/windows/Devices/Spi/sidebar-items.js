@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["Provider"],"struct":["ISpiBusInfo","ISpiConnectionSettings","ISpiConnectionSettingsFactory","ISpiController","ISpiControllerStatics","ISpiDevice","ISpiDeviceStatics","SpiBusInfo","SpiConnectionSettings","SpiController","SpiDevice","SpiMode","SpiSharingMode"],"trait":["ISpiDeviceStatics_Impl"]};

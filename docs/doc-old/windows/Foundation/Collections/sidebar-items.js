@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["CollectionChange","IMapChangedEventArgs","IObservableMap","IObservableVector","IPropertySet","IVectorChangedEventArgs","MapChangedEventHandler","PropertySet","StringMap","ValueSet","VectorChangedEventHandler"],"trait":["IMapChangedEventArgs_Impl","IObservableMap_Impl","IObservableVector_Impl","IPropertySet_Impl","IVectorChangedEventArgs_Impl"]};

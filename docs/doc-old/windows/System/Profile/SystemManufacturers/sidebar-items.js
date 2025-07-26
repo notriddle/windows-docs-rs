@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["IOemSupportInfo","ISmbiosInformationStatics","ISystemSupportDeviceInfo","ISystemSupportInfoStatics","ISystemSupportInfoStatics2","OemSupportInfo","SmbiosInformation","SystemSupportDeviceInfo","SystemSupportInfo"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["ApiInformation","AttributeTargets","CompositionType","DeprecationType","FeatureStage","GCPressureAmount","IApiInformationStatics","MarshalingType","Platform","ThreadingModel"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["IKnownSimpleHapticsControllerWaveformsStatics","IKnownSimpleHapticsControllerWaveformsStatics2","ISimpleHapticsController","ISimpleHapticsControllerFeedback","IVibrationDevice","IVibrationDeviceStatics","KnownSimpleHapticsControllerWaveforms","SimpleHapticsController","SimpleHapticsControllerFeedback","VibrationAccessStatus","VibrationDevice"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["CustomDevice","DeviceAccessMode","DeviceSharingMode","ICustomDevice","ICustomDeviceStatics","IIOControlCode","IIOControlCodeFactory","IKnownDeviceTypesStatics","IOControlAccessMode","IOControlBufferingMethod","IOControlCode","KnownDeviceTypes"],"trait":["IIOControlCode_Impl"]};

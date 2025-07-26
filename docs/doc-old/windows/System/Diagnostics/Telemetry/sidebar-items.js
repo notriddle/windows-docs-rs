@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["IPlatformTelemetryClientStatics","IPlatformTelemetryRegistrationResult","IPlatformTelemetryRegistrationSettings","PlatformTelemetryClient","PlatformTelemetryRegistrationResult","PlatformTelemetryRegistrationSettings","PlatformTelemetryRegistrationStatus"]};

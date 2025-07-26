@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["Core","Deployment","Policies","Setup","Update","Workplace"],"struct":["IMdmAlert","IMdmSession","IMdmSessionManagerStatics","MdmAlert","MdmAlertDataType","MdmAlertMark","MdmSession","MdmSessionManager","MdmSessionState"]};

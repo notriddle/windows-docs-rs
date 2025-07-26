@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["IRemoteTextConnection","IRemoteTextConnection2","IRemoteTextConnectionFactory","IRemoteTextConnectionFactory2","RemoteKeyEventAttributes","RemoteTextConnection","RemoteTextConnectionDataHandler","RemoteTextConnectionOptions"]};

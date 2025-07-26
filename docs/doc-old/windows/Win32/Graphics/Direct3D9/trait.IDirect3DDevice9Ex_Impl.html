@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="API documentation for the Rust `IDirect3DDevice9Ex_Impl` trait in crate `windows`."><title>IDirect3DDevice9Ex_Impl in windows::Win32::Graphics::Direct3D9 - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../../../static.files/rustdoc-aa0817cf.css"><meta name="rustdoc-vars" data-root-path="../../../../" data-static-root-path="../../../../static.files/" data-current-crate="windows" data-themes="" data-resource-suffix="" data-rustdoc-version="1.90.0-dev" data-channel="nightly" data-search-js="search-fa3e91e5.js" data-settings-js="settings-5514c975.js" ><script src="../../../../static.files/storage-4e99c027.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../../../static.files/main-673ee1e0.js"></script><noscript><link rel="stylesheet" href="../../../../static.files/noscript-32bb7600.css"></noscript><link rel="alternate icon" type="image/png" href="../../../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../../../static.files/favicon-044be391.svg"><link
+  rel="search"
+  type="application/opensearchdescription+xml"
+  title="Rust for Windows"
+  href="https://microsoft.github.io/windows-docs-rs/opensearch.xml"
+/>
+
+</head><body class="rustdoc trait"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button></nav><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../../../../windows/index.html">windows</a><span class="version">0.61.1</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">IDirect3D<wbr>Device9<wbr>Ex_<wbr>Impl</a></h2><h3><a href="#required-methods">Required Methods</a></h3><ul class="block"><li><a href="#tymethod.CheckDeviceState" title="CheckDeviceState">CheckDeviceState</a></li><li><a href="#tymethod.CheckResourceResidency" title="CheckResourceResidency">CheckResourceResidency</a></li><li><a href="#tymethod.ComposeRects" title="ComposeRects">ComposeRects</a></li><li><a href="#tymethod.CreateDepthStencilSurfaceEx" title="CreateDepthStencilSurfaceEx">CreateDepthStencilSurfaceEx</a></li><li><a href="#tymethod.CreateOffscreenPlainSurfaceEx" title="CreateOffscreenPlainSurfaceEx">CreateOffscreenPlainSurfaceEx</a></li><li><a href="#tymethod.CreateRenderTargetEx" title="CreateRenderTargetEx">CreateRenderTargetEx</a></li><li><a href="#tymethod.GetDisplayModeEx" title="GetDisplayModeEx">GetDisplayModeEx</a></li><li><a href="#tymethod.GetGPUThreadPriority" title="GetGPUThreadPriority">GetGPUThreadPriority</a></li><li><a href="#tymethod.GetMaximumFrameLatency" title="GetMaximumFrameLatency">GetMaximumFrameLatency</a></li><li><a href="#tymethod.PresentEx" title="PresentEx">PresentEx</a></li><li><a href="#tymethod.ResetEx" title="ResetEx">ResetEx</a></li><li><a href="#tymethod.SetConvolutionMonoKernel" title="SetConvolutionMonoKernel">SetConvolutionMonoKernel</a></li><li><a href="#tymethod.SetGPUThreadPriority" title="SetGPUThreadPriority">SetGPUThreadPriority</a></li><li><a href="#tymethod.SetMaximumFrameLatency" title="SetMaximumFrameLatency">SetMaximumFrameLatency</a></li><li><a href="#tymethod.WaitForVBlank" title="WaitForVBlank">WaitForVBlank</a></li></ul><h3><a href="#dyn-compatibility">Dyn Compatibility</a></h3><h3><a href="#implementors">Implementors</a></h3></section><div id="rustdoc-modnav"><h2><a href="index.html">In windows::<wbr>Win32::<wbr>Graphics::<wbr>Direct3<wbr>D9</a></h2></div></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><div class="width-limiter"><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><div class="rustdoc-breadcrumbs"><a href="../../../index.html">windows</a>::<wbr><a href="../../index.html">Win32</a>::<wbr><a href="../index.html">Graphics</a>::<wbr><a href="index.html">Direct3D9</a></div><h1>Trait <span class="trait">IDirect3DDevice9Ex_Impl</span><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"></span></div><pre class="rust item-decl"><code>pub trait IDirect3DDevice9Ex_Impl: <a class="trait" href="trait.IDirect3DDevice9_Impl.html" title="trait windows::Win32::Graphics::Direct3D9::IDirect3DDevice9_Impl">IDirect3DDevice9_Impl</a> {
+<details class="toggle type-contents-toggle"><summary class="hideme"><span>Show 15 methods</span></summary>    // Required methods
+    fn <a href="#tymethod.SetConvolutionMonoKernel" class="fn">SetConvolutionMonoKernel</a>(
+        &amp;self,
+        width: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        height: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        rows: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>,
+        columns: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.ComposeRects" class="fn">ComposeRects</a>(
+        &amp;self,
+        psrc: Ref&lt;'_, <a class="struct" href="struct.IDirect3DSurface9.html" title="struct windows::Win32::Graphics::Direct3D9::IDirect3DSurface9">IDirect3DSurface9</a>&gt;,
+        pdst: Ref&lt;'_, <a class="struct" href="struct.IDirect3DSurface9.html" title="struct windows::Win32::Graphics::Direct3D9::IDirect3DSurface9">IDirect3DSurface9</a>&gt;,
+        psrcrectdescs: Ref&lt;'_, <a class="struct" href="struct.IDirect3DVertexBuffer9.html" title="struct windows::Win32::Graphics::Direct3D9::IDirect3DVertexBuffer9">IDirect3DVertexBuffer9</a>&gt;,
+        numrects: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pdstrectdescs: Ref&lt;'_, <a class="struct" href="struct.IDirect3DVertexBuffer9.html" title="struct windows::Win32::Graphics::Direct3D9::IDirect3DVertexBuffer9">IDirect3DVertexBuffer9</a>&gt;,
+        operation: <a class="struct" href="struct.D3DCOMPOSERECTSOP.html" title="struct windows::Win32::Graphics::Direct3D9::D3DCOMPOSERECTSOP">D3DCOMPOSERECTSOP</a>,
+        xoffset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+        yoffset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.PresentEx" class="fn">PresentEx</a>(
+        &amp;self,
+        psourcerect: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="../../Foundation/struct.RECT.html" title="struct windows::Win32::Foundation::RECT">RECT</a>,
+        pdestrect: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="../../Foundation/struct.RECT.html" title="struct windows::Win32::Foundation::RECT">RECT</a>,
+        hdestwindowoverride: <a class="struct" href="../../Foundation/struct.HWND.html" title="struct windows::Win32::Foundation::HWND">HWND</a>,
+        pdirtyregion: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="../Gdi/struct.RGNDATA.html" title="struct windows::Win32::Graphics::Gdi::RGNDATA">RGNDATA</a>,
+        dwflags: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetGPUThreadPriority" class="fn">GetGPUThreadPriority</a>(&amp;self, ppriority: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.SetGPUThreadPriority" class="fn">SetGPUThreadPriority</a>(&amp;self, priority: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.WaitForVBlank" class="fn">WaitForVBlank</a>(&amp;self, iswapchain: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.CheckResourceResidency" class="fn">CheckResourceResidency</a>(
+        &amp;self,
+        presourcearray: OutRef&lt;'_, <a class="struct" href="struct.IDirect3DResource9.html" title="struct windows::Win32::Graphics::Direct3D9::IDirect3DResource9">IDirect3DResource9</a>&gt;,
+        numresources: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.SetMaximumFrameLatency" class="fn">SetMaximumFrameLatency</a>(&amp;self, maxlatency: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetMaximumFrameLatency" class="fn">GetMaximumFrameLatency</a>(&amp;self, pmaxlatency: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.CheckDeviceState" class="fn">CheckDeviceState</a>(&amp;self, hdestinationwindow: <a class="struct" href="../../Foundation/struct.HWND.html" title="struct windows::Win32::Foundation::HWND">HWND</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.CreateRenderTargetEx" class="fn">CreateRenderTargetEx</a>(
+        &amp;self,
+        width: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        height: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        format: <a class="struct" href="struct.D3DFORMAT.html" title="struct windows::Win32::Graphics::Direct3D9::D3DFORMAT">D3DFORMAT</a>,
+        multisample: <a class="struct" href="struct.D3DMULTISAMPLE_TYPE.html" title="struct windows::Win32::Graphics::Direct3D9::D3DMULTISAMPLE_TYPE">D3DMULTISAMPLE_TYPE</a>,
+        multisamplequality: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        lockable: BOOL,
+        ppsurface: OutRef&lt;'_, <a class="struct" href="struct.IDirect3DSurface9.html" title="struct windows::Win32::Graphics::Direct3D9::IDirect3DSurface9">IDirect3DSurface9</a>&gt;,
+        psharedhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../Foundation/struct.HANDLE.html" title="struct windows::Win32::Foundation::HANDLE">HANDLE</a>,
+        usage: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.CreateOffscreenPlainSurfaceEx" class="fn">CreateOffscreenPlainSurfaceEx</a>(
+        &amp;self,
+        width: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        height: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        format: <a class="struct" href="struct.D3DFORMAT.html" title="struct windows::Win32::Graphics::Direct3D9::D3DFORMAT">D3DFORMAT</a>,
+        pool: <a class="struct" href="struct.D3DPOOL.html" title="struct windows::Win32::Graphics::Direct3D9::D3DPOOL">D3DPOOL</a>,
+        ppsurface: OutRef&lt;'_, <a class="struct" href="struct.IDirect3DSurface9.html" title="struct windows::Win32::Graphics::Direct3D9::IDirect3DSurface9">IDirect3DSurface9</a>&gt;,
+        psharedhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../Foundation/struct.HANDLE.html" title="struct windows::Win32::Foundation::HANDLE">HANDLE</a>,
+        usage: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.CreateDepthStencilSurfaceEx" class="fn">CreateDepthStencilSurfaceEx</a>(
+        &amp;self,
+        width: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        height: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        format: <a class="struct" href="struct.D3DFORMAT.html" title="struct windows::Win32::Graphics::Direct3D9::D3DFORMAT">D3DFORMAT</a>,
+        multisample: <a class="struct" href="struct.D3DMULTISAMPLE_TYPE.html" title="struct windows::Win32::Graphics::Direct3D9::D3DMULTISAMPLE_TYPE">D3DMULTISAMPLE_TYPE</a>,
+        multisamplequality: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        discard: BOOL,
+        ppsurface: OutRef&lt;'_, <a class="struct" href="struct.IDirect3DSurface9.html" title="struct windows::Win32::Graphics::Direct3D9::IDirect3DSurface9">IDirect3DSurface9</a>&gt;,
+        psharedhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../Foundation/struct.HANDLE.html" title="struct windows::Win32::Foundation::HANDLE">HANDLE</a>,
+        usage: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.ResetEx" class="fn">ResetEx</a>(
+        &amp;self,
+        ppresentationparameters: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="struct.D3DPRESENT_PARAMETERS.html" title="struct windows::Win32::Graphics::Direct3D9::D3DPRESENT_PARAMETERS">D3DPRESENT_PARAMETERS</a>,
+        pfullscreendisplaymode: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="struct.D3DDISPLAYMODEEX.html" title="struct windows::Win32::Graphics::Direct3D9::D3DDISPLAYMODEEX">D3DDISPLAYMODEEX</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetDisplayModeEx" class="fn">GetDisplayModeEx</a>(
+        &amp;self,
+        iswapchain: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pmode: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="struct.D3DDISPLAYMODEEX.html" title="struct windows::Win32::Graphics::Direct3D9::D3DDISPLAYMODEEX">D3DDISPLAYMODEEX</a>,
+        protation: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="struct.D3DDISPLAYROTATION.html" title="struct windows::Win32::Graphics::Direct3D9::D3DDISPLAYROTATION">D3DDISPLAYROTATION</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+</details>}</code></pre><h2 id="required-methods" class="section-header">Required Methods<a href="#required-methods" class="anchor">§</a></h2><div class="methods"><section id="tymethod.SetConvolutionMonoKernel" class="method"><h4 class="code-header">fn <a href="#tymethod.SetConvolutionMonoKernel" class="fn">SetConvolutionMonoKernel</a>(
+    &amp;self,
+    width: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    height: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    rows: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>,
+    columns: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.ComposeRects" class="method"><h4 class="code-header">fn <a href="#tymethod.ComposeRects" class="fn">ComposeRects</a>(
+    &amp;self,
+    psrc: Ref&lt;'_, <a class="struct" href="struct.IDirect3DSurface9.html" title="struct windows::Win32::Graphics::Direct3D9::IDirect3DSurface9">IDirect3DSurface9</a>&gt;,
+    pdst: Ref&lt;'_, <a class="struct" href="struct.IDirect3DSurface9.html" title="struct windows::Win32::Graphics::Direct3D9::IDirect3DSurface9">IDirect3DSurface9</a>&gt;,
+    psrcrectdescs: Ref&lt;'_, <a class="struct" href="struct.IDirect3DVertexBuffer9.html" title="struct windows::Win32::Graphics::Direct3D9::IDirect3DVertexBuffer9">IDirect3DVertexBuffer9</a>&gt;,
+    numrects: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pdstrectdescs: Ref&lt;'_, <a class="struct" href="struct.IDirect3DVertexBuffer9.html" title="struct windows::Win32::Graphics::Direct3D9::IDirect3DVertexBuffer9">IDirect3DVertexBuffer9</a>&gt;,
+    operation: <a class="struct" href="struct.D3DCOMPOSERECTSOP.html" title="struct windows::Win32::Graphics::Direct3D9::D3DCOMPOSERECTSOP">D3DCOMPOSERECTSOP</a>,
+    xoffset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+    yoffset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.PresentEx" class="method"><h4 class="code-header">fn <a href="#tymethod.PresentEx" class="fn">PresentEx</a>(
+    &amp;self,
+    psourcerect: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="../../Foundation/struct.RECT.html" title="struct windows::Win32::Foundation::RECT">RECT</a>,
+    pdestrect: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="../../Foundation/struct.RECT.html" title="struct windows::Win32::Foundation::RECT">RECT</a>,
+    hdestwindowoverride: <a class="struct" href="../../Foundation/struct.HWND.html" title="struct windows::Win32::Foundation::HWND">HWND</a>,
+    pdirtyregion: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="../Gdi/struct.RGNDATA.html" title="struct windows::Win32::Graphics::Gdi::RGNDATA">RGNDATA</a>,
+    dwflags: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetGPUThreadPriority" class="method"><h4 class="code-header">fn <a href="#tymethod.GetGPUThreadPriority" class="fn">GetGPUThreadPriority</a>(&amp;self, ppriority: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.SetGPUThreadPriority" class="method"><h4 class="code-header">fn <a href="#tymethod.SetGPUThreadPriority" class="fn">SetGPUThreadPriority</a>(&amp;self, priority: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.WaitForVBlank" class="method"><h4 class="code-header">fn <a href="#tymethod.WaitForVBlank" class="fn">WaitForVBlank</a>(&amp;self, iswapchain: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.CheckResourceResidency" class="method"><h4 class="code-header">fn <a href="#tymethod.CheckResourceResidency" class="fn">CheckResourceResidency</a>(
+    &amp;self,
+    presourcearray: OutRef&lt;'_, <a class="struct" href="struct.IDirect3DResource9.html" title="struct windows::Win32::Graphics::Direct3D9::IDirect3DResource9">IDirect3DResource9</a>&gt;,
+    numresources: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.SetMaximumFrameLatency" class="method"><h4 class="code-header">fn <a href="#tymethod.SetMaximumFrameLatency" class="fn">SetMaximumFrameLatency</a>(&amp;self, maxlatency: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetMaximumFrameLatency" class="method"><h4 class="code-header">fn <a href="#tymethod.GetMaximumFrameLatency" class="fn">GetMaximumFrameLatency</a>(&amp;self, pmaxlatency: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.CheckDeviceState" class="method"><h4 class="code-header">fn <a href="#tymethod.CheckDeviceState" class="fn">CheckDeviceState</a>(&amp;self, hdestinationwindow: <a class="struct" href="../../Foundation/struct.HWND.html" title="struct windows::Win32::Foundation::HWND">HWND</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.CreateRenderTargetEx" class="method"><h4 class="code-header">fn <a href="#tymethod.CreateRenderTargetEx" class="fn">CreateRenderTargetEx</a>(
+    &amp;self,
+    width: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    height: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    format: <a class="struct" href="struct.D3DFORMAT.html" title="struct windows::Win32::Graphics::Direct3D9::D3DFORMAT">D3DFORMAT</a>,
+    multisample: <a class="struct" href="struct.D3DMULTISAMPLE_TYPE.html" title="struct windows::Win32::Graphics::Direct3D9::D3DMULTISAMPLE_TYPE">D3DMULTISAMPLE_TYPE</a>,
+    multisamplequality: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    lockable: BOOL,
+    ppsurface: OutRef&lt;'_, <a class="struct" href="struct.IDirect3DSurface9.html" title="struct windows::Win32::Graphics::Direct3D9::IDirect3DSurface9">IDirect3DSurface9</a>&gt;,
+    psharedhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../Foundation/struct.HANDLE.html" title="struct windows::Win32::Foundation::HANDLE">HANDLE</a>,
+    usage: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.CreateOffscreenPlainSurfaceEx" class="method"><h4 class="code-header">fn <a href="#tymethod.CreateOffscreenPlainSurfaceEx" class="fn">CreateOffscreenPlainSurfaceEx</a>(
+    &amp;self,
+    width: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    height: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    format: <a class="struct" href="struct.D3DFORMAT.html" title="struct windows::Win32::Graphics::Direct3D9::D3DFORMAT">D3DFORMAT</a>,
+    pool: <a class="struct" href="struct.D3DPOOL.html" title="struct windows::Win32::Graphics::Direct3D9::D3DPOOL">D3DPOOL</a>,
+    ppsurface: OutRef&lt;'_, <a class="struct" href="struct.IDirect3DSurface9.html" title="struct windows::Win32::Graphics::Direct3D9::IDirect3DSurface9">IDirect3DSurface9</a>&gt;,
+    psharedhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../Foundation/struct.HANDLE.html" title="struct windows::Win32::Foundation::HANDLE">HANDLE</a>,
+    usage: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.CreateDepthStencilSurfaceEx" class="method"><h4 class="code-header">fn <a href="#tymethod.CreateDepthStencilSurfaceEx" class="fn">CreateDepthStencilSurfaceEx</a>(
+    &amp;self,
+    width: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    height: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    format: <a class="struct" href="struct.D3DFORMAT.html" title="struct windows::Win32::Graphics::Direct3D9::D3DFORMAT">D3DFORMAT</a>,
+    multisample: <a class="struct" href="struct.D3DMULTISAMPLE_TYPE.html" title="struct windows::Win32::Graphics::Direct3D9::D3DMULTISAMPLE_TYPE">D3DMULTISAMPLE_TYPE</a>,
+    multisamplequality: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    discard: BOOL,
+    ppsurface: OutRef&lt;'_, <a class="struct" href="struct.IDirect3DSurface9.html" title="struct windows::Win32::Graphics::Direct3D9::IDirect3DSurface9">IDirect3DSurface9</a>&gt;,
+    psharedhandle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../Foundation/struct.HANDLE.html" title="struct windows::Win32::Foundation::HANDLE">HANDLE</a>,
+    usage: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.ResetEx" class="method"><h4 class="code-header">fn <a href="#tymethod.ResetEx" class="fn">ResetEx</a>(
+    &amp;self,
+    ppresentationparameters: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="struct.D3DPRESENT_PARAMETERS.html" title="struct windows::Win32::Graphics::Direct3D9::D3DPRESENT_PARAMETERS">D3DPRESENT_PARAMETERS</a>,
+    pfullscreendisplaymode: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="struct.D3DDISPLAYMODEEX.html" title="struct windows::Win32::Graphics::Direct3D9::D3DDISPLAYMODEEX">D3DDISPLAYMODEEX</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetDisplayModeEx" class="method"><h4 class="code-header">fn <a href="#tymethod.GetDisplayModeEx" class="fn">GetDisplayModeEx</a>(
+    &amp;self,
+    iswapchain: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pmode: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="struct.D3DDISPLAYMODEEX.html" title="struct windows::Win32::Graphics::Direct3D9::D3DDISPLAYMODEEX">D3DDISPLAYMODEEX</a>,
+    protation: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="struct.D3DDISPLAYROTATION.html" title="struct windows::Win32::Graphics::Direct3D9::D3DDISPLAYROTATION">D3DDISPLAYROTATION</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section></div><h2 id="dyn-compatibility" class="section-header">Dyn Compatibility<a href="#dyn-compatibility" class="anchor">§</a></h2><div class="dyn-compatibility-info"><p>This trait is <b>not</b> <a href="https://doc.rust-lang.org/nightly/reference/items/traits.html#dyn-compatibility">dyn compatible</a>.</p><p><i>In older versions of Rust, dyn compatibility was called "object safety", so this trait is not object safe.</i></p></div><h2 id="implementors" class="section-header">Implementors<a href="#implementors" class="anchor">§</a></h2><div id="implementors-list"></div><script src="../../../../trait.impl/windows/Win32/Graphics/Direct3D9/trait.IDirect3DDevice9Ex_Impl.js" async></script></section></div></main></body></html>

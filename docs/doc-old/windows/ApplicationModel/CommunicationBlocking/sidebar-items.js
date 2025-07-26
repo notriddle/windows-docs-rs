@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["CommunicationBlockingAccessManager","CommunicationBlockingAppManager","ICommunicationBlockingAccessManagerStatics","ICommunicationBlockingAppManagerStatics","ICommunicationBlockingAppManagerStatics2"]};

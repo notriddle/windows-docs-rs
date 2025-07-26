@@ -1,0 +1,288 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="API documentation for the Rust `ISpSREngine_Impl` trait in crate `windows`."><title>ISpSREngine_Impl in windows::Win32::Media::Speech - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../../../static.files/rustdoc-aa0817cf.css"><meta name="rustdoc-vars" data-root-path="../../../../" data-static-root-path="../../../../static.files/" data-current-crate="windows" data-themes="" data-resource-suffix="" data-rustdoc-version="1.90.0-dev" data-channel="nightly" data-search-js="search-fa3e91e5.js" data-settings-js="settings-5514c975.js" ><script src="../../../../static.files/storage-4e99c027.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../../../static.files/main-673ee1e0.js"></script><noscript><link rel="stylesheet" href="../../../../static.files/noscript-32bb7600.css"></noscript><link rel="alternate icon" type="image/png" href="../../../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../../../static.files/favicon-044be391.svg"><link
+  rel="search"
+  type="application/opensearchdescription+xml"
+  title="Rust for Windows"
+  href="https://microsoft.github.io/windows-docs-rs/opensearch.xml"
+/>
+
+</head><body class="rustdoc trait"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button></nav><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../../../../windows/index.html">windows</a><span class="version">0.61.1</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">ISpSR<wbr>Engine_<wbr>Impl</a></h2><h3><a href="#required-methods">Required Methods</a></h3><ul class="block"><li><a href="#tymethod.GetInputAudioFormat" title="GetInputAudioFormat">GetInputAudioFormat</a></li><li><a href="#tymethod.GetPropertyNum" title="GetPropertyNum">GetPropertyNum</a></li><li><a href="#tymethod.GetPropertyString" title="GetPropertyString">GetPropertyString</a></li><li><a href="#tymethod.IsPronounceable" title="IsPronounceable">IsPronounceable</a></li><li><a href="#tymethod.LoadProprietaryGrammar" title="LoadProprietaryGrammar">LoadProprietaryGrammar</a></li><li><a href="#tymethod.LoadSLM" title="LoadSLM">LoadSLM</a></li><li><a href="#tymethod.OnCreateGrammar" title="OnCreateGrammar">OnCreateGrammar</a></li><li><a href="#tymethod.OnCreateRecoContext" title="OnCreateRecoContext">OnCreateRecoContext</a></li><li><a href="#tymethod.OnDeleteGrammar" title="OnDeleteGrammar">OnDeleteGrammar</a></li><li><a href="#tymethod.OnDeleteRecoContext" title="OnDeleteRecoContext">OnDeleteRecoContext</a></li><li><a href="#tymethod.PrivateCall" title="PrivateCall">PrivateCall</a></li><li><a href="#tymethod.PrivateCallEx" title="PrivateCallEx">PrivateCallEx</a></li><li><a href="#tymethod.RecognizeStream" title="RecognizeStream">RecognizeStream</a></li><li><a href="#tymethod.RuleNotify" title="RuleNotify">RuleNotify</a></li><li><a href="#tymethod.SetAdaptationData" title="SetAdaptationData">SetAdaptationData</a></li><li><a href="#tymethod.SetContextState" title="SetContextState">SetContextState</a></li><li><a href="#tymethod.SetGrammarState" title="SetGrammarState">SetGrammarState</a></li><li><a href="#tymethod.SetPropertyNum" title="SetPropertyNum">SetPropertyNum</a></li><li><a href="#tymethod.SetPropertyString" title="SetPropertyString">SetPropertyString</a></li><li><a href="#tymethod.SetProprietaryRuleIdState" title="SetProprietaryRuleIdState">SetProprietaryRuleIdState</a></li><li><a href="#tymethod.SetProprietaryRuleState" title="SetProprietaryRuleState">SetProprietaryRuleState</a></li><li><a href="#tymethod.SetRecoProfile" title="SetRecoProfile">SetRecoProfile</a></li><li><a href="#tymethod.SetSLMState" title="SetSLMState">SetSLMState</a></li><li><a href="#tymethod.SetSite" title="SetSite">SetSite</a></li><li><a href="#tymethod.SetTextSelection" title="SetTextSelection">SetTextSelection</a></li><li><a href="#tymethod.SetWordSequenceData" title="SetWordSequenceData">SetWordSequenceData</a></li><li><a href="#tymethod.UnloadProprietaryGrammar" title="UnloadProprietaryGrammar">UnloadProprietaryGrammar</a></li><li><a href="#tymethod.UnloadSLM" title="UnloadSLM">UnloadSLM</a></li><li><a href="#tymethod.WordNotify" title="WordNotify">WordNotify</a></li></ul><h3><a href="#dyn-compatibility">Dyn Compatibility</a></h3><h3><a href="#implementors">Implementors</a></h3></section><div id="rustdoc-modnav"><h2><a href="index.html">In windows::<wbr>Win32::<wbr>Media::<wbr>Speech</a></h2></div></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><div class="width-limiter"><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><div class="rustdoc-breadcrumbs"><a href="../../../index.html">windows</a>::<wbr><a href="../../index.html">Win32</a>::<wbr><a href="../index.html">Media</a>::<wbr><a href="index.html">Speech</a></div><h1>Trait <span class="trait">ISpSREngine_Impl</span><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"></span></div><pre class="rust item-decl"><code>pub trait ISpSREngine_Impl: IUnknownImpl {
+<details class="toggle type-contents-toggle"><summary class="hideme"><span>Show 29 methods</span></summary>    // Required methods
+    fn <a href="#tymethod.SetSite" class="fn">SetSite</a>(&amp;self, psite: Ref&lt;'_, <a class="struct" href="struct.ISpSREngineSite.html" title="struct windows::Win32::Media::Speech::ISpSREngineSite">ISpSREngineSite</a>&gt;) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetInputAudioFormat" class="fn">GetInputAudioFormat</a>(
+        &amp;self,
+        pguidsourceformatid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a>GUID,
+        psourcewaveformatex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="../Audio/struct.WAVEFORMATEX.html" title="struct windows::Win32::Media::Audio::WAVEFORMATEX">WAVEFORMATEX</a>,
+        pguiddesiredformatid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a>GUID,
+        ppcomemdesiredwaveformatex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../Audio/struct.WAVEFORMATEX.html" title="struct windows::Win32::Media::Audio::WAVEFORMATEX">WAVEFORMATEX</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.RecognizeStream" class="fn">RecognizeStream</a>(
+        &amp;self,
+        rguidfmtid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a>GUID,
+        pwaveformatex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="../Audio/struct.WAVEFORMATEX.html" title="struct windows::Win32::Media::Audio::WAVEFORMATEX">WAVEFORMATEX</a>,
+        hrequestsync: <a class="struct" href="../../Foundation/struct.HANDLE.html" title="struct windows::Win32::Foundation::HANDLE">HANDLE</a>,
+        hdataavailable: <a class="struct" href="../../Foundation/struct.HANDLE.html" title="struct windows::Win32::Foundation::HANDLE">HANDLE</a>,
+        hexit: <a class="struct" href="../../Foundation/struct.HANDLE.html" title="struct windows::Win32::Foundation::HANDLE">HANDLE</a>,
+        fnewaudiostream: BOOL,
+        frealtimeaudio: BOOL,
+        paudioobjecttoken: Ref&lt;'_, <a class="struct" href="struct.ISpObjectToken.html" title="struct windows::Win32::Media::Speech::ISpObjectToken">ISpObjectToken</a>&gt;,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.SetRecoProfile" class="fn">SetRecoProfile</a>(&amp;self, pprofile: Ref&lt;'_, <a class="struct" href="struct.ISpObjectToken.html" title="struct windows::Win32::Media::Speech::ISpObjectToken">ISpObjectToken</a>&gt;) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.OnCreateGrammar" class="fn">OnCreateGrammar</a>(
+        &amp;self,
+        pvenginerecocontext: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        hsapigrammar: <a class="struct" href="struct.SPGRAMMARHANDLE.html" title="struct windows::Win32::Media::Speech::SPGRAMMARHANDLE">SPGRAMMARHANDLE</a>,
+        ppvenginegrammarcontext: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.OnDeleteGrammar" class="fn">OnDeleteGrammar</a>(&amp;self, pvenginegrammar: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.LoadProprietaryGrammar" class="fn">LoadProprietaryGrammar</a>(
+        &amp;self,
+        pvenginegrammar: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        rguidparam: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a>GUID,
+        pszstringparam: &amp;PCWSTR,
+        pvdataparam: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        uldatasize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        options: <a class="struct" href="struct.SPLOADOPTIONS.html" title="struct windows::Win32::Media::Speech::SPLOADOPTIONS">SPLOADOPTIONS</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.UnloadProprietaryGrammar" class="fn">UnloadProprietaryGrammar</a>(
+        &amp;self,
+        pvenginegrammar: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.SetProprietaryRuleState" class="fn">SetProprietaryRuleState</a>(
+        &amp;self,
+        pvenginegrammar: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        pszname: &amp;PCWSTR,
+        preserved: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        newstate: <a class="struct" href="struct.SPRULESTATE.html" title="struct windows::Win32::Media::Speech::SPRULESTATE">SPRULESTATE</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.SetProprietaryRuleIdState" class="fn">SetProprietaryRuleIdState</a>(
+        &amp;self,
+        pvenginegrammar: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        dwruleid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        newstate: <a class="struct" href="struct.SPRULESTATE.html" title="struct windows::Win32::Media::Speech::SPRULESTATE">SPRULESTATE</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.LoadSLM" class="fn">LoadSLM</a>(
+        &amp;self,
+        pvenginegrammar: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        psztopicname: &amp;PCWSTR,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.UnloadSLM" class="fn">UnloadSLM</a>(&amp;self, pvenginegrammar: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.SetSLMState" class="fn">SetSLMState</a>(
+        &amp;self,
+        pvenginegrammar: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        newstate: <a class="struct" href="struct.SPRULESTATE.html" title="struct windows::Win32::Media::Speech::SPRULESTATE">SPRULESTATE</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.SetWordSequenceData" class="fn">SetWordSequenceData</a>(
+        &amp;self,
+        pvenginegrammar: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        ptext: &amp;PCWSTR,
+        cchtext: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pinfo: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="struct.SPTEXTSELECTIONINFO.html" title="struct windows::Win32::Media::Speech::SPTEXTSELECTIONINFO">SPTEXTSELECTIONINFO</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.SetTextSelection" class="fn">SetTextSelection</a>(
+        &amp;self,
+        pvenginegrammar: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        pinfo: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="struct.SPTEXTSELECTIONINFO.html" title="struct windows::Win32::Media::Speech::SPTEXTSELECTIONINFO">SPTEXTSELECTIONINFO</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.IsPronounceable" class="fn">IsPronounceable</a>(
+        &amp;self,
+        pvenginegrammar: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        pszword: &amp;PCWSTR,
+    ) -&gt; Result&lt;<a class="struct" href="struct.SPWORDPRONOUNCEABLE.html" title="struct windows::Win32::Media::Speech::SPWORDPRONOUNCEABLE">SPWORDPRONOUNCEABLE</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.OnCreateRecoContext" class="fn">OnCreateRecoContext</a>(
+        &amp;self,
+        hsapirecocontext: <a class="struct" href="struct.SPRECOCONTEXTHANDLE.html" title="struct windows::Win32::Media::Speech::SPRECOCONTEXTHANDLE">SPRECOCONTEXTHANDLE</a>,
+        ppvenginecontext: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.OnDeleteRecoContext" class="fn">OnDeleteRecoContext</a>(&amp;self, pvenginecontext: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.PrivateCall" class="fn">PrivateCall</a>(
+        &amp;self,
+        pvenginecontext: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        pcallframe: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        ulcallframesize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.SetAdaptationData" class="fn">SetAdaptationData</a>(
+        &amp;self,
+        pvenginecontext: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        padaptationdata: &amp;PCWSTR,
+        cch: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.SetPropertyNum" class="fn">SetPropertyNum</a>(
+        &amp;self,
+        esrc: <a class="struct" href="struct.SPPROPSRC.html" title="struct windows::Win32::Media::Speech::SPPROPSRC">SPPROPSRC</a>,
+        pvsrcobj: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        pname: &amp;PCWSTR,
+        lvalue: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetPropertyNum" class="fn">GetPropertyNum</a>(
+        &amp;self,
+        esrc: <a class="struct" href="struct.SPPROPSRC.html" title="struct windows::Win32::Media::Speech::SPPROPSRC">SPPROPSRC</a>,
+        pvsrcobj: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        pname: &amp;PCWSTR,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.SetPropertyString" class="fn">SetPropertyString</a>(
+        &amp;self,
+        esrc: <a class="struct" href="struct.SPPROPSRC.html" title="struct windows::Win32::Media::Speech::SPPROPSRC">SPPROPSRC</a>,
+        pvsrcobj: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        pname: &amp;PCWSTR,
+        pvalue: &amp;PCWSTR,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetPropertyString" class="fn">GetPropertyString</a>(
+        &amp;self,
+        esrc: <a class="struct" href="struct.SPPROPSRC.html" title="struct windows::Win32::Media::Speech::SPPROPSRC">SPPROPSRC</a>,
+        pvsrcobj: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        pname: &amp;PCWSTR,
+    ) -&gt; Result&lt;PWSTR&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.SetGrammarState" class="fn">SetGrammarState</a>(
+        &amp;self,
+        pvenginegrammar: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        egrammarstate: <a class="struct" href="struct.SPGRAMMARSTATE.html" title="struct windows::Win32::Media::Speech::SPGRAMMARSTATE">SPGRAMMARSTATE</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.WordNotify" class="fn">WordNotify</a>(
+        &amp;self,
+        action: <a class="struct" href="struct.SPCFGNOTIFY.html" title="struct windows::Win32::Media::Speech::SPCFGNOTIFY">SPCFGNOTIFY</a>,
+        cwords: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pwords: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="struct.SPWORDENTRY.html" title="struct windows::Win32::Media::Speech::SPWORDENTRY">SPWORDENTRY</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.RuleNotify" class="fn">RuleNotify</a>(
+        &amp;self,
+        action: <a class="struct" href="struct.SPCFGNOTIFY.html" title="struct windows::Win32::Media::Speech::SPCFGNOTIFY">SPCFGNOTIFY</a>,
+        crules: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        prules: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="struct.SPRULEENTRY.html" title="struct windows::Win32::Media::Speech::SPRULEENTRY">SPRULEENTRY</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.PrivateCallEx" class="fn">PrivateCallEx</a>(
+        &amp;self,
+        pvenginecontext: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        pincallframe: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        ulincallframesize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        ppvcomemresponse: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        pulresponsesize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.SetContextState" class="fn">SetContextState</a>(
+        &amp;self,
+        pvenginecontext: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        econtextstate: <a class="struct" href="struct.SPCONTEXTSTATE.html" title="struct windows::Win32::Media::Speech::SPCONTEXTSTATE">SPCONTEXTSTATE</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+</details>}</code></pre><h2 id="required-methods" class="section-header">Required Methods<a href="#required-methods" class="anchor">§</a></h2><div class="methods"><section id="tymethod.SetSite" class="method"><h4 class="code-header">fn <a href="#tymethod.SetSite" class="fn">SetSite</a>(&amp;self, psite: Ref&lt;'_, <a class="struct" href="struct.ISpSREngineSite.html" title="struct windows::Win32::Media::Speech::ISpSREngineSite">ISpSREngineSite</a>&gt;) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetInputAudioFormat" class="method"><h4 class="code-header">fn <a href="#tymethod.GetInputAudioFormat" class="fn">GetInputAudioFormat</a>(
+    &amp;self,
+    pguidsourceformatid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a>GUID,
+    psourcewaveformatex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="../Audio/struct.WAVEFORMATEX.html" title="struct windows::Win32::Media::Audio::WAVEFORMATEX">WAVEFORMATEX</a>,
+    pguiddesiredformatid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a>GUID,
+    ppcomemdesiredwaveformatex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../Audio/struct.WAVEFORMATEX.html" title="struct windows::Win32::Media::Audio::WAVEFORMATEX">WAVEFORMATEX</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.RecognizeStream" class="method"><h4 class="code-header">fn <a href="#tymethod.RecognizeStream" class="fn">RecognizeStream</a>(
+    &amp;self,
+    rguidfmtid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a>GUID,
+    pwaveformatex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="../Audio/struct.WAVEFORMATEX.html" title="struct windows::Win32::Media::Audio::WAVEFORMATEX">WAVEFORMATEX</a>,
+    hrequestsync: <a class="struct" href="../../Foundation/struct.HANDLE.html" title="struct windows::Win32::Foundation::HANDLE">HANDLE</a>,
+    hdataavailable: <a class="struct" href="../../Foundation/struct.HANDLE.html" title="struct windows::Win32::Foundation::HANDLE">HANDLE</a>,
+    hexit: <a class="struct" href="../../Foundation/struct.HANDLE.html" title="struct windows::Win32::Foundation::HANDLE">HANDLE</a>,
+    fnewaudiostream: BOOL,
+    frealtimeaudio: BOOL,
+    paudioobjecttoken: Ref&lt;'_, <a class="struct" href="struct.ISpObjectToken.html" title="struct windows::Win32::Media::Speech::ISpObjectToken">ISpObjectToken</a>&gt;,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.SetRecoProfile" class="method"><h4 class="code-header">fn <a href="#tymethod.SetRecoProfile" class="fn">SetRecoProfile</a>(&amp;self, pprofile: Ref&lt;'_, <a class="struct" href="struct.ISpObjectToken.html" title="struct windows::Win32::Media::Speech::ISpObjectToken">ISpObjectToken</a>&gt;) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.OnCreateGrammar" class="method"><h4 class="code-header">fn <a href="#tymethod.OnCreateGrammar" class="fn">OnCreateGrammar</a>(
+    &amp;self,
+    pvenginerecocontext: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    hsapigrammar: <a class="struct" href="struct.SPGRAMMARHANDLE.html" title="struct windows::Win32::Media::Speech::SPGRAMMARHANDLE">SPGRAMMARHANDLE</a>,
+    ppvenginegrammarcontext: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.OnDeleteGrammar" class="method"><h4 class="code-header">fn <a href="#tymethod.OnDeleteGrammar" class="fn">OnDeleteGrammar</a>(&amp;self, pvenginegrammar: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.LoadProprietaryGrammar" class="method"><h4 class="code-header">fn <a href="#tymethod.LoadProprietaryGrammar" class="fn">LoadProprietaryGrammar</a>(
+    &amp;self,
+    pvenginegrammar: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    rguidparam: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a>GUID,
+    pszstringparam: &amp;PCWSTR,
+    pvdataparam: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    uldatasize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    options: <a class="struct" href="struct.SPLOADOPTIONS.html" title="struct windows::Win32::Media::Speech::SPLOADOPTIONS">SPLOADOPTIONS</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.UnloadProprietaryGrammar" class="method"><h4 class="code-header">fn <a href="#tymethod.UnloadProprietaryGrammar" class="fn">UnloadProprietaryGrammar</a>(&amp;self, pvenginegrammar: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.SetProprietaryRuleState" class="method"><h4 class="code-header">fn <a href="#tymethod.SetProprietaryRuleState" class="fn">SetProprietaryRuleState</a>(
+    &amp;self,
+    pvenginegrammar: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    pszname: &amp;PCWSTR,
+    preserved: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    newstate: <a class="struct" href="struct.SPRULESTATE.html" title="struct windows::Win32::Media::Speech::SPRULESTATE">SPRULESTATE</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>&gt;</h4></section><section id="tymethod.SetProprietaryRuleIdState" class="method"><h4 class="code-header">fn <a href="#tymethod.SetProprietaryRuleIdState" class="fn">SetProprietaryRuleIdState</a>(
+    &amp;self,
+    pvenginegrammar: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    dwruleid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    newstate: <a class="struct" href="struct.SPRULESTATE.html" title="struct windows::Win32::Media::Speech::SPRULESTATE">SPRULESTATE</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.LoadSLM" class="method"><h4 class="code-header">fn <a href="#tymethod.LoadSLM" class="fn">LoadSLM</a>(
+    &amp;self,
+    pvenginegrammar: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    psztopicname: &amp;PCWSTR,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.UnloadSLM" class="method"><h4 class="code-header">fn <a href="#tymethod.UnloadSLM" class="fn">UnloadSLM</a>(&amp;self, pvenginegrammar: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.SetSLMState" class="method"><h4 class="code-header">fn <a href="#tymethod.SetSLMState" class="fn">SetSLMState</a>(
+    &amp;self,
+    pvenginegrammar: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    newstate: <a class="struct" href="struct.SPRULESTATE.html" title="struct windows::Win32::Media::Speech::SPRULESTATE">SPRULESTATE</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.SetWordSequenceData" class="method"><h4 class="code-header">fn <a href="#tymethod.SetWordSequenceData" class="fn">SetWordSequenceData</a>(
+    &amp;self,
+    pvenginegrammar: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    ptext: &amp;PCWSTR,
+    cchtext: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pinfo: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="struct.SPTEXTSELECTIONINFO.html" title="struct windows::Win32::Media::Speech::SPTEXTSELECTIONINFO">SPTEXTSELECTIONINFO</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.SetTextSelection" class="method"><h4 class="code-header">fn <a href="#tymethod.SetTextSelection" class="fn">SetTextSelection</a>(
+    &amp;self,
+    pvenginegrammar: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    pinfo: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="struct.SPTEXTSELECTIONINFO.html" title="struct windows::Win32::Media::Speech::SPTEXTSELECTIONINFO">SPTEXTSELECTIONINFO</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.IsPronounceable" class="method"><h4 class="code-header">fn <a href="#tymethod.IsPronounceable" class="fn">IsPronounceable</a>(
+    &amp;self,
+    pvenginegrammar: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    pszword: &amp;PCWSTR,
+) -&gt; Result&lt;<a class="struct" href="struct.SPWORDPRONOUNCEABLE.html" title="struct windows::Win32::Media::Speech::SPWORDPRONOUNCEABLE">SPWORDPRONOUNCEABLE</a>&gt;</h4></section><section id="tymethod.OnCreateRecoContext" class="method"><h4 class="code-header">fn <a href="#tymethod.OnCreateRecoContext" class="fn">OnCreateRecoContext</a>(
+    &amp;self,
+    hsapirecocontext: <a class="struct" href="struct.SPRECOCONTEXTHANDLE.html" title="struct windows::Win32::Media::Speech::SPRECOCONTEXTHANDLE">SPRECOCONTEXTHANDLE</a>,
+    ppvenginecontext: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.OnDeleteRecoContext" class="method"><h4 class="code-header">fn <a href="#tymethod.OnDeleteRecoContext" class="fn">OnDeleteRecoContext</a>(&amp;self, pvenginecontext: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.PrivateCall" class="method"><h4 class="code-header">fn <a href="#tymethod.PrivateCall" class="fn">PrivateCall</a>(
+    &amp;self,
+    pvenginecontext: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    pcallframe: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    ulcallframesize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.SetAdaptationData" class="method"><h4 class="code-header">fn <a href="#tymethod.SetAdaptationData" class="fn">SetAdaptationData</a>(
+    &amp;self,
+    pvenginecontext: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    padaptationdata: &amp;PCWSTR,
+    cch: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.SetPropertyNum" class="method"><h4 class="code-header">fn <a href="#tymethod.SetPropertyNum" class="fn">SetPropertyNum</a>(
+    &amp;self,
+    esrc: <a class="struct" href="struct.SPPROPSRC.html" title="struct windows::Win32::Media::Speech::SPPROPSRC">SPPROPSRC</a>,
+    pvsrcobj: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    pname: &amp;PCWSTR,
+    lvalue: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetPropertyNum" class="method"><h4 class="code-header">fn <a href="#tymethod.GetPropertyNum" class="fn">GetPropertyNum</a>(
+    &amp;self,
+    esrc: <a class="struct" href="struct.SPPROPSRC.html" title="struct windows::Win32::Media::Speech::SPPROPSRC">SPPROPSRC</a>,
+    pvsrcobj: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    pname: &amp;PCWSTR,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>&gt;</h4></section><section id="tymethod.SetPropertyString" class="method"><h4 class="code-header">fn <a href="#tymethod.SetPropertyString" class="fn">SetPropertyString</a>(
+    &amp;self,
+    esrc: <a class="struct" href="struct.SPPROPSRC.html" title="struct windows::Win32::Media::Speech::SPPROPSRC">SPPROPSRC</a>,
+    pvsrcobj: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    pname: &amp;PCWSTR,
+    pvalue: &amp;PCWSTR,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetPropertyString" class="method"><h4 class="code-header">fn <a href="#tymethod.GetPropertyString" class="fn">GetPropertyString</a>(
+    &amp;self,
+    esrc: <a class="struct" href="struct.SPPROPSRC.html" title="struct windows::Win32::Media::Speech::SPPROPSRC">SPPROPSRC</a>,
+    pvsrcobj: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    pname: &amp;PCWSTR,
+) -&gt; Result&lt;PWSTR&gt;</h4></section><section id="tymethod.SetGrammarState" class="method"><h4 class="code-header">fn <a href="#tymethod.SetGrammarState" class="fn">SetGrammarState</a>(
+    &amp;self,
+    pvenginegrammar: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    egrammarstate: <a class="struct" href="struct.SPGRAMMARSTATE.html" title="struct windows::Win32::Media::Speech::SPGRAMMARSTATE">SPGRAMMARSTATE</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.WordNotify" class="method"><h4 class="code-header">fn <a href="#tymethod.WordNotify" class="fn">WordNotify</a>(
+    &amp;self,
+    action: <a class="struct" href="struct.SPCFGNOTIFY.html" title="struct windows::Win32::Media::Speech::SPCFGNOTIFY">SPCFGNOTIFY</a>,
+    cwords: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pwords: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="struct.SPWORDENTRY.html" title="struct windows::Win32::Media::Speech::SPWORDENTRY">SPWORDENTRY</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.RuleNotify" class="method"><h4 class="code-header">fn <a href="#tymethod.RuleNotify" class="fn">RuleNotify</a>(
+    &amp;self,
+    action: <a class="struct" href="struct.SPCFGNOTIFY.html" title="struct windows::Win32::Media::Speech::SPCFGNOTIFY">SPCFGNOTIFY</a>,
+    crules: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    prules: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="struct.SPRULEENTRY.html" title="struct windows::Win32::Media::Speech::SPRULEENTRY">SPRULEENTRY</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.PrivateCallEx" class="method"><h4 class="code-header">fn <a href="#tymethod.PrivateCallEx" class="fn">PrivateCallEx</a>(
+    &amp;self,
+    pvenginecontext: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    pincallframe: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    ulincallframesize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ppvcomemresponse: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    pulresponsesize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.SetContextState" class="method"><h4 class="code-header">fn <a href="#tymethod.SetContextState" class="fn">SetContextState</a>(
+    &amp;self,
+    pvenginecontext: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    econtextstate: <a class="struct" href="struct.SPCONTEXTSTATE.html" title="struct windows::Win32::Media::Speech::SPCONTEXTSTATE">SPCONTEXTSTATE</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section></div><h2 id="dyn-compatibility" class="section-header">Dyn Compatibility<a href="#dyn-compatibility" class="anchor">§</a></h2><div class="dyn-compatibility-info"><p>This trait is <b>not</b> <a href="https://doc.rust-lang.org/nightly/reference/items/traits.html#dyn-compatibility">dyn compatible</a>.</p><p><i>In older versions of Rust, dyn compatibility was called "object safety", so this trait is not object safe.</i></p></div><h2 id="implementors" class="section-header">Implementors<a href="#implementors" class="anchor">§</a></h2><div id="implementors-list"></div><script src="../../../../trait.impl/windows/Win32/Media/Speech/trait.ISpSREngine_Impl.js" async></script></section></div></main></body></html>

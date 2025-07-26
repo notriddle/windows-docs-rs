@@ -1,0 +1,131 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="API documentation for the Rust `IStillImageW_Impl` trait in crate `windows`."><title>IStillImageW_Impl in windows::Win32::Devices::Fax - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../../../static.files/rustdoc-aa0817cf.css"><meta name="rustdoc-vars" data-root-path="../../../../" data-static-root-path="../../../../static.files/" data-current-crate="windows" data-themes="" data-resource-suffix="" data-rustdoc-version="1.90.0-dev" data-channel="nightly" data-search-js="search-fa3e91e5.js" data-settings-js="settings-5514c975.js" ><script src="../../../../static.files/storage-4e99c027.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../../../static.files/main-673ee1e0.js"></script><noscript><link rel="stylesheet" href="../../../../static.files/noscript-32bb7600.css"></noscript><link rel="alternate icon" type="image/png" href="../../../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../../../static.files/favicon-044be391.svg"><link
+  rel="search"
+  type="application/opensearchdescription+xml"
+  title="Rust for Windows"
+  href="https://microsoft.github.io/windows-docs-rs/opensearch.xml"
+/>
+
+</head><body class="rustdoc trait"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button></nav><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../../../../windows/index.html">windows</a><span class="version">0.61.1</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">IStill<wbr>ImageW_<wbr>Impl</a></h2><h3><a href="#required-methods">Required Methods</a></h3><ul class="block"><li><a href="#tymethod.CreateDevice" title="CreateDevice">CreateDevice</a></li><li><a href="#tymethod.EnableHwNotifications" title="EnableHwNotifications">EnableHwNotifications</a></li><li><a href="#tymethod.GetDeviceInfo" title="GetDeviceInfo">GetDeviceInfo</a></li><li><a href="#tymethod.GetDeviceList" title="GetDeviceList">GetDeviceList</a></li><li><a href="#tymethod.GetDeviceValue" title="GetDeviceValue">GetDeviceValue</a></li><li><a href="#tymethod.GetHwNotificationState" title="GetHwNotificationState">GetHwNotificationState</a></li><li><a href="#tymethod.GetSTILaunchInformation" title="GetSTILaunchInformation">GetSTILaunchInformation</a></li><li><a href="#tymethod.Initialize" title="Initialize">Initialize</a></li><li><a href="#tymethod.LaunchApplicationForDevice" title="LaunchApplicationForDevice">LaunchApplicationForDevice</a></li><li><a href="#tymethod.RefreshDeviceBus" title="RefreshDeviceBus">RefreshDeviceBus</a></li><li><a href="#tymethod.RegisterLaunchApplication" title="RegisterLaunchApplication">RegisterLaunchApplication</a></li><li><a href="#tymethod.SetDeviceValue" title="SetDeviceValue">SetDeviceValue</a></li><li><a href="#tymethod.SetupDeviceParameters" title="SetupDeviceParameters">SetupDeviceParameters</a></li><li><a href="#tymethod.UnregisterLaunchApplication" title="UnregisterLaunchApplication">UnregisterLaunchApplication</a></li><li><a href="#tymethod.WriteToErrorLog" title="WriteToErrorLog">WriteToErrorLog</a></li></ul><h3><a href="#dyn-compatibility">Dyn Compatibility</a></h3><h3><a href="#implementors">Implementors</a></h3></section><div id="rustdoc-modnav"><h2><a href="index.html">In windows::<wbr>Win32::<wbr>Devices::<wbr>Fax</a></h2></div></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><div class="width-limiter"><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><div class="rustdoc-breadcrumbs"><a href="../../../index.html">windows</a>::<wbr><a href="../../index.html">Win32</a>::<wbr><a href="../index.html">Devices</a>::<wbr><a href="index.html">Fax</a></div><h1>Trait <span class="trait">IStillImageW_Impl</span><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"></span></div><pre class="rust item-decl"><code>pub trait IStillImageW_Impl: IUnknownImpl {
+<details class="toggle type-contents-toggle"><summary class="hideme"><span>Show 15 methods</span></summary>    // Required methods
+    fn <a href="#tymethod.Initialize" class="fn">Initialize</a>(&amp;self, hinst: <a class="struct" href="../../Foundation/struct.HINSTANCE.html" title="struct windows::Win32::Foundation::HINSTANCE">HINSTANCE</a>, dwversion: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetDeviceList" class="fn">GetDeviceList</a>(
+        &amp;self,
+        dwtype: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        dwflags: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pdwitemsreturned: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        ppbuffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetDeviceInfo" class="fn">GetDeviceInfo</a>(
+        &amp;self,
+        pwszdevicename: &amp;PCWSTR,
+        ppbuffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.CreateDevice" class="fn">CreateDevice</a>(
+        &amp;self,
+        pwszdevicename: &amp;PCWSTR,
+        dwmode: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pdevice: OutRef&lt;'_, <a class="struct" href="struct.IStiDevice.html" title="struct windows::Win32::Devices::Fax::IStiDevice">IStiDevice</a>&gt;,
+        punkouter: Ref&lt;'_, IUnknown&gt;,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetDeviceValue" class="fn">GetDeviceValue</a>(
+        &amp;self,
+        pwszdevicename: &amp;PCWSTR,
+        pvaluename: &amp;PCWSTR,
+        ptype: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pdata: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+        cbdata: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.SetDeviceValue" class="fn">SetDeviceValue</a>(
+        &amp;self,
+        pwszdevicename: &amp;PCWSTR,
+        pvaluename: &amp;PCWSTR,
+        type: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pdata: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+        cbdata: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetSTILaunchInformation" class="fn">GetSTILaunchInformation</a>(
+        &amp;self,
+        pwszdevicename: PWSTR,
+        pdweventcode: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pwszeventname: PWSTR,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.RegisterLaunchApplication" class="fn">RegisterLaunchApplication</a>(
+        &amp;self,
+        pwszappname: &amp;PCWSTR,
+        pwszcommandline: &amp;PCWSTR,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.UnregisterLaunchApplication" class="fn">UnregisterLaunchApplication</a>(&amp;self, pwszappname: &amp;PCWSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.EnableHwNotifications" class="fn">EnableHwNotifications</a>(
+        &amp;self,
+        pwszdevicename: &amp;PCWSTR,
+        bnewstate: BOOL,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.GetHwNotificationState" class="fn">GetHwNotificationState</a>(&amp;self, pwszdevicename: &amp;PCWSTR) -&gt; Result&lt;BOOL&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.RefreshDeviceBus" class="fn">RefreshDeviceBus</a>(&amp;self, pwszdevicename: &amp;PCWSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.LaunchApplicationForDevice" class="fn">LaunchApplicationForDevice</a>(
+        &amp;self,
+        pwszdevicename: &amp;PCWSTR,
+        pwszappname: &amp;PCWSTR,
+        pstinotify: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="struct.STINOTIFY.html" title="struct windows::Win32::Devices::Fax::STINOTIFY">STINOTIFY</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.SetupDeviceParameters" class="fn">SetupDeviceParameters</a>(
+        &amp;self,
+        param0: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="struct.STI_DEVICE_INFORMATIONW.html" title="struct windows::Win32::Devices::Fax::STI_DEVICE_INFORMATIONW">STI_DEVICE_INFORMATIONW</a>,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.WriteToErrorLog" class="fn">WriteToErrorLog</a>(
+        &amp;self,
+        dwmessagetype: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+        pszmessage: &amp;PCWSTR,
+    ) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+</details>}</code></pre><h2 id="required-methods" class="section-header">Required Methods<a href="#required-methods" class="anchor">§</a></h2><div class="methods"><section id="tymethod.Initialize" class="method"><h4 class="code-header">fn <a href="#tymethod.Initialize" class="fn">Initialize</a>(&amp;self, hinst: <a class="struct" href="../../Foundation/struct.HINSTANCE.html" title="struct windows::Win32::Foundation::HINSTANCE">HINSTANCE</a>, dwversion: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetDeviceList" class="method"><h4 class="code-header">fn <a href="#tymethod.GetDeviceList" class="fn">GetDeviceList</a>(
+    &amp;self,
+    dwtype: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    dwflags: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pdwitemsreturned: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    ppbuffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetDeviceInfo" class="method"><h4 class="code-header">fn <a href="#tymethod.GetDeviceInfo" class="fn">GetDeviceInfo</a>(
+    &amp;self,
+    pwszdevicename: &amp;PCWSTR,
+    ppbuffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.CreateDevice" class="method"><h4 class="code-header">fn <a href="#tymethod.CreateDevice" class="fn">CreateDevice</a>(
+    &amp;self,
+    pwszdevicename: &amp;PCWSTR,
+    dwmode: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pdevice: OutRef&lt;'_, <a class="struct" href="struct.IStiDevice.html" title="struct windows::Win32::Devices::Fax::IStiDevice">IStiDevice</a>&gt;,
+    punkouter: Ref&lt;'_, IUnknown&gt;,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetDeviceValue" class="method"><h4 class="code-header">fn <a href="#tymethod.GetDeviceValue" class="fn">GetDeviceValue</a>(
+    &amp;self,
+    pwszdevicename: &amp;PCWSTR,
+    pvaluename: &amp;PCWSTR,
+    ptype: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pdata: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    cbdata: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.SetDeviceValue" class="method"><h4 class="code-header">fn <a href="#tymethod.SetDeviceValue" class="fn">SetDeviceValue</a>(
+    &amp;self,
+    pwszdevicename: &amp;PCWSTR,
+    pvaluename: &amp;PCWSTR,
+    type: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pdata: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    cbdata: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetSTILaunchInformation" class="method"><h4 class="code-header">fn <a href="#tymethod.GetSTILaunchInformation" class="fn">GetSTILaunchInformation</a>(
+    &amp;self,
+    pwszdevicename: PWSTR,
+    pdweventcode: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pwszeventname: PWSTR,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.RegisterLaunchApplication" class="method"><h4 class="code-header">fn <a href="#tymethod.RegisterLaunchApplication" class="fn">RegisterLaunchApplication</a>(
+    &amp;self,
+    pwszappname: &amp;PCWSTR,
+    pwszcommandline: &amp;PCWSTR,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.UnregisterLaunchApplication" class="method"><h4 class="code-header">fn <a href="#tymethod.UnregisterLaunchApplication" class="fn">UnregisterLaunchApplication</a>(&amp;self, pwszappname: &amp;PCWSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.EnableHwNotifications" class="method"><h4 class="code-header">fn <a href="#tymethod.EnableHwNotifications" class="fn">EnableHwNotifications</a>(
+    &amp;self,
+    pwszdevicename: &amp;PCWSTR,
+    bnewstate: BOOL,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.GetHwNotificationState" class="method"><h4 class="code-header">fn <a href="#tymethod.GetHwNotificationState" class="fn">GetHwNotificationState</a>(&amp;self, pwszdevicename: &amp;PCWSTR) -&gt; Result&lt;BOOL&gt;</h4></section><section id="tymethod.RefreshDeviceBus" class="method"><h4 class="code-header">fn <a href="#tymethod.RefreshDeviceBus" class="fn">RefreshDeviceBus</a>(&amp;self, pwszdevicename: &amp;PCWSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.LaunchApplicationForDevice" class="method"><h4 class="code-header">fn <a href="#tymethod.LaunchApplicationForDevice" class="fn">LaunchApplicationForDevice</a>(
+    &amp;self,
+    pwszdevicename: &amp;PCWSTR,
+    pwszappname: &amp;PCWSTR,
+    pstinotify: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="struct.STINOTIFY.html" title="struct windows::Win32::Devices::Fax::STINOTIFY">STINOTIFY</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.SetupDeviceParameters" class="method"><h4 class="code-header">fn <a href="#tymethod.SetupDeviceParameters" class="fn">SetupDeviceParameters</a>(
+    &amp;self,
+    param0: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="struct.STI_DEVICE_INFORMATIONW.html" title="struct windows::Win32::Devices::Fax::STI_DEVICE_INFORMATIONW">STI_DEVICE_INFORMATIONW</a>,
+) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section><section id="tymethod.WriteToErrorLog" class="method"><h4 class="code-header">fn <a href="#tymethod.WriteToErrorLog" class="fn">WriteToErrorLog</a>(&amp;self, dwmessagetype: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, pszmessage: &amp;PCWSTR) -&gt; Result&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section></div><h2 id="dyn-compatibility" class="section-header">Dyn Compatibility<a href="#dyn-compatibility" class="anchor">§</a></h2><div class="dyn-compatibility-info"><p>This trait is <b>not</b> <a href="https://doc.rust-lang.org/nightly/reference/items/traits.html#dyn-compatibility">dyn compatible</a>.</p><p><i>In older versions of Rust, dyn compatibility was called "object safety", so this trait is not object safe.</i></p></div><h2 id="implementors" class="section-header">Implementors<a href="#implementors" class="anchor">§</a></h2><div id="implementors-list"></div><script src="../../../../trait.impl/windows/Win32/Devices/Fax/trait.IStillImageW_Impl.js" async></script></section></div></main></body></html>

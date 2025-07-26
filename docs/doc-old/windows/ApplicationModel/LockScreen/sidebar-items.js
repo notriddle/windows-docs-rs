@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["ILockApplicationHost","ILockApplicationHostStatics","ILockScreenBadge","ILockScreenInfo","ILockScreenUnlockingDeferral","ILockScreenUnlockingEventArgs","LockApplicationHost","LockScreenBadge","LockScreenInfo","LockScreenUnlockingDeferral","LockScreenUnlockingEventArgs"]};

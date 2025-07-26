@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["AddAppointmentOperation","AppointmentsProviderLaunchActionVerbs","IAddAppointmentOperation","IAppointmentsProviderLaunchActionVerbsStatics","IAppointmentsProviderLaunchActionVerbsStatics2","IRemoveAppointmentOperation","IReplaceAppointmentOperation","RemoveAppointmentOperation","ReplaceAppointmentOperation"]};

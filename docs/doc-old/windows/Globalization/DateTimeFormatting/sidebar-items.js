@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["DateTimeFormatter","DayFormat","DayOfWeekFormat","HourFormat","IDateTimeFormatter","IDateTimeFormatter2","IDateTimeFormatterFactory","IDateTimeFormatterStatics","MinuteFormat","MonthFormat","SecondFormat","YearFormat"]};
