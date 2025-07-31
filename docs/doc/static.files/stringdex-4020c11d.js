@@ -1049,7 +1049,7 @@ function loadDatabase(hooks) {
     /** @type {number[]} */
     const SHORT_ALPHABITMAP_CHARS = [];
     for (let i = 0x61; i <= 0x7A; ++i) {
-        if (i === 0x77 || i === 0x71) {
+        if (i === 0x76 || i === 0x71) {
             // 24 entries, 26 letters, so we skip q and v
             continue;
         }
@@ -1099,17 +1099,19 @@ function loadDatabase(hooks) {
              * @returns {number}
              */
             getIndex(k) {
+                //return this.getKeys().indexOf(k);
                 const ix = alphabitmap_chars.indexOf(k);
                 if (ix < 0) {
                     return ix;
                 }
-                return bitCount(~(0xffffff << ix) & this.bitmap);
+                return bitCount(~(0xffffffff << ix) & this.bitmap);
             }
             /**
              * @param {number} branch_index
              * @returns {number}
              */
             getKey(branch_index) {
+                //return this.getKeys()[branch_index];
                 let alpha_index = 0;
                 while (branch_index >= 0) {
                     if (this.bitmap & (1 << alpha_index)) {
@@ -1882,7 +1884,7 @@ function loadDatabase(hooks) {
                 cpbranches = EMPTY_UINT8;
                 might_have_prefix_branches = EMPTY_SEARCH_TREE_BRANCHES;
             } else if (alphabitmap) {
-                cpbranches = new Uint8Array(input.buffer, i + input.byteOffset, 3);
+                cpbranches = new Uint8Array(input.buffer, i + input.byteOffset, alphabitmap.width);
                 const branchset = (alphabitmap.width === 4 ? (input[i + 3] << 24) : 0) |
                     (input[i + 2] << 16) |
                     (input[i + 1] << 8) |
@@ -1900,7 +1902,7 @@ function loadDatabase(hooks) {
                 csbranches = EMPTY_UINT8;
                 branches = might_have_prefix_branches;
             } else if (alphabitmap) {
-                csbranches = new Uint8Array(input.buffer, i + input.byteOffset, 3);
+                csbranches = new Uint8Array(input.buffer, i + input.byteOffset, alphabitmap.width);
                 const branchset = (alphabitmap.width === 4 ? (input[i + 3] << 24) : 0) |
                     (input[i + 2] << 16) |
                     (input[i + 1] << 8) |
