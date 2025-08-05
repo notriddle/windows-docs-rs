@@ -7,21 +7,26 @@
  * @property {Array<RoaringBitmapArray|RoaringBitmapBits|RoaringBitmapRun>} containers
  */
 class RoaringBitmap {
-    /** @param {Uint8Array?} u8array */
-    constructor(u8array) {
+    /**
+     * @param {Uint8Array|null} u8array
+     * @param {number} startingOffset
+    */
+    constructor(u8array, startingOffset) {
+        let i = startingOffset;
         this.keys = [];
         /** @type {number[]} */
         this.cardinalities = [];
         /** @type {(RoaringBitmapArray|RoaringBitmapBits|RoaringBitmapRun)[]} */
         this.containers = [];
+        /** @type {number} */
         this.consumed_len_bytes = 0;
-        if (u8array === null || u8array.length === 0) {
+        if (u8array === null || u8array.length === i) {
             return this;
         }
-        if (u8array[0] > 0xf0) {
+        if (u8array[i] > 0xf0) {
             // Special representation of tiny sets that are close together
-            const lspecial = u8array[0] & 0x0f;
-            let pspecial = 1;
+            const lspecial = u8array[i] & 0x0f;
+            let pspecial = i + 1;
             let key = u8array[pspecial + 2] | (u8array[pspecial + 3] << 8);
             let value = u8array[pspecial] | (u8array[pspecial + 1] << 8);
             let entry = (key << 16) | value;
@@ -44,12 +49,12 @@ class RoaringBitmap {
                 container.cardinality = cardinalityOld + 1;
                 pspecial += 2;
             }
-            this.consumed_len_bytes = pspecial;
+            this.consumed_len_bytes = pspecial - i;
             return this;
-        } else if (u8array[0] < 0x3a) {
+        } else if (u8array[i] < 0x3a) {
             // Special representation of tiny sets with arbitrary 32-bit integers
-            const lspecial = u8array[0];
-            let pspecial = 1;
+            const lspecial = u8array[i];
+            let pspecial = i + 1;
             for (let ispecial = 0; ispecial < lspecial; ispecial += 1) {
                 const key = u8array[pspecial + 2] | (u8array[pspecial + 3] << 8);
                 const value = u8array[pspecial] | (u8array[pspecial + 1] << 8);
@@ -60,7 +65,7 @@ class RoaringBitmap {
                 container.cardinality = cardinalityOld + 1;
                 pspecial += 4;
             }
-            this.consumed_len_bytes = pspecial;
+            this.consumed_len_bytes = pspecial - i;
             return this;
         }
         // https://github.com/RoaringBitmap/RoaringFormatSpec
@@ -69,14 +74,15 @@ class RoaringBitmap {
         // compressed form, even when loaded into memory. This decoder
         // turns the containers into objects, but uses byte array
         // slices of the original format for the data payload.
-        const has_runs = u8array[0] === 0x3b;
-        if (u8array[0] !== 0x3a && u8array[0] !== 0x3b) {
-            throw new Error("not a roaring bitmap: " + u8array[0]);
+        const has_runs = u8array[i] === 0x3b;
+        if (u8array[i] !== 0x3a && u8array[i] !== 0x3b) {
+            throw new Error("not a roaring bitmap: " + u8array[i]);
         }
         const size = has_runs ?
-            ((u8array[2] | (u8array[3] << 8)) + 1) :
-            ((u8array[4] | (u8array[5] << 8) | (u8array[6] << 16) | (u8array[7] << 24)));
-        let i = has_runs ? 4 : 8;
+            ((u8array[i + 2] | (u8array[i + 3] << 8)) + 1) :
+            ((u8array[i + 4] | (u8array[i + 5] << 8) |
+             (u8array[i + 6] << 16) | (u8array[i + 7] << 24)));
+        i += has_runs ? 4 : 8;
         let is_run;
         if (has_runs) {
             const is_run_len = Math.floor((size + 7) / 8);
@@ -101,8 +107,8 @@ class RoaringBitmap {
             }
         }
         for (let j = 0; j < size; ++j) {
-            if (offsets && offsets[j] !== i) {
-                throw new Error(`corrupt bitmap ${j}: ${i} / ${offsets[j]}`);
+            if (offsets && offsets[j] !== i - startingOffset) {
+                throw new Error(`corrupt bitmap ${j}: ${i - startingOffset} / ${offsets[j]}`);
             }
             if (is_run[j >> 3] & (1 << (j & 0x7))) {
                 const runcount = (u8array[i] | (u8array[i + 1] << 8));
@@ -127,14 +133,14 @@ class RoaringBitmap {
                 i += end;
             }
         }
-        this.consumed_len_bytes = i;
+        this.consumed_len_bytes = i - startingOffset;
     }
     /**
      * @param {number} number
      * @returns {RoaringBitmap}
      */
     static makeSingleton(number) {
-        const result = new RoaringBitmap(null);
+        const result = new RoaringBitmap(null, 0);
         result.cardinalities.push(1);
         result.keys.push(number >> 16);
         result.containers.push(new RoaringBitmapArray(
@@ -184,7 +190,7 @@ class RoaringBitmap {
         const il = this.keys.length;
         let j = 0;
         const jl = that.keys.length;
-        const result = new RoaringBitmap(null);
+        const result = new RoaringBitmap(null, 0);
         while (i < il || j < jl) {
             if (j >= jl || this.keys[i] < that.keys[j]) {
                 result.keys.push(this.keys[i]);
@@ -328,7 +334,7 @@ class RoaringBitmap {
         const il = this.keys.length;
         let j = 0;
         const jl = that.keys.length;
-        const result = new RoaringBitmap(null);
+        const result = new RoaringBitmap(null, 0);
         while (i < il && j < jl) {
             if (this.keys[i] < that.keys[j]) {
                 i += 1;
@@ -585,11 +591,11 @@ class RoaringBitmapBits {
     }
 }
 
-const EMPTY_BITMAP = new RoaringBitmap(null);
+const EMPTY_BITMAP = new RoaringBitmap(null, 0);
 EMPTY_BITMAP.consumed_len_bytes = 0;
-const EMPTY_BITMAP1 = new RoaringBitmap(null);
+const EMPTY_BITMAP1 = new RoaringBitmap(null, 0);
 EMPTY_BITMAP1.consumed_len_bytes = 1;
-const EVERYTHING_BITMAP = new RoaringBitmap(null);
+const EVERYTHING_BITMAP = new RoaringBitmap(null, 0);
 
 const EMPTY_UINT8 = new Uint8Array();
 
@@ -839,7 +845,7 @@ function loadDatabase(hooks) {
                     registry.dataColumns.set(colName, new DataColumn(
                         counts,
                         makeUint8ArrayFromBase64(dataObj[colName]["H"]),
-                        new RoaringBitmap(makeUint8ArrayFromBase64(dataObj[colName]["E"])),
+                        new RoaringBitmap(makeUint8ArrayFromBase64(dataObj[colName]["E"]), 0),
                         colName,
                     ));
                 }
@@ -1928,7 +1934,7 @@ function loadDatabase(hooks) {
                     j += 1;
                 }
             } else {
-                cphashes = input.subarray(i, i + (cplen * 6));
+                cphashes = cplen === 0 ? EMPTY_UINT8 : input.subarray(i, i + (cplen * 6));
                 i += cplen * 6;
             }
             j = 0;
@@ -1967,7 +1973,7 @@ function loadDatabase(hooks) {
                     j += 1;
                 }
             } else {
-                cshashes = input.subarray(i, i + (cslen * 6));
+                cshashes = cslen === 0 ? EMPTY_UINT8 : input.subarray(i, i + (cslen * 6));
                 i += cslen * 6;
             }
             let cpbranches;
@@ -2111,7 +2117,9 @@ function loadDatabase(hooks) {
                     data = data_history[data_history.length - dlen - 1];
                     dlen = data.length;
                 } else {
-                    data = dlen === 0 ? EMPTY_UINT8 : new Uint8Array(input.buffer, i + input.byteOffset, dlen);
+                    data = dlen === 0 ?
+                        EMPTY_UINT8 :
+                        new Uint8Array(input.buffer, i + input.byteOffset, dlen);
                     i += dlen;
                 }
                 const coffset = i;
@@ -2131,7 +2139,7 @@ function loadDatabase(hooks) {
                     whole = EMPTY_BITMAP;
                     suffix = input[i] === 0 ?
                         EMPTY_BITMAP1 :
-                        new RoaringBitmap(new Uint8Array(input.buffer, i + input.byteOffset));
+                        new RoaringBitmap(input, i);
                     i += suffix.consumed_len_bytes;
                 } else if (input[i] === 0xff) {
                     whole = EMPTY_BITMAP;
@@ -2140,11 +2148,11 @@ function loadDatabase(hooks) {
                 } else {
                     whole = input[i] === 0 ?
                         EMPTY_BITMAP1 :
-                        new RoaringBitmap(new Uint8Array(input.buffer, i + input.byteOffset));
+                        new RoaringBitmap(input, i);
                     i += whole.consumed_len_bytes;
                     suffix = input[i] === 0 ?
                         EMPTY_BITMAP1 :
-                        new RoaringBitmap(new Uint8Array(input.buffer, i + input.byteOffset));
+                        new RoaringBitmap(input, i);
                     i += suffix.consumed_len_bytes;
                 }
                 tree = new SearchTree(
@@ -2186,10 +2194,10 @@ function loadDatabase(hooks) {
                 ci += cpbranches.length;
                 canonical.set(csbranches, ci);
                 ci += csbranches.length;
-                canonical.set(input.subarray(
-                    i - whole.consumed_len_bytes - suffix.consumed_len_bytes,
-                    i,
-                ), ci);
+                const leavesOffset = i - whole.consumed_len_bytes - suffix.consumed_len_bytes;
+                for (let j = leavesOffset; j < i; j += 1) {
+                    canonical[ci + j - leavesOffset] = input[j];
+                }
                 siphashOfBytes(canonical.subarray(0, clen), 0, 0, 0, 0, hash);
                 hash[2] &= 0x7f;
             } else {
@@ -2214,7 +2222,7 @@ function loadDatabase(hooks) {
                     whole = EMPTY_BITMAP;
                     suffix = input[i] === 0 ?
                         EMPTY_BITMAP1 :
-                        new RoaringBitmap(new Uint8Array(input.buffer, i + input.byteOffset));
+                        new RoaringBitmap(input, i);
                     i += suffix.consumed_len_bytes;
                 } else if (input[i] === 0xff) {
                     whole = EMPTY_BITMAP;
@@ -2223,11 +2231,11 @@ function loadDatabase(hooks) {
                 } else {
                     whole = input[i] === 0 ?
                         EMPTY_BITMAP1 :
-                        new RoaringBitmap(new Uint8Array(input.buffer, i + input.byteOffset));
+                        new RoaringBitmap(input, i);
                     i += whole.consumed_len_bytes;
                     suffix = input[i] === 0 ?
                         EMPTY_BITMAP1 :
-                        new RoaringBitmap(new Uint8Array(input.buffer, i + input.byteOffset));
+                        new RoaringBitmap(input, i);
                     i += suffix.consumed_len_bytes;
                 }
                 siphashOfBytes(new Uint8Array(
