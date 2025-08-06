@@ -1,42 +1,44 @@
 /**
  * @import * as stringdex from "./stringdex.d.ts"
  */
+
+const EMPTY_UINT8 = new Uint8Array();
+
 /**
- * @property {Array<number>} keys
- * @property {Array<number>} cardinalities
- * @property {Array<RoaringBitmapArray|RoaringBitmapBits|RoaringBitmapRun>} containers
+ * @property {Uint8Array} keysAndCardinalities
+ * @property {Uint8Array[]} containers
  */
 class RoaringBitmap {
     /**
      * @param {Uint8Array|null} u8array
-     * @param {number} startingOffset
+     * @param {number} [startingOffset]
     */
     constructor(u8array, startingOffset) {
-        let i = startingOffset;
-        this.keys = [];
-        /** @type {number[]} */
-        this.cardinalities = [];
+        const start = startingOffset ? startingOffset : 0;
+        let i = start;
+        /** @type {Uint8Array} */
+        this.keysAndCardinalities = EMPTY_UINT8;
         /** @type {(RoaringBitmapArray|RoaringBitmapBits|RoaringBitmapRun)[]} */
         this.containers = [];
         /** @type {number} */
         this.consumed_len_bytes = 0;
-        if (u8array === null || u8array.length === i) {
+        if (u8array === null || u8array.length === i || u8array[i] === 0) {
             return this;
-        }
-        if (u8array[i] > 0xf0) {
+        } else if (u8array[i] > 0xf0) {
             // Special representation of tiny sets that are close together
             const lspecial = u8array[i] & 0x0f;
+            this.keysAndCardinalities = new Uint8Array(lspecial * 4);
             let pspecial = i + 1;
             let key = u8array[pspecial + 2] | (u8array[pspecial + 3] << 8);
             let value = u8array[pspecial] | (u8array[pspecial + 1] << 8);
             let entry = (key << 16) | value;
-            this.keys.push(key);
             let container;
             container = new RoaringBitmapArray(1, new Uint8Array(4));
             container.array[0] = value & 0xFF;
             container.array[1] = (value >> 8) & 0xFF;
             this.containers.push(container);
-            this.cardinalities.push(1);
+            this.keysAndCardinalities[0] = key;
+            this.keysAndCardinalities[1] = key >> 8;
             pspecial += 4;
             for (let ispecial = 1; ispecial < lspecial; ispecial += 1) {
                 entry += u8array[pspecial] | (u8array[pspecial + 1] << 8);
@@ -54,6 +56,7 @@ class RoaringBitmap {
         } else if (u8array[i] < 0x3a) {
             // Special representation of tiny sets with arbitrary 32-bit integers
             const lspecial = u8array[i];
+            this.keysAndCardinalities = new Uint8Array(lspecial * 4);
             let pspecial = i + 1;
             for (let ispecial = 0; ispecial < lspecial; ispecial += 1) {
                 const key = u8array[pspecial + 2] | (u8array[pspecial + 3] << 8);
@@ -89,16 +92,12 @@ class RoaringBitmap {
             is_run = new Uint8Array(u8array.buffer, i + u8array.byteOffset, is_run_len);
             i += is_run_len;
         } else {
-            is_run = new Uint8Array();
+            is_run = EMPTY_UINT8;
         }
-        for (let j = 0; j < size; ++j) {
-            this.keys.push(u8array[i] | (u8array[i + 1] << 8));
-            i += 2;
-            this.cardinalities.push((u8array[i] | (u8array[i + 1] << 8)) + 1);
-            i += 2;
-        }
+        this.keysAndCardinalities = u8array.subarray(i, i + (size * 4));
+        i += size * 4;
         let offsets = null;
-        if (!has_runs || this.keys.length >= 4) {
+        if (!has_runs || size >= 4) {
             offsets = [];
             for (let j = 0; j < size; ++j) {
                 offsets.push(u8array[i] | (u8array[i + 1] << 8) | (u8array[i + 2] << 16) |
@@ -107,9 +106,11 @@ class RoaringBitmap {
             }
         }
         for (let j = 0; j < size; ++j) {
-            if (offsets && offsets[j] !== i - startingOffset) {
-                throw new Error(`corrupt bitmap ${j}: ${i - startingOffset} / ${offsets[j]}`);
+            if (offsets && offsets[j] !== i - start) {
+                throw new Error(`corrupt bitmap ${j}: ${i - start} / ${offsets[j]}`);
             }
+            const cardinality = (this.keysAndCardinalities[(j * 4) + 2] |
+                (this.keysAndCardinalities[(j * 4) + 3] << 8)) + 1;
             if (is_run[j >> 3] & (1 << (j & 0x7))) {
                 const runcount = (u8array[i] | (u8array[i + 1] << 8));
                 i += 2;
@@ -118,22 +119,22 @@ class RoaringBitmap {
                     new Uint8Array(u8array.buffer, i + u8array.byteOffset, runcount * 4),
                 ));
                 i += runcount * 4;
-            } else if (this.cardinalities[j] >= 4096) {
+            } else if (cardinality >= 4096) {
                 this.containers.push(new RoaringBitmapBits(new Uint8Array(
                     u8array.buffer,
                     i + u8array.byteOffset, 8192,
                 )));
                 i += 8192;
             } else {
-                const end = this.cardinalities[j] * 2;
+                const end = cardinality * 2;
                 this.containers.push(new RoaringBitmapArray(
-                    this.cardinalities[j],
+                    cardinality,
                     new Uint8Array(u8array.buffer, i + u8array.byteOffset, end),
                 ));
                 i += end;
             }
         }
-        this.consumed_len_bytes = i - startingOffset;
+        this.consumed_len_bytes = i - start;
     }
     /**
      * @param {number} number
@@ -141,11 +142,13 @@ class RoaringBitmap {
      */
     static makeSingleton(number) {
         const result = new RoaringBitmap(null, 0);
-        result.cardinalities.push(1);
-        result.keys.push(number >> 16);
+        result.keysAndCardinalities = Uint8Array.of(
+            (number >> 16), (number >> 24),
+            0, 0, // keysAndCardinalities stores the true cardinality minus 1
+        );
         result.containers.push(new RoaringBitmapArray(
             1,
-            Uint8Array.from([number, number >> 8]),
+            Uint8Array.of(number, number >> 8),
         ));
         return result;
     }
@@ -155,10 +158,15 @@ class RoaringBitmap {
             let i = 0;
             const l = 1 << 16;
             const everything_range = new RoaringBitmapRun(1, Uint8Array.of(0, 0, 0xff, 0xff));
+            EVERYTHING_BITMAP.keysAndCardinalities = new Uint8Array(l * 4);
             while (i < l) {
-                EVERYTHING_BITMAP.keys.push(i);
-                EVERYTHING_BITMAP.cardinalities.push(1 << 16);
                 EVERYTHING_BITMAP.containers.push(everything_range);
+                // key
+                EVERYTHING_BITMAP.keysAndCardinalities[(i * 4) + 0] = i;
+                EVERYTHING_BITMAP.keysAndCardinalities[(i * 4) + 1] = i >> 8;
+                // cardinality (minus one)
+                EVERYTHING_BITMAP.keysAndCardinalities[(i * 4) + 2] = 0xff;
+                EVERYTHING_BITMAP.keysAndCardinalities[(i * 4) + 3] = 0xff;
                 i += 1;
             }
         }
@@ -171,6 +179,70 @@ class RoaringBitmap {
     /** @returns {boolean} */
     isEmpty() {
         return this.containers.length === 0;
+    }
+    /**
+     * Helper function used when constructing bitmaps from lists.
+     * Returns an array container with at least two free byte slots
+     * and bumps `this.cardinalities`.
+     * @param {number} key
+     * @returns {RoaringBitmapArray}
+     */
+    addToArrayAt(key) {
+        let mid = this.getContainerId(key);
+        /** @type {RoaringBitmapArray|RoaringBitmapBits|RoaringBitmapRun} */
+        let container;
+        if (mid === -1) {
+            container = new RoaringBitmapArray(0, new Uint8Array(2));
+            mid = this.containers.length;
+            this.containers.push(container);
+            if (mid * 4 > this.keysAndCardinalities.length) {
+                const keysAndContainers = new Uint8Array(mid * 8);
+                keysAndContainers.set(this.keysAndCardinalities);
+                this.keysAndCardinalities = keysAndContainers;
+            }
+            this.keysAndCardinalities[(mid * 4) + 0] = key;
+            this.keysAndCardinalities[(mid * 4) + 1] = key >> 8;
+        } else {
+            container = this.containers[mid];
+            const cardinalityOld =
+                this.keysAndCardinalities[(mid * 4) + 2] |
+                (this.keysAndCardinalities[(mid * 4) + 3] << 8);
+            const cardinality = cardinalityOld + 1;
+            this.keysAndCardinalities[(mid * 4) + 2] = cardinality;
+            this.keysAndCardinalities[(mid * 4) + 3] = cardinality >> 8;
+        }
+        // the logic for handing this number is annoying, because keysAndCardinalities stores
+        // the cardinality *minus one*, so that it can count up to 65536 with only two bytes
+        // (because empty containers are never stored).
+        //
+        // So, if this is a new container, the stored cardinality contains `0 0`, which is
+        // the proper value of the old cardinality (an imaginary empty container existed).
+        // If this is adding to an existing container, then the above `else` branch bumps it
+        // by one, leaving us with a proper value of `cardinality - 1`.
+        const cardinalityOld =
+            this.keysAndCardinalities[(mid * 4) + 2] |
+            (this.keysAndCardinalities[(mid * 4) + 3] << 8);
+        if (!(container instanceof RoaringBitmapArray) ||
+            container.array.byteLength < ((cardinalityOld + 1) * 2)
+        ) {
+            const newBuf = new Uint8Array((cardinalityOld + 1) * 4);
+            let idx = 0;
+            for (const cvalue of container.values()) {
+                newBuf[idx] = cvalue & 0xFF;
+                newBuf[idx + 1] = (cvalue >> 8) & 0xFF;
+                idx += 2;
+            }
+            if (container instanceof RoaringBitmapArray) {
+                container.cardinality = cardinalityOld;
+                container.array = newBuf;
+                return container;
+            }
+            const newcontainer = new RoaringBitmapArray(cardinalityOld, newBuf);
+            this.containers[mid] = newcontainer;
+            return newcontainer;
+        } else {
+            return container;
+        }
     }
     /**
      * @param {RoaringBitmap} that
@@ -187,28 +259,44 @@ class RoaringBitmap {
             return RoaringBitmap.everything();
         }
         let i = 0;
-        const il = this.keys.length;
+        const il = this.containers.length;
         let j = 0;
-        const jl = that.keys.length;
+        const jl = that.containers.length;
         const result = new RoaringBitmap(null, 0);
+        result.keysAndCardinalities = new Uint8Array((il + jl) * 4);
         while (i < il || j < jl) {
-            if (j >= jl || this.keys[i] < that.keys[j]) {
-                result.keys.push(this.keys[i]);
+            const ik = i * 4;
+            const jk = j * 4;
+            const k = result.containers.length * 4;
+            if (j >= jl || (i < il && (
+                (this.keysAndCardinalities[ik + 1] < that.keysAndCardinalities[jk + 1]) ||
+                (this.keysAndCardinalities[ik + 1] === that.keysAndCardinalities[jk + 1] &&
+                    this.keysAndCardinalities[ik] < that.keysAndCardinalities[jk])
+            ))) {
+                result.keysAndCardinalities[k + 0] = this.keysAndCardinalities[ik + 0];
+                result.keysAndCardinalities[k + 1] = this.keysAndCardinalities[ik + 1];
+                result.keysAndCardinalities[k + 2] = this.keysAndCardinalities[ik + 2];
+                result.keysAndCardinalities[k + 3] = this.keysAndCardinalities[ik + 3];
                 result.containers.push(this.containers[i]);
-                result.cardinalities.push(this.cardinalities[i]);
                 i += 1;
-            } else if (i >= il || that.keys[j] < this.keys[i]) {
-                result.keys.push(that.keys[j]);
+            } else if (i >= il || (j < jl && (
+                (that.keysAndCardinalities[jk + 1] < this.keysAndCardinalities[ik + 1]) ||
+                (that.keysAndCardinalities[jk + 1] === this.keysAndCardinalities[ik + 1] &&
+                    that.keysAndCardinalities[jk] < this.keysAndCardinalities[ik])
+            ))) {
+                result.keysAndCardinalities[k + 0] = that.keysAndCardinalities[jk + 0];
+                result.keysAndCardinalities[k + 1] = that.keysAndCardinalities[jk + 1];
+                result.keysAndCardinalities[k + 2] = that.keysAndCardinalities[jk + 2];
+                result.keysAndCardinalities[k + 3] = that.keysAndCardinalities[jk + 3];
                 result.containers.push(that.containers[j]);
-                result.cardinalities.push(that.cardinalities[j]);
                 j += 1;
             } else {
                 // this key is not smaller than that key
                 // that key is not smaller than this key
                 // they must be equal
-                result.keys.push(this.keys[i]);
                 const thisContainer = this.containers[i];
                 const thatContainer = that.containers[j];
+                let card = 0;
                 if (thisContainer instanceof RoaringBitmapBits &&
                     thatContainer instanceof RoaringBitmapBits
                 ) {
@@ -219,7 +307,6 @@ class RoaringBitmap {
                     );
                     let k = 0;
                     const kl = resultArray.length;
-                    let card = 0;
                     while (k < kl) {
                         const c = thisContainer.array[k] | thatContainer.array[k];
                         resultArray[k] = c;
@@ -227,7 +314,6 @@ class RoaringBitmap {
                         k += 1;
                     }
                     result.containers.push(new RoaringBitmapBits(resultArray));
-                    result.cardinalities.push(card);
                 } else {
                     const thisValues = thisContainer.values();
                     const thatValues = thatContainer.values();
@@ -268,53 +354,23 @@ class RoaringBitmap {
                         resultValues.length,
                         resultArray,
                     ));
-                    result.cardinalities.push(resultValues.length);
+                    card = resultValues.length;
                 }
+                result.keysAndCardinalities[k + 0] = this.keysAndCardinalities[ik + 0];
+                result.keysAndCardinalities[k + 1] = this.keysAndCardinalities[ik + 1];
+                card -= 1;
+                result.keysAndCardinalities[k + 2] = card;
+                result.keysAndCardinalities[k + 3] = card >> 8;
                 i += 1;
                 j += 1;
             }
         }
+        // shrink the keysAndCardinalities list if it's more than twice as big as it needs to be
+        if (result.containers.length < (result.containers.length * 2)) {
+            result.keysAndCardinalities =
+                result.keysAndCardinalities.slice(result.containers.length * 4);
+        }
         return result;
-    }
-    /**
-     * Helper function used when constructing bitmaps from lists.
-     * Returns an array container with at least two free byte slots
-     * and bumps `this.cardinalities`.
-     * @param {number} key
-     * @returns {RoaringBitmapArray}
-     */
-    addToArrayAt(key) {
-        let mid = this.getContainerId(key);
-        /** @type {RoaringBitmapArray|RoaringBitmapBits|RoaringBitmapRun} */
-        let container;
-        if (mid === -1) {
-            this.keys.push(key);
-            container = new RoaringBitmapArray(0, new Uint8Array(2));
-            mid = this.containers.length;
-            this.containers.push(container);
-            this.cardinalities.push(0);
-        } else {
-            container = this.containers[mid];
-        }
-        const cardinalityOld = this.cardinalities[mid];
-        this.cardinalities[mid] += 1;
-        if (!(container instanceof RoaringBitmapArray) ||
-            container.array.byteLength < ((cardinalityOld + 1) * 2)
-        ) {
-            const newBuf = new Uint8Array((cardinalityOld + 1) * 4);
-            let idx = 0;
-            for (const cvalue of container.values()) {
-                newBuf[idx] = cvalue & 0xFF;
-                newBuf[idx + 1] = (cvalue >> 8) & 0xFF;
-                idx += 2;
-            }
-            const newcontainer = new RoaringBitmapArray(cardinalityOld, newBuf);
-            this.containers[mid] = newcontainer;
-            return newcontainer;
-        } else {
-            container.cardinality = cardinalityOld;
-            return container;
-        }
     }
     /**
      * @param {RoaringBitmap} that
@@ -331,14 +387,26 @@ class RoaringBitmap {
             return this;
         }
         let i = 0;
-        const il = this.keys.length;
+        const il = this.containers.length;
         let j = 0;
-        const jl = that.keys.length;
+        const jl = that.containers.length;
         const result = new RoaringBitmap(null, 0);
+        result.keysAndCardinalities = new Uint8Array((il > jl ? il : jl) * 4);
         while (i < il && j < jl) {
-            if (this.keys[i] < that.keys[j]) {
+            const ik = i * 4;
+            const jk = j * 4;
+            const k = result.containers.length * 4;
+            if (j >= jl || (i < il && (
+                (this.keysAndCardinalities[ik + 1] < that.keysAndCardinalities[jk + 1]) ||
+                (this.keysAndCardinalities[ik + 1] === that.keysAndCardinalities[jk + 1] &&
+                    this.keysAndCardinalities[ik] < that.keysAndCardinalities[jk])
+            ))) {
                 i += 1;
-            } else if (that.keys[j] < this.keys[i]) {
+            } else if (i >= il || (j < jl && (
+                (that.keysAndCardinalities[jk + 1] < this.keysAndCardinalities[ik + 1]) ||
+                (that.keysAndCardinalities[jk + 1] === this.keysAndCardinalities[ik + 1] &&
+                    that.keysAndCardinalities[jk] < this.keysAndCardinalities[ik])
+            ))) {
                 j += 1;
             } else {
                 // this key is not smaller than that key
@@ -346,6 +414,7 @@ class RoaringBitmap {
                 // they must be equal
                 const thisContainer = this.containers[i];
                 const thatContainer = that.containers[j];
+                let card = 0;
                 if (thisContainer instanceof RoaringBitmapBits &&
                     thatContainer instanceof RoaringBitmapBits
                 ) {
@@ -356,7 +425,6 @@ class RoaringBitmap {
                     );
                     let k = 0;
                     const kl = resultArray.length;
-                    let card = 0;
                     while (k < kl) {
                         const c = thisContainer.array[k] & thatContainer.array[k];
                         resultArray[k] = c;
@@ -364,9 +432,7 @@ class RoaringBitmap {
                         k += 1;
                     }
                     if (card !== 0) {
-                        result.keys.push(this.keys[i]);
                         result.containers.push(new RoaringBitmapBits(resultArray));
-                        result.cardinalities.push(card);
                     }
                 } else {
                     const thisValues = thisContainer.values();
@@ -388,7 +454,8 @@ class RoaringBitmap {
                             thatValue = thatValues.next();
                         }
                     }
-                    if (resultValues.length !== 0) {
+                    card = resultValues.length;
+                    if (card !== 0) {
                         const resultArray = new Uint8Array(resultValues.length * 2);
                         let k = 0;
                         for (const value of resultValues) {
@@ -397,17 +464,27 @@ class RoaringBitmap {
                             resultArray[k + 1] = (value >> 8) & 0xFF;
                             k += 2;
                         }
-                        result.keys.push(this.keys[i]);
                         result.containers.push(new RoaringBitmapArray(
                             resultValues.length,
                             resultArray,
                         ));
-                        result.cardinalities.push(resultValues.length);
                     }
+                }
+                if (card !== 0) {
+                    result.keysAndCardinalities[k + 0] = this.keysAndCardinalities[ik + 0];
+                    result.keysAndCardinalities[k + 1] = this.keysAndCardinalities[ik + 1];
+                    card -= 1;
+                    result.keysAndCardinalities[k + 2] = card;
+                    result.keysAndCardinalities[k + 3] = card >> 8;
                 }
                 i += 1;
                 j += 1;
             }
+        }
+        // shrink the keysAndCardinalities list if it's more than twice as big as it needs to be
+        if (result.containers.length < (result.containers.length * 2)) {
+            //result.keysAndCardinalities =
+            //    result.keysAndCardinalities.slice(result.containers.length * 4);
         }
         return result;
     }
@@ -431,10 +508,11 @@ class RoaringBitmap {
         // bigger than 2**16, and because we have 32 bits of safe int,
         // left + right can't overflow.
         let left = 0;
-        let right = this.keys.length - 1;
+        let right = this.containers.length - 1;
         while (left <= right) {
             const mid = Math.floor((left + right) / 2);
-            const x = this.keys[mid];
+            const x = this.keysAndCardinalities[(mid * 4)] |
+                (this.keysAndCardinalities[(mid * 4) + 1] << 8);
             if (x < key) {
                 left = mid + 1;
             } else if (x > key) {
@@ -446,11 +524,10 @@ class RoaringBitmap {
         return -1;
     }
     * entries() {
-        for (const i in this.containers) {
-            if (!Object.prototype.hasOwnProperty.call(this.containers, i)) {
-                continue;
-            }
-            const key = this.keys[i];
+        const l = this.containers.length;
+        for (let i = 0; i < l; ++i) {
+            const key = this.keysAndCardinalities[i * 4] |
+                (this.keysAndCardinalities[(i * 4) + 1] << 8);
             for (const value of this.containers[i].values()) {
                 yield (key << 16) | value;
             }
@@ -470,8 +547,11 @@ class RoaringBitmap {
      */
     cardinality() {
         let result = 0;
-        for (const card of this.cardinalities) {
-            result += card;
+        const l = this.containers.length;
+        for (let i = 0; i < l; ++i) {
+            const card = this.keysAndCardinalities[(i * 4) + 2] |
+                (this.keysAndCardinalities[(i * 4) + 3] << 8);
+            result += card + 1;
         }
         return result;
     }
@@ -596,8 +676,6 @@ EMPTY_BITMAP.consumed_len_bytes = 0;
 const EMPTY_BITMAP1 = new RoaringBitmap(null, 0);
 EMPTY_BITMAP1.consumed_len_bytes = 1;
 const EVERYTHING_BITMAP = new RoaringBitmap(null, 0);
-
-const EMPTY_UINT8 = new Uint8Array();
 
 /**
  * A mapping from six byte nodeids to an arbitrary value.
