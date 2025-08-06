@@ -8,7 +8,9 @@
         <div class="help-menu" tabindex="-1">
             <a href="${rootPath}help.html"><span class="label">Help</span></a>
         </div>
-        <button id="toggle-all-docs"><span class="label">Summary</span></button>`;}}window.customElements.define("rustdoc-toolbar",RustdocToolbarElement);class RustdocTopBarElement extends HTMLElement{constructor(){super();}connectedCallback(){const rootPath=getVar("root-path");const tmplt=document.createElement("template");tmplt.innerHTML=`
+        <button id="toggle-all-docs"
+title="Collapse sections (shift-click to also collapse impl blocks)"><span
+class="label">Summary</span></button>`;}}window.customElements.define("rustdoc-toolbar",RustdocToolbarElement);class RustdocTopBarElement extends HTMLElement{constructor(){super();}connectedCallback(){const rootPath=getVar("root-path");const tmplt=document.createElement("template");tmplt.innerHTML=`
         <slot name="sidebar-menu-toggle"></slot>
         <slot></slot>
         <slot name="settings-menu"></slot>
